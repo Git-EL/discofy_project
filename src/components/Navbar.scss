@@ -1,0 +1,14 @@
+$main-color: #8bffff;
+
+.Nav {
+  color: $main-color;
+  display: flex;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.Nav li {
+  list-style: none;
+  padding: 5px;
+}
