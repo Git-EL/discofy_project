@@ -6,9 +6,11 @@ $main-color: #8bffff;
   position: absolute;
   top: 15px;
   right: 15px;
+  z-index: 2;
 }
 
 .Nav li {
   list-style: none;
   padding: 5px;
+  font-size: 17px;
 }
