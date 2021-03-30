@@ -3,15 +3,8 @@ import './Navbar.scss'
 const Navbar = () => {
   return (
     <ul className='Nav'>
-      <li>
-        Contact
-      </li>
-      <li>
-        |
-      </li>
-      <li>
-        Login
-      </li>
+      <li><a href="#">Home</a> | </li>
+      <li><a href="#">About</a></li>
     </ul>
   )}
 
