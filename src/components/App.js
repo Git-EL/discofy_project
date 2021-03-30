@@ -1,8 +1,8 @@
 import './App.scss'
-import Navbar from './components/Navbar'
-import discofy_logo from './assets/discofy_logo.svg'
-import bgstyle1 from './assets/bg-style1.svg'
-import bgstyle2 from './assets/bg-style2.svg'
+import Navbar from './Navbar'
+import discofy_logo from '../assets/discofy_logo.svg'
+import bgstyle1 from '../assets/bg-style1.svg'
+import bgstyle2 from '../assets/bg-style2.svg'
 
 function App () {
   return (
