@@ -13,7 +13,7 @@ $main-color: #8bffff;
   display: block;
   padding: 8px 15px;
   list-style: none;
-  padding: 5px;
+  padding: 8px;
   font-size: 17px;
   // font-weight: bold;
 }
@@ -24,4 +24,14 @@ $main-color: #8bffff;
 
 .Nav a:visited {
   color: $main-color;
+}
+
+.Nav button {
+  margin: 0;
+  background-color: transparent;
+  color: $main-color;
+  font-size: 17px;
+  border-style: none;
+  outline: transparent;
+  cursor: pointer;
 }
