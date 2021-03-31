@@ -6,7 +6,6 @@ $main-bgcolor: #050124;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   height: 100vh;
   width: 100%;
 }
@@ -27,7 +26,7 @@ $main-bgcolor: #050124;
 
 .Getstrt-btn {
   height: 45px;
-  font: normal normal 700 1em/4em Arial, sans-serif;
+  font: normal 700 1em/4em Arial, sans-serif;
   overflow: hidden;
   width: 150px;
   margin: 15px;
@@ -35,6 +34,7 @@ $main-bgcolor: #050124;
   border-radius: 50px;
   border-style: solid;
   border-color: $main-color;
+  outline:transparent;
 }
 
 .Getstrt-btn a {
