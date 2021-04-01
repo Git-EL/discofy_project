@@ -16,17 +16,27 @@ $main-bgcolor: #050124;
 }
 
 .testdiv button {
-  height: 45px;
   font: normal 700 1em Arial, sans-serif;
-  padding: 0 15px;
+  padding: 8px 15px;
   margin: 15px;
   background-color: $main-color;
+  color: $main-bgcolor;
   border-radius: 50px;
   border-style: solid;
   border-color: $main-color;
-  outline:transparent;
+  outline: transparent;
+  padding-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .testdiv button:hover {
   cursor: pointer;
+}
+
+.spotifyIcon {
+  font-size: 1.5em;
+  position: relative;
+  top: 1.5px;
+  color: #0d0a32;
+  padding-right: 5px;
 }
