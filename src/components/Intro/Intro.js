@@ -14,7 +14,7 @@ const Intro = () => {
     window.location = `${spotify_authUrl}?client_id=${spotify_clientId}&redirect_uri=${spotify_redirectUrl}&response_type=token&show_dialog=true&scope=user-top-read,user-library-read`
   }
 
-  return <div className='testdiv'>
+  return <div className='intro-container'>
            <h2>Test-Text</h2>
            <button variant='info' type='submit' onClick={handleLogin}>
              {spotifyIcon} Login with Spotify
