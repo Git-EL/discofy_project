@@ -11,7 +11,7 @@ const Intro = () => {
   const spotify_redirectUrl = process.env.REACT_APP_REDIRECT_URL
 
   const handleLogin = () => {
-    window.location = `${spotify_authUrl}?client_id=${spotify_clientId}&redirect_uri=${spotify_redirectUrl}&response_type=token&show_dialog=true&scope=user-library-read`
+    window.location = `${spotify_authUrl}?client_id=${spotify_clientId}&redirect_uri=${spotify_redirectUrl}&response_type=token&show_dialog=true&scope=user-top-read,user-library-read`
   }
 
   return <div className='testdiv'>
