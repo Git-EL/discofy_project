@@ -1,12 +1,12 @@
 $main-color: #8bffff;
 $main-bgcolor: #050124;
 
-.testdiv h2 {
+.intro-container h2 {
   color: white;
   background-color: turquoise;
 }
 
-.testdiv {
+.intro-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +15,7 @@ $main-bgcolor: #050124;
   width: 100%;
 }
 
-.testdiv button {
+.intro-container button {
   height: 45px;
   font: normal 700 1em Arial, sans-serif;
   padding: 0 15px;
@@ -27,6 +27,6 @@ $main-bgcolor: #050124;
   outline:transparent;
 }
 
-.testdiv button:hover {
+.intro-container button:hover {
   cursor: pointer;
 }
