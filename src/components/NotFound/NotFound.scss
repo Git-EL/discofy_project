@@ -1,12 +1,16 @@
 $main-color: #8bffff;
 $main-bgcolor: #050124;
 
-.testdiv h2 {
+.notfound-container  h1 {
   color: white;
-  background-color: turquoise;
+  font-size: 7em;
 }
 
-.testdiv {
+.notfound-container  h2 {
+  color: white;
+}
+
+.notfound-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,7 +19,7 @@ $main-bgcolor: #050124;
   width: 100%;
 }
 
-.testdiv button {
+.notfound-container button {
   height: 45px;
   font: normal 700 1em Arial, sans-serif;
   padding: 0 15px;
@@ -27,6 +31,11 @@ $main-bgcolor: #050124;
   outline:transparent;
 }
 
-.testdiv button:hover {
+.notfound-container button a {
+  text-decoration: transparent;
+}
+
+
+.notfound-container button:hover {
   cursor: pointer;
 }
