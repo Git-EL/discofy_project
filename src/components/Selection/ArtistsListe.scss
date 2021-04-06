@@ -1,0 +1,20 @@
+.ArtistsBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.artists-button {
+  height: 100px;
+  width: 100px;
+  padding: 0 15px;
+  margin: 5px;
+  background-color: white;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: white;
+  outline:transparent;
+}
+
+.artists-button:hover {
+  cursor: pointer;
+}
