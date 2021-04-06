@@ -4,12 +4,12 @@ import discofy_logo from '../../assets/discofy_logo.svg'
 
 function Home () {
   return (
-    <div className='HomeContainer'>
+    <div className='home-container'>
       <img src={discofy_logo} alt='discofy-logo' className='logo' />
-      <button className='Getstrt-btn'>
-        <Link to='/Intro' className='First-link'> Get started
+      <button className='getstarted-btn'>
+        <Link to='/intro' className='first-link'> Get started
         </Link>
-        <Link to='/Intro'> Get started
+        <Link to='/intro'> Get started
         </Link>
       </button>
     </div>

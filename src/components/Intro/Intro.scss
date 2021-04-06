@@ -1,12 +1,12 @@
 $main-color: #8bffff;
 $main-bgcolor: #050124;
 
-.testdiv h2 {
+.intro-container h2 {
   color: white;
   background-color: turquoise;
 }
 
-.testdiv {
+.intro-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,15 +15,18 @@ $main-bgcolor: #050124;
   width: 100%;
 }
 
-
-.testdiv button:hover {
-  cursor: pointer;
+.intro-container button {
+  height: 45px;
+  font: normal 700 1em Arial, sans-serif;
+  padding: 0 15px;
+  margin: 15px;
+  background-color: $main-color;
+  border-radius: 50px;
+  border-style: solid;
+  border-color: $main-color;
+  outline:transparent;
 }
 
-.spotifyIcon {
-  font-size: 1.5em;
-  position: relative;
-  top: 1.5px;
-  color: #0d0a32;
-  padding-right: 5px;
+.intro-container button:hover {
+  cursor: pointer;
 }
