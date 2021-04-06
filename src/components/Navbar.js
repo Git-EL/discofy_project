@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Navbar = () => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
   const spotify_authUrl = process.env.REACT_APP_AUTHORIZE_URL
-// redirect muss noch geändert werden zur richtigen Adresse später
+  // redirect muss noch geändert werden zur richtigen Adresse später
   const spotify_redirectUrl = process.env.REACT_APP_REDIRECT_URL
 
   const handleLogin = () => {
@@ -25,7 +25,8 @@ const Navbar = () => {
         |
       </li>
       <li>
-        <button onClick={handleLogin}> Login
+        <button onClick={handleLogin}>
+          Login
         </button>
       </li>
     </ul>

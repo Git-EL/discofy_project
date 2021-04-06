@@ -4,7 +4,7 @@ import { getParamValues } from '../../utils/function'
 
 export default class Redirect extends React.Component {
   componentDidMount () {
-    const { history, location } = this.props
+   const { history, location } = this.props
     // const { setExpiryTime, history, location } = this.props
 
     try {
