@@ -1,6 +1,6 @@
 import './Navbar.scss'
-import React, { useState } from "react";
-
+import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
 
 const Navbar = () => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
@@ -10,35 +10,43 @@ const Navbar = () => {
   const handleLogin = () => {
     window.location = `${spotify_authUrl}?client_id=${spotify_clientId}&redirect_uri=${spotify_redirectUrl}&response_type=token&show_dialog=true`
   }
-  const [navLinkOpen, navLinkToggle] = useState(false);
+  const [navLinkOpen, navLinkToggle] = useState(false)
   const handleNavLinksToggle = () => {
     navLinkToggle(!navLinkOpen)
-  };
-
-  const renderClasses = () => {
-     let classes = "navlinks";
-     if (navLinkOpen) {
-       classes += " active"
-     }
-     return classes
   }
-
-
+  const renderClasses = () => {
+    let classes = 'navlinks'
+    if (navLinkOpen) {
+      classes += ' active'
+    }
+    return classes
+  }
   return (
     <nav>
-    <ul className={renderClasses()}>
-      <li className="link">
-        <a href="/">HOME</a></li>
-      <li className="link">
-        <a href="/">CONTACT</a></li>
-      <li className="link">
-        <a href="/"> <button onClick={handleLogin}>LOGIN</button></a></li>
+      <ul className={renderClasses()}>
+        <li className='link'>
+          <Link to='/'> Home
+          </Link>
+        </li>
+        <li className='link'>
+          <Link to='/'> Contact
+          </Link>
+        </li>
+        <li className='link, spacing-deco'>|
+          </li>
+        <li className='link'>
+
+          <button onClick={handleLogin}>
+            <Link to='/'> Login
+            </Link>
+          </button>
+        </li>
       </ul>
-      <div onClick={handleNavLinksToggle} className="hamburger-toggle">
-        <i className="fas fa-bars fa-lg"></i>
+      <div onClick={handleNavLinksToggle} className='hamburger-toggle'>
+        <i className='fas fa-bars fa-lg'></i>
+        {/* <i className="fas fa-times"></i> */}
+
       </div>
-      </nav>
-  )};
-
-
+    </nav>
+  )}
 export default Navbar
