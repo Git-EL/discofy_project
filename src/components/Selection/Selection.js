@@ -6,8 +6,8 @@ import ArtistsListe from './ArtistsListe'
 import UserGenreListe from './UserGenreListe'
 import axios from 'axios'
 // import getParamValues from '../../utils/function'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import 'react-tabs/style/react-tabs.css'
 
 const Selection = () => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
@@ -44,7 +44,7 @@ const Selection = () => {
       data: 'grant_type=client_credentials',
       method: 'POST'
     }).then((tokenResponse) => {
-      setToken(tokenResponse.data.access_token);
+      setToken(tokenResponse.data.access_token)
       console.log(token)
 
       // Das hier muss noch User Music Genre werden
@@ -72,24 +72,23 @@ const Selection = () => {
   }
 
   const artistsboxClicked = (val) => {
-    const currentArtists = [...artists.listOfArtistsFromAPI];
-    console.log(currentArtists);
-    const artistsInfo = currentArtists.filter((t) => t.id === val);
-    console.log(artistsInfo);
+    const currentArtists = [...artists.listOfArtistsFromAPI]
+    console.log(currentArtists)
+    const artistsInfo = currentArtists.filter((t) => t.id === val)
+    console.log(artistsInfo)
 
-    setArtistDetail(artistsInfo[0].id);
-    console.log('val: ' + val);
+    setArtistDetail(artistsInfo[0].id)
+    console.log('val: ' + val)
 
-      axios(`https://api.spotify.com/v1/recommendations?seed_artists=${val}`, {
-        method: 'GET',
-        headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token }
-      }).then((artiststracksResponse) => {
-        setArtiststracks({
-        listOfArtiststracksFromAPI: artiststracksResponse.data.tracks});
-        console.log(artiststracksResponse);
-        console.log(artistsTracks);
-      } )
-     
+    axios(`https://api.spotify.com/v1/recommendations?seed_artists=${val}`, {
+      method: 'GET',
+      headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token }
+    }).then((artiststracksResponse) => {
+      setArtiststracks({
+      listOfArtiststracksFromAPI: artiststracksResponse.data.tracks})
+      console.log(artiststracksResponse)
+      console.log(artistsTracks)
+    })
   }
 
   const usergenrebuttonClicked = (e) => {
@@ -107,36 +106,30 @@ const Selection = () => {
   }
 
   return (
-   <div className='container'>
-    <Tabs>
-    <TabList>
-      <Tab onClick={genrebuttonClicked}>
-        Genre </Tab>
-      <Tab onClick={artistsbuttonClicked}>
-        Artists</Tab>
-      <Tab onClick={usergenrebuttonClicked}>
-        User Track Genre (TOP)
-      </Tab>
-    </TabList>
-
-    <TabPanel>
-      <h2><GenreListe title='Genre' genrelist={genres.listOfGenresFromAPI} />
-</h2>
-    </TabPanel>
-    <TabPanel>
-      <h2><ArtistsListe title='Artists' artistslist={artists.listOfArtistsFromAPI} clicked={artistsboxClicked} />
-      <div>
-        id:
-        {artistDetail}
-        {/* <ArtistsTrackListe title='ArtistsTracks' artiststracklist={artiststracks.listOfArtiststracksFromAPI}/> */}
-      </div></h2>
-    </TabPanel>
-    <TabPanel>
-      <h2><UserGenreListe title='UserGenre' usergenrelist={usergenre.listOfUsergenreFromAPI} />
-    
-</h2>
-    </TabPanel>
-  </Tabs></ div>
+    <div className='container'>
+      <Tabs>
+        <TabList>
+          <Tab onClick={genrebuttonClicked}>
+            Genre
+          </Tab>
+          <Tab onClick={artistsbuttonClicked}>
+            Artists
+          </Tab>
+          <Tab onClick={usergenrebuttonClicked}>
+            User Track Genre (TOP)
+          </Tab>
+        </TabList>
+        <TabPanel>
+          <h2><GenreListe title='Genre' genrelist={genres.listOfGenresFromAPI} /></h2>
+        </TabPanel>
+        <TabPanel>
+          <h2><ArtistsListe title='Artists' artistslist={artists.listOfArtistsFromAPI} clicked={artistsboxClicked} /> <div> id: {artistDetail} {/* <ArtistsTrackListe title='ArtistsTracks' artiststracklist={artiststracks.listOfArtiststracksFromAPI}/> */} </div></h2>
+        </TabPanel>
+        <TabPanel>
+          <h2><UserGenreListe title='UserGenre' usergenrelist={usergenre.listOfUsergenreFromAPI} /></h2>
+        </TabPanel>
+      </Tabs>
+      </ div>
   )
 }
 
