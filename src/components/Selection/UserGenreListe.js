@@ -10,7 +10,7 @@ import React from 'react'
 const UserGenreListe = props => {
 
   return (
-    <div className='col-sm-10'>
+    <div className='col-sm-10 usergenre-container'>
       <div key={0} className="UserGenreBox">
         {props.usergenrelist.map((item, idx) => 
         <ul key={idx + 1} value={item.id}>
