@@ -6,6 +6,8 @@ import ArtistsListe from './ArtistsListe'
 import UserGenreListe from './UserGenreListe'
 import axios from 'axios'
 // import getParamValues from '../../utils/function'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 
 const Selection = () => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
@@ -105,27 +107,36 @@ const Selection = () => {
   }
 
   return (
-    <div className='container'>
-      <button onClick={genrebuttonClicked} className='main-button'>
-        Genre
-      </button>
-      <GenreListe title='Genre' genrelist={genres.listOfGenresFromAPI} />
+   <div className='container'>
+    <Tabs>
+    <TabList>
+      <Tab onClick={genrebuttonClicked}>
+        Genre </Tab>
+      <Tab onClick={artistsbuttonClicked}>
+        Artists</Tab>
+      <Tab onClick={usergenrebuttonClicked}>
+        User Track Genre (TOP)
+      </Tab>
+    </TabList>
 
-      <button onClick={artistsbuttonClicked} className='main-button'>
-        Artists
-      </button>
-      <ArtistsListe title='Artists' artistslist={artists.listOfArtistsFromAPI} clicked={artistsboxClicked} />
+    <TabPanel>
+      <h2><GenreListe title='Genre' genrelist={genres.listOfGenresFromAPI} />
+</h2>
+    </TabPanel>
+    <TabPanel>
+      <h2><ArtistsListe title='Artists' artistslist={artists.listOfArtistsFromAPI} clicked={artistsboxClicked} />
       <div>
         id:
         {artistDetail}
         {/* <ArtistsTrackListe title='ArtistsTracks' artiststracklist={artiststracks.listOfArtiststracksFromAPI}/> */}
-      </div>
-
-      <button onClick={usergenrebuttonClicked} className='main-button'>
-        User Track Genre (TOP)
-      </button>
-      <UserGenreListe title='UserGenre' usergenrelist={usergenre.listOfUsergenreFromAPI} />
-    </div>
+      </div></h2>
+    </TabPanel>
+    <TabPanel>
+      <h2><UserGenreListe title='UserGenre' usergenrelist={usergenre.listOfUsergenreFromAPI} />
+    
+</h2>
+    </TabPanel>
+  </Tabs></ div>
   )
 }
 
