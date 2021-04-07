@@ -108,6 +108,7 @@ const Selection = () => {
 
   return (
    <div className='container'>
+     
     <Tabs>
     <TabList>
       <Tab onClick={genrebuttonClicked}>
