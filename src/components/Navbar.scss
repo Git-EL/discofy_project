@@ -6,9 +6,13 @@ $main-color: #8BFFFF;
   padding: 0;
   box-sizing: border-box;
 }
+
+
 a {
   text-decoration: none;
 }
+
+
 nav {
   color: $main-color;
   display: flex;
@@ -18,6 +22,8 @@ nav {
   margin-right: 30px;
   z-index: 1;
 }
+
+
 .navlinks {
   display: flex;
   justify-content: space-around;
@@ -25,10 +31,14 @@ nav {
   width: 40%;
   font-size: 24px;
 }
+
+
 .link {
   letter-spacing: 3px;
   font-weight: bold;
 }
+
+
 
 .link a {
   color: $main-color;
