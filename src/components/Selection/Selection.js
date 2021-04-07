@@ -23,7 +23,7 @@ const Selection = () => {
   const [artists, setArtists] = useState({
     listOfArtistsFromAPI: []
   })
-  const [artiststracks, setArtiststracks] = useState({
+  const [artistsTracks, setArtiststracks] = useState({
     listOfArtiststracksFromAPI: []
   })
   const [usergenre, setUsergenre] = useState({
@@ -42,7 +42,8 @@ const Selection = () => {
       data: 'grant_type=client_credentials',
       method: 'POST'
     }).then((tokenResponse) => {
-      setToken(tokenResponse.data.access_token)
+      setToken(tokenResponse.data.access_token);
+      console.log(token)
 
       // Das hier muss noch User Music Genre werden
       axios('https://api.spotify.com/v1/browse/categories', {
@@ -69,24 +70,22 @@ const Selection = () => {
   }
 
   const artistsboxClicked = (val) => {
-    const currentArtists = [...artists.listOfArtistsFromAPI]
-    console.log(currentArtists)
-    const artistsInfo = currentArtists.filter((t) => t.id === val)
-    console.log(artistsInfo)
+    const currentArtists = [...artists.listOfArtistsFromAPI];
+    console.log(currentArtists);
+    const artistsInfo = currentArtists.filter((t) => t.id === val);
+    console.log(artistsInfo);
 
-    setArtistDetail(artistsInfo[0].id)
-    console.log('val: ' + val)
-    console.log('artistsDetail innen: ' + artistDetail)
-
-
+    setArtistDetail(artistsInfo[0].id);
+    console.log('val: ' + val);
 
       axios(`https://api.spotify.com/v1/recommendations?seed_artists=${val}`, {
         method: 'GET',
         headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token }
       }).then((artiststracksResponse) => {
         setArtiststracks({
-        listOfArtiststracksFromAPI: artiststracksResponse.data.tracks}) 
-        console.log(artiststracksResponse)
+        listOfArtiststracksFromAPI: artiststracksResponse.data.tracks});
+        console.log(artiststracksResponse);
+        console.log(artistsTracks);
       } )
      
   }
@@ -104,8 +103,6 @@ const Selection = () => {
       })
     })
   }
-
-  console.log('artistsDetail außen: ' + artistDetail)
 
   return (
     <div className='container'>
