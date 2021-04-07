@@ -7,7 +7,6 @@ import UserGenreListe from './UserGenreListe'
 import axios from 'axios'
 // import getParamValues from '../../utils/function'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import 'react-tabs/style/react-tabs.css'
 
 const Selection = () => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
@@ -108,7 +107,7 @@ const Selection = () => {
   return (
     <div className='container'>
       <Tabs>
-        <TabList>
+        <TabList className='tab-title'>
           <Tab onClick={genrebuttonClicked}>
             Genre
           </Tab>
@@ -120,13 +119,24 @@ const Selection = () => {
           </Tab>
         </TabList>
         <TabPanel>
-          <h2><GenreListe title='Genre' genrelist={genres.listOfGenresFromAPI} /></h2>
+          <div className='tab-contentbox'>
+            <GenreListe title='Genre' genrelist={genres.listOfGenresFromAPI} />
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2><ArtistsListe title='Artists' artistslist={artists.listOfArtistsFromAPI} clicked={artistsboxClicked} /> <div> id: {artistDetail} {/* <ArtistsTrackListe title='ArtistsTracks' artiststracklist={artiststracks.listOfArtiststracksFromAPI}/> */} </div></h2>
+          <div className='tab-contentbox'>
+            <ArtistsListe title='Artists' artistslist={artists.listOfArtistsFromAPI} clicked={artistsboxClicked} />
+            <div>
+              id:
+              {artistDetail}
+              {/* <ArtistsTrackListe title='ArtistsTracks' artiststracklist={artiststracks.listOfArtiststracksFromAPI}/> */}
+            </div>
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2><UserGenreListe title='UserGenre' usergenrelist={usergenre.listOfUsergenreFromAPI} /></h2>
+          <div className='tab-contentbox'>
+            <UserGenreListe title='UserGenre' usergenrelist={usergenre.listOfUsergenreFromAPI} />
+          </div>
         </TabPanel>
       </Tabs>
       </ div>

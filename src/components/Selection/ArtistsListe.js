@@ -13,7 +13,7 @@ const ArtistsListe = props => {
 }    
 
   return (
-    <div className='col-sm-10'>
+    <div className='col-sm-10 artist-container'>
       <div key={0} className="ArtistsBox">
         {props.artistslist.map((item, idx) => 
         <button key={idx + 1} onClick={clicked} id={item.id} className="artists-button">

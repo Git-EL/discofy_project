@@ -2,27 +2,93 @@ $main-color: #8bffff;
 $main-bgcolor: #050124;
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: block;
   height: 100vh;
-  width: 100%;
+  max-width: 810px;
+  width: 80%;
   color:white;
+  margin: 100px auto;
 }
 
-.main-button {
-  height: 45px;
-  font: normal 700 1em Arial, sans-serif;
-  padding: 0 15px;
-  margin: 15px;
-  background-color: $main-color;
-  border-radius: 50px;
-  border-style: solid;
-  border-color: $main-color;
-  outline:transparent;
+.tab-title {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  color:red;
 }
 
-.main-button:hover {
+
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.react-tabs__tab-list {
+  border-bottom: 1px solid #aaa;
+  margin: 0 0 0px;
+  padding: 0;
+}
+
+.react-tabs__tab {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  list-style: none;
+  padding: 15px 12px 0;
   cursor: pointer;
+  height: 100px;
+  width: 150px
 }
+
+.react-tabs__tab--selected {
+  border: solid 1px rgba(235, 233, 233, 0.282);
+  border-radius: 20px;
+  background-color:  rgba(235, 233, 233, 0.091);
+ 
+  color: $main-bgcolor;
+  border-radius: 5px 5px 0 0;
+  height: 100px;
+  width: 150px;
+}
+
+.react-tabs__tab:focus{
+  box-shadow: 0 0 5px hsl(208, 99%, 50%);
+  border-color: hsl(208, 99%, 50%);
+  outline: none;
+}
+
+// .react-tabs__tab:focus:after {
+//   content: "";
+//   position: absolute;
+//   height: 5px;
+//   left: -4px;
+//   right: -4px;
+//   bottom: -5px;
+//   background: #fff;
+// }
+
+.react-tabs__tab-panel {
+  display: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}
+
+
+// .main-button {
+//   height: 45px;
+//   font: normal 700 1em Arial, sans-serif;
+//   padding: 0 15px;
+//   margin: 15px;
+//   background-color: $main-color;
+//   border-radius: 50px;
+//   border-style: solid;
+//   border-color: $main-color;
+//   outline:transparent;
+// }
+
+// .main-button:hover {
+//   cursor: pointer;
+// }

@@ -1,6 +1,16 @@
 .ArtistsBox {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  position: relative;
+  padding: 20px;
+}
+
+.artist-container {
+  border: solid 1px rgba(235, 233, 233, 0.282);
+  border-radius: 20px;
+  background-color: rgba(235, 233, 233, 0.091);
+  border-radius: 5px 5px;
 }
 
 .artists-button {
@@ -12,7 +22,7 @@
   border-radius: 5px;
   border-style: solid;
   border-color: white;
-  outline:transparent;
+  outline: transparent;
 }
 
 .artists-button:hover {
