@@ -24,6 +24,8 @@ const Navbar = () => {
   return (
     <nav>
       <ul className={renderClasses()}>
+      <div onClick={handleNavLinksToggle} className='hamburger-toggle'>
+        <i className='fas fa-times'></i></div>
         <li className='link'>
           <Link to='/'> Home
           </Link>
@@ -35,7 +37,6 @@ const Navbar = () => {
         <li className='link, spacing-deco'>|
           </li>
         <li className='link'>
-
           <button onClick={handleLogin}>
             <Link to='/'> Login
             </Link>
