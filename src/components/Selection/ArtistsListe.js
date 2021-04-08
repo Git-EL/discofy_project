@@ -14,7 +14,18 @@ const ArtistsListe = props => {
 
   return (
     <div className='col-sm-10 artist-container'>
+      <h3>Top Artists vom Nutzer</h3>
       <div key={0} className="ArtistsBox">
+      
+        {props.savedartistslist.map((item, idx) => 
+        <button key={idx + 1} onClick={clicked} id={item.id} className="artists-button">
+          {item.name}
+            </button>
+          )
+          }
+      </div>
+      <h3>Gespeicherte Artists</h3>
+      <div key={1} className="ArtistsBox">
         {props.artistslist.map((item, idx) => 
         <button key={idx + 1} onClick={clicked} id={item.id} className="artists-button">
           {item.name}

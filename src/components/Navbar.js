@@ -8,11 +8,15 @@ const Navbar = () => {
   // redirect muss noch geändert werden zur richtigen Adresse später
   const spotify_redirectUrl = process.env.REACT_APP_REDIRECT_URL
   const handleLogin = () => {
-    window.location = `${spotify_authUrl}?client_id=${spotify_clientId}&redirect_uri=${spotify_redirectUrl}&response_type=token&show_dialog=true`
+    window.location = `${spotify_authUrl}?client_id=${spotify_clientId}&redirect_uri=${spotify_redirectUrl}&response_type=token&show_dialog=true&scope=user-library-read+user-follow-read+user-top-read`
   }
   const [navLinkOpen, navLinkToggle] = useState(false)
   const handleNavLinksToggle = () => {
     navLinkToggle(!navLinkOpen)
+  }
+  const handleLinksToggle = () => {
+    if (navLinkOpen) {
+    navLinkToggle(!navLinkOpen)}
   }
   const renderClasses = () => {
     let classes = 'navlinks'
@@ -27,11 +31,11 @@ const Navbar = () => {
       <div onClick={handleNavLinksToggle} className='hamburger-toggle'>
         <i className='fas fa-times'></i></div>
         <li className='link'>
-          <Link to='/'> Home
+          <Link to='/' onClick={handleLinksToggle}> Home
           </Link>
         </li>
         <li className='link'>
-          <Link to='/'> Contact
+          <Link to='/' onClick={handleLinksToggle}> Contact
           </Link>
         </li>
         <li className='link, spacing-deco'>|
@@ -45,8 +49,6 @@ const Navbar = () => {
       </ul>
       <div onClick={handleNavLinksToggle} className='hamburger-toggle'>
         <i className='fas fa-bars fa-lg'></i>
-        {/* <i className="fas fa-times"></i> */}
-
       </div>
     </nav>
   )}
