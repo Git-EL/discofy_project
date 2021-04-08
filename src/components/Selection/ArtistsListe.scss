@@ -3,7 +3,7 @@
   flex-wrap: wrap;
   margin: 0 auto;
   position: relative;
-  padding: 20px;
+  padding: 10px 20px 0;
 }
 
 .artist-container {
@@ -11,6 +11,10 @@
   border-radius: 20px;
   background-color: rgba(235, 233, 233, 0.091);
   border-radius: 5px 5px;
+}
+
+.artist-container h4 {
+  margin: 20px 25px 0;
 }
 
 .artists-button {
@@ -27,4 +31,10 @@
 
 .artists-button:hover {
   cursor: pointer;
+}
+
+.missing-message {
+  color: white;
+  font-size: 13px;
+  margin: 0 5px;
 }

@@ -9,6 +9,8 @@ const GenreListe = props => {
         {props.genrelist.map((item, idx) => 
         <div key={idx + 1} value={item.id}>
           <div className="genre-list">{item.name}</div>
+          <img src={item.icons[0].url} alt="test" className="genre-icon"/>
+           
             </div>)}
       </div>
     </div>

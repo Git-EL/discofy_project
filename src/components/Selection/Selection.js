@@ -51,7 +51,7 @@ const Selection = () => {
       console.log(token)
 
       // Das hier muss noch User Music Genre werden
-      axios('https://api.spotify.com/v1/browse/categories', {
+      axios('https://api.spotify.com/v1/browse/categories/?locale=en_US', {
         method: 'GET',
         headers: { Authorization: 'Bearer ' + tokenResponse.data.access_token }
       }).then((genreResponse) => {
@@ -117,9 +117,9 @@ const Selection = () => {
 
   return (
     <div className='container'>
-      <p>
+      <h3>
         Take your pick
-      </p>
+      </h3>
       <Tabs>
         <TabList className='tab-title'>
           <Tab onClick={genrebuttonClicked}>
