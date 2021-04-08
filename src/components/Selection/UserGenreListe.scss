@@ -6,11 +6,11 @@
 }
 
 .UserGenreBox {
+  margin: 19px;
   display: flex;
-  flex-wrap: wrap;
-  position: relative;
+  flex-flow: row wrap;
   color: white;
-  margin: 20px;
+  max-width:900px;
 }
 
 .UserGenreBox ul {

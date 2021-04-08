@@ -3,12 +3,14 @@
   border-radius: 20px;
   background-color: rgba(235, 186, 247, 0.1);
   border-radius: 0 5px 5px 5px;
-}
+  
 
 .genre-box {
+  margin: 19px;
   display: flex;
-  flex-wrap: wrap;
-  margin: 20px;
+  flex-flow: row wrap;
+  max-width:900px;
+}
 }
 
 .genre-list {
