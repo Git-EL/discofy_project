@@ -24,6 +24,9 @@ const Selection = () => {
   const [artists, setArtists] = useState({
     listOfArtistsFromAPI: []
   })
+  const [savedArtists, setSavedartists] = useState({
+    listOfSavedartistsFromAPI: []
+  })
   const [artistsTracks, setArtiststracks] = useState({
     listOfArtiststracksFromAPI: []
   })
@@ -60,18 +63,25 @@ const Selection = () => {
 
   const artistsbuttonClicked = (e) => {
     e.preventDefault()
-
-    axios('https://api.spotify.com/v1/me/top/artists', {
-      method: 'GET',
-      headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token }
-    }).then((artistsResponse) => {
+    axios.all([
+      axios.get('https://api.spotify.com/v1/me/following?type=artist', {
+        method: 'GET',
+        headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token }
+      }),
+      axios.get('https://api.spotify.com/v1/me/top/artists', {
+        method: 'GET',
+        headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token }
+      })
+    ]).then(axios.spread((artistsResponse, savedartistsResponse) => {
       setArtists({
-      listOfArtistsFromAPI: artistsResponse.data.items})
-    })
+      listOfArtistsFromAPI: artistsResponse.data.artists.items})
+      setSavedartists({
+      listOfSavedartistsFromAPI: savedartistsResponse.data.items})
+    }))
   }
 
   const artistsboxClicked = (val) => {
-    const currentArtists = [...artists.listOfArtistsFromAPI]
+    const currentArtists = [...artists.listOfArtistsFromAPI, ...savedArtists.listOfSavedartistsFromAPI]
     console.log(currentArtists)
     const artistsInfo = currentArtists.filter((t) => t.id === val)
     console.log(artistsInfo)
@@ -106,7 +116,9 @@ const Selection = () => {
 
   return (
     <div className='container'>
-      <p>Take your pick</p>
+      <p>
+        Take your pick
+      </p>
       <Tabs>
         <TabList className='tab-title'>
           <Tab onClick={genrebuttonClicked}>
@@ -126,7 +138,11 @@ const Selection = () => {
         </TabPanel>
         <TabPanel>
           <div className='tab-contentbox'>
-            <ArtistsListe title='Artists' artistslist={artists.listOfArtistsFromAPI} clicked={artistsboxClicked} />
+            <ArtistsListe
+              title='Artists'
+              artistslist={artists.listOfArtistsFromAPI}
+              savedartistslist={savedArtists.listOfSavedartistsFromAPI}
+              clicked={artistsboxClicked} />
             <div>
               id:
               {artistDetail}
@@ -140,16 +156,16 @@ const Selection = () => {
           </div>
         </TabPanel>
       </Tabs>
-      
-      <div className="choices">
-      <h1 className="happychoices">Happy with your choices?</h1>
-      <div className="boxresult">
-       <button className='filter-btn'>Filter Songs</button>
+      <div className='choices'>
+        <h1 className='happychoices'>Happy with your choices?</h1>
+        <div className='boxresult'>
+          <button className='filter-btn'>
+            Filter Songs
+          </button>
+        </div>
       </div>
-    </div>
-    
       </ div>
-      
+
   )
 }
 
