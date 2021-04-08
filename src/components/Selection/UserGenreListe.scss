@@ -1,5 +1,18 @@
+.usergenre-container {
+  border: solid 1px rgba(235, 233, 233, 0.282);
+  border-radius: 20px;
+  background-color:  rgba(235, 233, 233, 0.091);
+  border-radius: 5px 5px;
+}
+
 .UserGenreBox {
   display: flex;
-  flex-direction: row;
-  color: white
- }
+  flex-wrap: wrap;
+  position: relative;
+  color: white;
+  margin: 20px;
+}
+
+.UserGenreBox ul {
+  list-style: none;
+}
