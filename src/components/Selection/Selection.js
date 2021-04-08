@@ -106,6 +106,7 @@ const Selection = () => {
 
   return (
     <div className='container'>
+      <p>Take your pick</p>
       <Tabs>
         <TabList className='tab-title'>
           <Tab onClick={genrebuttonClicked}>
@@ -139,7 +140,16 @@ const Selection = () => {
           </div>
         </TabPanel>
       </Tabs>
+      
+      <div className="choices">
+      <h1 className="happychoices">Happy with your choices?</h1>
+      <div className="boxresult">
+       <button className='filter-btn'>Filter Songs</button>
+      </div>
+    </div>
+    
       </ div>
+      
   )
 }
 
