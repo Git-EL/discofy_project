@@ -7,7 +7,7 @@ import UserGenreListe from './UserGenreListe'
 import axios from 'axios'
 // import getParamValues from '../../utils/function'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Selection = () => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
@@ -117,57 +117,57 @@ const Selection = () => {
 
   return (
     <div className='container'>
-      <h3>
-        Take your pick
-      </h3>
-      <Tabs>
-        <TabList className='tab-title'>
-          <Tab onClick={genrebuttonClicked}>
-            Genre
-          </Tab>
-          <Tab onClick={artistsbuttonClicked}>
-            Artists
-          </Tab>
-          <Tab onClick={usergenrebuttonClicked}>
-            User Track Genre (TOP)
-          </Tab>
-        </TabList>
-        <TabPanel>
-          <div className='tab-contentbox'>
-            <GenreListe title='Genre' genrelist={genres.listOfGenresFromAPI} />
-          </div>
-        </TabPanel>
-        <TabPanel>
-          <div className='tab-contentbox'>
-            <ArtistsListe
-              title='Artists'
-              artistslist={artists.listOfArtistsFromAPI}
-              savedartistslist={savedArtists.listOfSavedartistsFromAPI}
-              clicked={artistsboxClicked} />
-            <div>
-              id:
-              {artistDetail}
-              {/* <ArtistsTrackListe title='ArtistsTracks' artiststracklist={artiststracks.listOfArtiststracksFromAPI}/> */}
+      <div className='inner-container'>
+        <h3>Take your pick</h3>
+        <Tabs>
+          <TabList className='tab-title'>
+            <Tab onClick={genrebuttonClicked}>
+              Genre
+            </Tab>
+            <Tab onClick={artistsbuttonClicked}>
+              Artists
+            </Tab>
+            <Tab onClick={usergenrebuttonClicked}>
+              User Track Genre (TOP)
+            </Tab>
+          </TabList>
+          <TabPanel>
+            <div className='tab-contentbox'>
+              <GenreListe title='Genre' genrelist={genres.listOfGenresFromAPI} />
             </div>
-          </div>
-        </TabPanel>
-        <TabPanel>
-          <div className='tab-contentbox'>
-            <UserGenreListe title='UserGenre' usergenrelist={usergenre.listOfUsergenreFromAPI} />
-          </div>
-        </TabPanel>
-      </Tabs>
-      <div className='choices'>
-        <h1 className='happychoices'>Happy with your choices?</h1>
+          </TabPanel>
+          <TabPanel>
+            <div className='tab-contentbox'>
+              <ArtistsListe
+                title='Artists'
+                artistslist={artists.listOfArtistsFromAPI}
+                savedartistslist={savedArtists.listOfSavedartistsFromAPI}
+                clicked={artistsboxClicked} />
+              <div>
+                id:
+                {artistDetail}
+                {/* <ArtistsTrackListe title='ArtistsTracks' artiststracklist={artiststracks.listOfArtiststracksFromAPI}/> */}
+              </div>
+            </div>
+          </TabPanel>
+          <TabPanel>
+            <div className='tab-contentbox'>
+              <UserGenreListe title='UserGenre' usergenrelist={usergenre.listOfUsergenreFromAPI} />
+            </div>
+          </TabPanel>
+        </Tabs>
+        </div>
+        <div className='choices'>
         <div className='boxresult'>
-          <button className='filter-btn'>
-            <Link to='/filter' className='filter-link'>
-            Filter Songs
-            </Link>
-          </button>
+          <h1 className='happychoices'>Happy with your choices?</h1>
+          
+            <button className='filter-btn'>
+              <Link to='/filter' className='filter-link'> Filter Songs
+              </Link>
+            </button>
+          </div>
         </div>
       </div>
-      </ div>
 
   )
 }

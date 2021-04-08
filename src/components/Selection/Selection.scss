@@ -2,13 +2,22 @@ $main-color: #8bffff;
 $main-bgcolor: #050124;
 
 .container {
-  display: block;
-  height: 100vh;
-  max-width: 600px;
-  width: 60%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "content choicebar";
+}
+
+.inner-container {
+  grid-area: content;
   color: white;
-  margin: 20px auto;
-  margin-left: 100px;
+  margin: 150px 40px 0;
+}
+
+.choices {
+  grid-area: choicebar;
+  min-height: 100vh;
+  text-align: center;
+  background-color: rgba(10, 1, 36, 0.529);
 }
 
 .tab-title {
@@ -18,7 +27,7 @@ $main-bgcolor: #050124;
   color: $main-color;
 }
 
-.container h3 {
+.inner-container h3 {
   color: $main-color;
   font-size: 30px;
   margin-bottom: 60px;
@@ -32,7 +41,7 @@ $main-bgcolor: #050124;
 
 .react-tabs__tab-list {
   border-bottom: 1px solid #aaa;
-  margin: 0 0 0px;
+  margin: 0;
   padding: 0;
 }
 
@@ -100,58 +109,51 @@ $main-bgcolor: #050124;
 //   cursor: pointer;
 // }
 
-.choices {
-  display: block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100vh;
-  width: 30%;
-  text-align: center;
-  padding-top: 60px;
-  background-color: rgba(10, 1, 36, 0.454);
-  background-color: rgba(10, 1, 36, 0.529);
-  z-index: -1;
+.boxresult {
+  position: fixed;
+  margin: auto;
+  margin: 300px 20px 0 20px;
 }
 
 .happychoices {
   color: white;
   font-size: 40px;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 200px;
 }
 
 .filter-btn {
-  height: 55px;
   font: normal 700 1em/4em Arial, sans-serif;
   overflow: hidden;
   width: 150px;
-  margin: 15px;
+  margin: 30px 20px 0 20px;
   background-color: $main-color;
   border-radius: 50px;
   border-style: solid;
   border-color: $main-color;
   outline: transparent;
-  text-transform: uppercase;}
+  text-transform: uppercase;
+}
 a.filter-link {
   color: $main-bgcolor;
 }
 
 @media screen and (max-width: 700px) {
-   .choices {
-     display: flex;
-     position: relative;
-     flex-direction: row;
-     background-color: transparent;
-   }
-   
-   .happychoices {
+  .container {
+    flex-direction: column;
+  }
+
+  .choices {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    background-color: transparent;
+  }
+
+  .happychoices {
     font-size: 30px;
     margin-top: 100px;
-   }
-
-   .filter-btn{
-     margin-top: 130px;
-   }
   }
+
+  .filter-btn {
+    margin-top: 130px;
+  }
+}

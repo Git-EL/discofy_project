@@ -10,11 +10,10 @@ $main-bgcolor: #050124;
   background-color: $main-bgcolor;
   background-image: url("../assets/background.svg");
   background-position: center;
-background-repeat: no-repeat;
 background-size: cover;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: relative;
-  overflow: auto;
+  overflow-y: initial;
   z-index: 0;
 }
