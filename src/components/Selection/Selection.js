@@ -7,6 +7,7 @@ import UserGenreListe from './UserGenreListe'
 import axios from 'axios'
 // import getParamValues from '../../utils/function'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import {Link} from 'react-router-dom'
 
 const Selection = () => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
@@ -160,7 +161,9 @@ const Selection = () => {
         <h1 className='happychoices'>Happy with your choices?</h1>
         <div className='boxresult'>
           <button className='filter-btn'>
+            <Link to='/filter' className='filter-link'>
             Filter Songs
+            </Link>
           </button>
         </div>
       </div>
