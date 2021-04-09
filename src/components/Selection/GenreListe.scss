@@ -46,3 +46,29 @@
   justify-content: center;
   box-shadow: 0 0 2px hsl(0, 0%, 100%);
 }
+
+
+@media screen and (max-width: 360px) {
+  .genre-icon {
+    display: none;
+  }
+
+  .genre-list {
+    margin: 5px 10px;
+    padding: 10px 0;
+    font-size: 13px;
+    font-weight: bold;
+    width: 150px;
+    color: black;
+    background-color: white;
+    text-align: center;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+  }
+
+  .genre-box {
+    display: flex;
+    justify-content: center;
+  }
+}
