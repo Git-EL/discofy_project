@@ -162,13 +162,14 @@ const Selection = () => {
           <h1 className='happychoices'>Happy with your choices?</h1>
           
             <button className='filter-btn'>
-              <Link to='/filter' className='filter-link'> Filter Songs
+              <Link to='/filter' className='filter-firstlink'> Filter Songs
               </Link>
+              <Link to='/filter'> Filter Songs
+         </Link>
             </button>
           </div>
         </div>
       </div>
-
   )
 }
 

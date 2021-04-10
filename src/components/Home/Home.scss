@@ -1,6 +1,19 @@
 $main-color: #8bffff;
 $main-bgcolor: #050124;
 
+@mixin animation-button {
+  height: 45px;
+  font: normal 700 1em/4em Arial, sans-serif;
+  overflow: hidden;
+  width: 150px;
+  background-color: $main-color;
+  border-radius: 50px;
+  border-style: solid;
+  border-color: $main-color;
+  outline: transparent;
+  text-transform: uppercase;
+}
+
 .home-container {
   display: flex;
   flex-direction: column;
@@ -23,19 +36,11 @@ $main-bgcolor: #050124;
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-
+.first-link {
+  margin-top: -10px;}
 .getstarted-btn {
-  height: 45px;
-  font: normal 700 1em/4em Arial, sans-serif;
-  overflow: hidden;
-  width: 150px;
+  @include animation-button;
   margin: 15px;
-  background-color: $main-color;
-  border-radius: 50px;
-  border-style: solid;
-  border-color: $main-color;
-  outline: transparent;
-  text-transform: uppercase;
 }
 
 .getstarted-btn a {
@@ -48,18 +53,13 @@ $main-bgcolor: #050124;
 .getstarted-btn:hover {
   background-color: transparent;
   border-color: $main-color;
-}
-
-.getstarted-btn:hover a {
-  color: $main-color;
+  a {
+    color: $main-color;
+  }
 }
 
 .getstarted-btn a:hover {
   text-decoration: none;
-}
-
-.first-link {
-  margin-top: -10px;
 }
 
 .getstarted-btn:hover .first-link {
