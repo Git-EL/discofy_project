@@ -1,5 +1,5 @@
 import './Selection.scss'
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import GenreListe from './GenreListe'
 import ArtistsListe from './ArtistsListe'
 // import ArtistsTrackListe from './ArtistsTrackListe'
@@ -36,9 +36,7 @@ const Selection = () => {
   })
   const [artistDetail, setArtistDetail] = useState('')
 
-  const genrebuttonClicked = (e) => {
-    e.preventDefault()
-
+  useEffect(() => {
     axios('https://accounts.spotify.com/api/token', {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -48,9 +46,7 @@ const Selection = () => {
       method: 'POST'
     }).then((tokenResponse) => {
       setToken(tokenResponse.data.access_token)
-      console.log(token)
 
-      // Das hier muss noch User Music Genre werden
       axios('https://api.spotify.com/v1/browse/categories/?locale=en_US', {
         method: 'GET',
         headers: { Authorization: 'Bearer ' + tokenResponse.data.access_token }
@@ -60,6 +56,19 @@ const Selection = () => {
         })
       })
     })
+  },[spotify_clientId, spotify_clientSecret]);
+
+  const genrebuttonClicked = (e) => {
+    e.preventDefault()
+
+      axios('https://api.spotify.com/v1/browse/categories/?locale=en_US', {
+        method: 'GET',
+        headers: { Authorization: 'Bearer ' + token }
+      }).then((genreResponse) => {
+        setGenres({
+          listOfGenresFromAPI: genreResponse.data.categories.items
+        })
+      })
   }
 
   const artistsbuttonClicked = (e) => {

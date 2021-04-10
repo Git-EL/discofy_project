@@ -15,21 +15,26 @@ const ArtistsListe = props => {
   return (
     <div className='col-sm-10 artist-container'>
       <h4>Top Artists vom Nutzer</h4>
+      <p className="info-message">Get tracks from similar artists based on your top artists</p>
       <div key={0} className="ArtistsBox">
       
         {props.savedartistslist.length > 0 ? props.savedartistslist.map((item, idx) => 
-        <button key={idx + 1} onClick={clicked} id={item.id} className="artists-button">
-          {item.name}
-            </button>
+        <div key={idx + 1}>
+          <div onClick={clicked} id={item.id} className="artist-name">{item.name}</div>
+          <img src={item.images[0].url} alt="test" className="artist-image"  onClick={clicked} id={item.id} />
+            </div>
           ) : <p className="missing-message">Du hast leider keine Top-Artists</p>
           }
       </div>
-      <h4>Gespeicherte Artists</h4>
+      <h4>Your followed artists</h4>
+      <p className="info-message">Get tracks from similar artists based on your followed artists</p>
       <div key={1} className="ArtistsBox">
-        {props.artistslist.length > 0 ? props.artistslist.map((item, idx) => 
-        <button key={idx + 1} onClick={clicked} id={item.id} className="artists-button">
-          {item.name}
-            </button>
+      {props.artistslist.length > 0 ? props.artistslist.map((item, idx) => 
+        <div key={idx + 1}>
+          <div onClick={clicked} id={item.id} className="artist-name">{item.name}</div>
+          <img src={item.images[0].url} alt="test" className="artist-image"  onClick={clicked} id={item.id} />
+           
+            </div>
           ) : <p className="missing-message">Du folgst leider keinen Artists</p>
           }
       </div>
