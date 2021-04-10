@@ -1,6 +1,5 @@
 .artist-container {
   border: solid 1px rgba(235, 233, 233, 0.282);
-  border-radius: 20px;
   background-color: rgba(235, 233, 233, 0.091);
   border-radius: 5px 5px;
 }
@@ -16,20 +15,33 @@
   max-width: 900px;
 }
 
-.artists-button {
+.artist-image {
   height: 100px;
   width: 100px;
-  padding: 0 15px;
-  margin: 5px;
-  background-color: white;
   border-radius: 5px;
-  border-style: solid;
-  border-color: white;
+  border: 1px solid white;
   outline: transparent;
+  margin: 5px
 }
 
-.artists-button:hover {
+.artist-image:hover, .artist-name:hover {
   cursor: pointer;
+}
+
+.artist-name {
+  font-size: 10px;
+  color: white;
+  text-align: center;
+  position: relative;
+  height: 0;
+  width: 100%;
+  top: 80px;
+}
+
+.info-message {
+  color: white;
+  font-size: 13px;
+  margin: 0 25px;
 }
 
 .missing-message {

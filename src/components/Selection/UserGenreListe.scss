@@ -16,3 +16,20 @@
 .UserGenreBox ul {
   list-style: none;
 }
+
+.UserGenreBox  li {
+  height: 100px;
+    width: 100px;
+    padding: 0 15px;
+   margin: 5px;
+    background-color: rgba(93, 134, 196, 0.315);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    font-size: 14px;
+    border: 1px white solid;
+}
