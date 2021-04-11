@@ -1,8 +1,11 @@
+$main-color: #8bffff;
+$main-bgcolor: #050124;
+
 .genre-container {
   border: solid 1px rgba(235, 233, 233, 0.282);
   border-radius: 20px;
   background-color: rgba(235, 186, 247, 0.1);
-  border-radius: 0 5px 5px 5px;
+  border-radius: 0 5px 5px 5px;}
   
 
 .genre-box {
@@ -10,7 +13,6 @@
   display: flex;
   flex-flow: row wrap;
   max-width:900px;
-}
 }
 
 .genre-name {
@@ -20,7 +22,8 @@
   color: white;
   text-align: center;
   position: relative;
-  top: 90px;
+  top: 80px;
+  height: 0;
 }
 
 // .genre-list {
@@ -39,7 +42,7 @@
 .genre-image {
   height: 100px;
   padding: 0;
-  margin: 0 5px;
+  margin: 5px;
   border-radius: 5%;
   display: flex;
   align-items: center;
@@ -47,9 +50,14 @@
   box-shadow: 0 0 2px hsl(0, 0%, 100%);
 }
 
+.fa-compact-disc {
+  font-size: 40px;
+  color: $main-color;
+  margin-bottom: 5px;
+}
 
 @media screen and (max-width: 360px) {
-  .genre-icon {
+  .genre-image {
     display: none;
   }
 

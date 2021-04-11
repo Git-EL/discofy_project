@@ -19,9 +19,10 @@
   height: 100px;
   width: 100px;
   border-radius: 5px;
-  border: 1px solid white;
+  border: 1px solid rgb(144, 134, 168);
+  opacity: 0.6;
   outline: transparent;
-  margin: 5px
+  margin: 4px 4px 0px 4px;
 }
 
 .artist-image:hover, .artist-name:hover {
@@ -31,13 +32,21 @@
 .artist-name {
   font-size: 10px;
   color: white;
+  letter-spacing: 1px;
   text-align: center;
   position: relative;
   height: 0;
-  width: 100%;
-  top: 80px;
+  text-align: center;
+  width: 108px;
+  top: 45%;
+  z-index:5;
 }
 
+.artists-icon {
+  height: 45px;
+  color: white
+ }
+ 
 .info-message {
   color: white;
   font-size: 13px;

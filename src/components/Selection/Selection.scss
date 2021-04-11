@@ -23,7 +23,7 @@ $main-bgcolor: #050124;
 .inner-container {
   grid-area: content;
   color: white;
-  margin: 110px 50px 40px;
+  margin: 100px 50px 40px;
 }
 
 .choices {
@@ -43,9 +43,11 @@ $main-bgcolor: #050124;
 .inner-container h3 {
   color: $main-color;
   font-size: 30px;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   border-bottom: 1px solid rgba(235, 233, 233, 0.282);
-  line-height: 3em;
+  line-height: 2.5em;
+  font-family: 'Nunito Sans', sans-serif;
+  letter-spacing: 2px;
 }
 
 .react-tabs {
@@ -58,17 +60,19 @@ $main-bgcolor: #050124;
   padding: 0;
 }
 
+// Tab-button inneres
 .react-tabs__tab {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   border: 1px solid transparent;
   border-bottom: none;
-  bottom: -1px;
+  bottom: -0.5px;
   position: relative;
   list-style: none;
-  padding: 15px 12px 0;
+  padding: 25px 12px 95px;
   cursor: pointer;
-  height: 100px;
-  width: 150px;
+  height: 105px;
+  width: 140px;
 }
 
 .react-tabs__tab--selected {
@@ -78,8 +82,8 @@ $main-bgcolor: #050124;
   border-bottom: none;
   color: white;
   border-radius: 5px 5px 0 0;
-  height: 100px;
-  width: 150px;
+  height: 105px;
+  width: 140px;
 }
 
 .react-tabs__tab:focus {
@@ -104,8 +108,10 @@ $main-bgcolor: #050124;
 
 .happychoices {
   color: white;
-  font-size: 2.5vw;
-  padding: 15px 0 0;
+  font-size: 3vw;
+  padding: 15px 10px 0;
+  font-family: 'Nunito Sans', sans-serif;
+  letter-spacing: 2px;
 }
 
 .filter-btn {

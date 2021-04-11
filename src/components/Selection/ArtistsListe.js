@@ -14,7 +14,7 @@ const ArtistsListe = props => {
 
   return (
     <div className='col-sm-10 artist-container'>
-      <h4>Top Artists vom Nutzer</h4>
+      <h4>Your top artists</h4>
       <p className="info-message">Get tracks from similar artists based on your top artists</p>
       <div key={0} className="ArtistsBox">
       
