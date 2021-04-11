@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="67.563"
+   height="76.5"
+   viewBox="0 0 67.563 76.5"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="FontAwsome (user).svg"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)">
+  <metadata
+     id="metadata9">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview5"
+     showgrid="false"
+     inkscape:zoom="5.4248366"
+     inkscape:cx="0.020062908"
+     inkscape:cy="45.29311"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3" />
+  <path
+     id="FontAwsome_user_"
+     data-name="FontAwsome (user)"
+     d="m 22.627094,31.959098 c 10.580623,0 15.877501,-12.791496 8.396777,-20.272219 -7.480723,-7.4807236 -20.272219,-2.183845 -20.272219,8.396779 -3.66e-4,6.558777 5.316664,11.875807 11.875442,11.87544 z M 37.91772,37.9699 c -2.255842,-2.256326 -3.779994,-2.672726 -6.977486,-3.041776 h -1.549288 c -4.291798,1.979324 -9.235243,1.979324 -13.527041,0 H 14.314617 C 7.428729,34.929985 1.8470719,40.511615 1.8452382,47.397503 v 3.861262 c 0,2.458338 1.9928765,4.451215 4.4512142,4.451215 H 22.626097"
+     fill="none"
+     stroke="#8bffff"
+     stroke-width="3.3218"
+     sodipodi:nodetypes="csccccccccssc" />
+  <path
+     id="FontAwsome_guitar_"
+     data-name="FontAwsome (guitar)"
+     d="m 64.519462,21.386988 -3.13435,-2.27956 c -1.322196,-0.961437 -3.173556,-0.66821 -4.133939,0.654752 l -3.555777,4.8997 C 53.397624,25.072162 53.2,25.546438 53.118333,26.046768 l -0.582299,3.509247 -5.859947,8.065524 c -1.222428,-0.646261 -2.561113,-1.043111 -3.938252,-1.167486 -3.166421,-0.226959 -6.130255,0.888874 -7.888073,3.308304 -0.71658,0.990632 -1.184342,2.139107 -1.363809,3.348498 -0.29066,1.797247 -1.597684,3.262577 -3.350162,3.75593 -2.126184,0.504956 -4.005379,1.745356 -5.305403,3.501937 -3.509326,4.81499 -1.574693,12.184088 4.293595,16.444747 5.868289,4.260656 13.465879,3.815382 16.968301,-0.996493 1.270558,-1.781965 1.86956,-3.956051 1.690937,-6.137292 -0.07022,-1.817676 0.917733,-3.511793 2.534324,-4.345767 1.095024,-0.545128 2.043051,-1.345358 2.764276,-2.333324 1.757059,-2.419981 1.900267,-5.575828 0.710706,-8.512514 -0.543429,-1.274986 -1.33582,-2.428713 -2.330756,-3.393601 l 5.857737,-8.062485 3.154928,-1.637802 c 0.449706,-0.2331 0.838678,-0.568128 1.135848,-0.978326 l 3.560577,-4.899114 c 0.958033,-1.321042 0.667971,-3.169429 -0.651399,-4.129763 z M 42.142455,54.22672 c -3.904358,0.615992 -6.604316,-3.795024 -4.280569,-6.991879 2.323747,-3.196854 7.352665,-1.989862 7.971581,1.914034 0.383767,2.42066 -1.26767,4.694025 -3.688386,5.077428 z"
+     fill="#393b67"
+     stroke="#8bffff"
+     stroke-width="3.3218"
+     style="fill:none"
+     sodipodi:nodetypes="ccccccccccccsccccccccccccsssss" />
+</svg>

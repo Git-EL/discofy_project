@@ -8,6 +8,8 @@ import axios from 'axios'
 // import getParamValues from '../../utils/function'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import { Link } from 'react-router-dom'
+import artist_icon from '../../assets/artist_icon.svg'
+
 
 const Selection = () => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
@@ -131,9 +133,11 @@ const Selection = () => {
         <Tabs>
           <TabList className='tab-title'>
             <Tab onClick={genrebuttonClicked}>
+            <i class="fas fa-compact-disc"></i>
               Genre
             </Tab>
             <Tab onClick={artistsbuttonClicked}>
+            <img src={artist_icon} alt='artists-icon' className='artists-icon' />
               Artists
             </Tab>
             <Tab onClick={usergenrebuttonClicked}>
