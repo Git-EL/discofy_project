@@ -13,6 +13,7 @@
     "axios": "^0.21.1",
     "lodash": "^4.17.21",
     "react": "^17.0.2",
+    "react-audio-player": "^0.16.1",
     "react-dom": "^17.0.2",
     "react-native-dotenv": "^2.5.3",
     "react-router-dom": "^5.2.0",

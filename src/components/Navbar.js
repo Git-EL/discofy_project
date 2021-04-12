@@ -48,7 +48,7 @@ const Navbar = () => {
         </li>
       </ul>
       <div onClick={handleNavLinksToggle} className='hamburger-toggle'>
-        <i className='fas fa-bars fa-lg'></i>
+        <i className='fas fa-bars fa-lg' ></i>
       </div>
     </nav>
   )}

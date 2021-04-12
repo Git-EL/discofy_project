@@ -2,14 +2,13 @@ import './Selection.scss'
 import React, { useState , useEffect } from 'react'
 import GenreListe from './GenreListe'
 import ArtistsListe from './ArtistsListe'
-// import ArtistsTrackListe from './ArtistsTrackListe'
+import ArtistsTrackListe from './ArtistsTrackListe'
 import UserGenreListe from './UserGenreListe'
 import axios from 'axios'
 // import getParamValues from '../../utils/function'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import { Link } from 'react-router-dom'
 import artist_icon from '../../assets/artist_icon.svg'
-
 
 const Selection = () => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
@@ -101,7 +100,7 @@ const Selection = () => {
     setArtistDetail(artistsInfo[0].id)
     console.log('val: ' + val)
 
-    axios(`https://api.spotify.com/v1/recommendations?seed_artists=${val}`, {
+    axios(`https://api.spotify.com/v1/recommendations?limit=40&seed_artists=${val}`, {
       method: 'GET',
       headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token }
     }).then((artiststracksResponse) => {
@@ -133,7 +132,7 @@ const Selection = () => {
         <Tabs>
           <TabList className='tab-title'>
             <Tab onClick={genrebuttonClicked}>
-            <i class="fas fa-compact-disc"></i>
+            <i className="fas fa-compact-disc"></i>
               Genre
             </Tab>
             <Tab onClick={artistsbuttonClicked}>
@@ -159,7 +158,7 @@ const Selection = () => {
               <div>
                 id:
                 {artistDetail}
-                {/* <ArtistsTrackListe title='ArtistsTracks' artiststracklist={artiststracks.listOfArtiststracksFromAPI}/> */}
+                <ArtistsTrackListe title='ArtistsTracks' artiststracklist={artistsTracks.listOfArtiststracksFromAPI}/>
               </div>
             </div>
           </TabPanel>
