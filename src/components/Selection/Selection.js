@@ -100,7 +100,7 @@ const Selection = () => {
     setArtistDetail(artistsInfo[0].id)
     console.log('val: ' + val)
 
-    axios(`https://api.spotify.com/v1/recommendations?limit=40&seed_artists=${val}`, {
+    axios(`https://api.spotify.com/v1/recommendations?limit=60&seed_artists=${val}`, {
       method: 'GET',
       headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token }
     }).then((artiststracksResponse) => {

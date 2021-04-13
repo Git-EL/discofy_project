@@ -14,17 +14,18 @@ const UserGenreListe = props => {
   return (
     <div className='col-sm-10 usergenre-container'>
       <div key={0} className="UserGenreBox">
-        {props.usergenrelist.map((item, idx) => 
-        item.genres[1] !== undefined ? (
+        {props.usergenrelist.map((item, idx)  => 
+        item.genres[1] !== undefined ? 
         <ul key={idx + 1} value={item.id}>
+         
           <li>{item.genres[1]}</li>
-          </ul>) : null
+          </ul> : null
           )
           } {props.usergenrelist.map((item, idx) => 
-            item.genres[2] !== undefined ? (
+            item.genres[2] !== undefined ? 
             <ul key={idx + 1} value={item.id}>
               <li>{item.genres[2]}</li>
-              </ul>) : null
+              </ul> : null
               )
               }
       </div>

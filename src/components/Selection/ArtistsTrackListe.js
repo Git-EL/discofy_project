@@ -14,7 +14,7 @@ return (
         function stoptrack() { audio.pause();}
  return (
        <div key={idx + 1} value={item.id} onMouseOver={playtrack} onMouseLeave={stoptrack}>
-         <img src={item.album.images[0].url} alt="test" className="trackalbum-image" id={item.id} width="100" height="100"/>
+        {item.preview_url ? <img src={item.album.images[0].url} alt="test" className="trackalbum-image" id={item.id} width="100" height="100"/> : null}
        </div>)})}
      </div>
    </div>
