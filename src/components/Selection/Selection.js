@@ -4,10 +4,11 @@ import GenreListe from './GenreListe'
 import ArtistsListe from './ArtistsListe'
 import ArtistsTrackListe from './ArtistsTrackListe'
 import UserGenreListe from './UserGenreListe'
+import Filter from '../Filter/Filter'
 import axios from 'axios'
 // import getParamValues from '../../utils/function'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import artist_icon from '../../assets/artist_icon.svg'
 
 const Selection = () => {
@@ -35,7 +36,7 @@ const Selection = () => {
   const [usergenre, setUsergenre] = useState({
     listOfUsergenreFromAPI: []
   })
-  const [artistDetail, setArtistDetail] = useState('')
+  const [artistId, setArtistId] = useState('')
 
   useEffect(() => {
     axios('https://accounts.spotify.com/api/token', {
@@ -97,7 +98,7 @@ const Selection = () => {
     const artistsInfo = currentArtists.filter((t) => t.id === val)
     console.log(artistsInfo)
 
-    setArtistDetail(artistsInfo[0].id)
+    setArtistId(artistsInfo[0].id)
     console.log('val: ' + val)
 
     axios(`https://api.spotify.com/v1/recommendations?limit=60&seed_artists=${val}`, {
@@ -126,6 +127,7 @@ const Selection = () => {
   }
 
   return (
+    artistId === '' ? ( 
     <div className='container'>
       <div className='inner-container'>
         <h3>Take your pick</h3>
@@ -156,8 +158,8 @@ const Selection = () => {
                 savedartistslist={savedArtists.listOfSavedartistsFromAPI}
                 clicked={artistsboxClicked} />
               <div>
-                id:
-                {artistDetail}
+                {/* hier erscheint die artist id:
+                {artistId} */}
                 <ArtistsTrackListe title='ArtistsTracks' artiststracklist={artistsTracks.listOfArtiststracksFromAPI}/>
               </div>
             </div>
@@ -174,15 +176,15 @@ const Selection = () => {
           <h1 className='happychoices'>Happy with your choices?</h1>
           
             <button className='filter-btn'>
-              <Link to='/filter' className='filter-firstlink'> Filter Songs
+            Filter Songs
+              {/* <Link to='/filter' className='filter-firstlink'> Filter Songs
               </Link>
               <Link to='/filter'> Filter Songs
-         </Link>
+         </Link> */}
             </button>
           </div>
         </div>
-      </div>
-  )
+      </div>) : (<Filter title='ArtistsTracks' artiststracklist={artistsTracks.listOfArtiststracksFromAPI}/>)) 
 }
 
 export default Selection
