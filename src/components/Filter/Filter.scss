@@ -1,6 +1,6 @@
 .filter-container {
   width: 100vw;
-  height: 100vh;
+  height: 800px;
 }
 
 .filter-container .back-btn {
@@ -10,3 +10,22 @@
   border: 1px solid black;
   border-radius: 5px;;
 }
+
+.checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90px;
+}
+
+.checkbox-label {
+  color:white;
+  font-size: 10px;
+}
+
+.playlist-preview ul {
+  color:white;
+ list-style: none;}
+
+// .playlist-box {
+//   display:block
+// }

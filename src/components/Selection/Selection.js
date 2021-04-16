@@ -173,8 +173,7 @@ const Selection = () => {
         </div>
         <div className='choices'>
         <div className='boxresult'>
-          <h1 className='happychoices'>Happy with your choices?</h1>
-          
+          <h1 className='happychoices'>Happy with your choices?</h1>          
             <button className='filter-btn'>
             Filter Songs
               {/* <Link to='/filter' className='filter-firstlink'> Filter Songs
