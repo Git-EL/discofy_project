@@ -8,7 +8,7 @@ const Navbar = () => {
   // redirect muss noch geändert werden zur richtigen Adresse später
   const spotify_redirectUrl = process.env.REACT_APP_REDIRECT_URL
   const handleLogin = () => {
-    window.location = `${spotify_authUrl}?client_id=${spotify_clientId}&redirect_uri=${spotify_redirectUrl}&response_type=token&show_dialog=true&scope=user-library-read+user-follow-read+user-top-read`
+    window.location = `${spotify_authUrl}?client_id=${spotify_clientId}&redirect_uri=${spotify_redirectUrl}&response_type=token&show_dialog=true&scope=user-library-read+user-follow-read+user-top-read+playlist-modify-private+playlist-modify-public`
   }
   const [navLinkOpen, navLinkToggle] = useState(false)
   const handleNavLinksToggle = () => {
