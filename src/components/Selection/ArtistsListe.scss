@@ -1,60 +1,93 @@
 .artist-container {
-  border: solid 1px rgba(235, 233, 233, 0.282);
-  background-color: rgba(235, 233, 233, 0.091);
-  border-radius: 5px 5px;
+	border: solid 1px rgba(235, 233, 233, 0.282);
+	background-color: rgba(235, 233, 233, 0.091);
+	border-radius: 5px 5px;
 }
 
 .artist-container h4 {
-  margin: 20px 25px 0;
+	margin: 20px 25px 0;
+}
+
+.artist-checkbox {
+	height: 100px;
+	width: 100px;
+	margin-top: 5px;
+	margin-left: 5px;
+	position: absolute;
+	z-index: 6;
+}
+
+.ArtistsBox input {
+	opacity: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.ArtistsBox input:checked {
+	opacity: 0;
+	background-color: transparent;
+}
+
+.ArtistsBox input:checked ~ .box {
+	height: 98px;
+	width: 98px;
+	margin-top: 5px;
+	margin-left: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 2px 3px rgb(124, 240, 255);
+	position: absolute;
+	cursor: pointer;
+	z-index: 6;
 }
 
 .ArtistsBox {
-  margin: 19px;
-  display: flex;
-  flex-flow: row wrap;
-  max-width: 900px;
+	margin: 19px;
+	display: flex;
+	flex-flow: row wrap;
+	max-width: 900px;
 }
 
 .artist-image {
-  height: 100px;
-  width: 100px;
-  border-radius: 5px;
-  border: 1px solid rgb(144, 134, 168);
-  opacity: 0.6;
-  outline: transparent;
-  margin: 4px 4px 0px 4px;
+	height: 100px;
+	width: 100px;
+	border-radius: 5px;
+	border: 1px solid rgb(144, 134, 168);
+	opacity: 0.6;
+	outline: transparent;
+	margin: 4px 4px 0px 4px;
 }
 
-.artist-image:hover, .artist-name:hover {
-  cursor: pointer;
+.artist-image:hover,
+.artist-name:hover {
+	cursor: pointer;
 }
 
 .artist-name {
-  font-size: 10px;
-  color: white;
-  letter-spacing: 1px;
-  text-align: center;
-  position: relative;
-  height: 0;
-  text-align: center;
-  width: 108px;
-  top: 45%;
-  z-index:5;
+	font-size: 10px;
+	color: white;
+	letter-spacing: 1px;
+	text-align: center;
+	position: relative;
+	height: 0;
+	text-align: center;
+	width: 108px;
+	top: 45%;
+	z-index: 5;
 }
 
 .artists-icon {
-  height: 45px;
-  color: white
- }
- 
+	height: 45px;
+	color: white;
+}
+
 .info-message {
-  color: white;
-  font-size: 13px;
-  margin: 0 25px;
+	color: white;
+	font-size: 13px;
+	margin: 0 25px;
 }
 
 .missing-message {
-  color: white;
-  font-size: 13px;
-  margin: 0 5px;
+	color: white;
+	font-size: 13px;
+	margin: 0 5px;
 }

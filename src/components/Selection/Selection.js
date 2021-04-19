@@ -2,7 +2,6 @@ import './Selection.scss'
 import React, { useState , useEffect } from 'react'
 import GenreListe from './GenreListe'
 import ArtistsListe from './ArtistsListe'
-import ArtistsTrackListe from './ArtistsTrackListe'
 import UserGenreListe from './UserGenreListe'
 import Filter from '../Filter/Filter'
 import axios from 'axios'
@@ -37,6 +36,7 @@ const Selection = () => {
     listOfUsergenreFromAPI: []
   })
   const [artistId, setArtistId] = useState('')
+  const [filterbtnStatus, setFilterbtnStatus] = useState(false)
 
   useEffect(() => {
     axios('https://accounts.spotify.com/api/token', {
@@ -49,7 +49,7 @@ const Selection = () => {
     }).then((tokenResponse) => {
       setToken(tokenResponse.data.access_token)
 
-      axios('https://api.spotify.com/v1/browse/categories/?locale=en_US', {
+      axios('https://api.spotify.com/v1/browse/categories/?locale=en_US&limit=40', {
         method: 'GET',
         headers: { Authorization: 'Bearer ' + tokenResponse.data.access_token }
       }).then((genreResponse) => {
@@ -63,7 +63,7 @@ const Selection = () => {
   const genrebuttonClicked = (e) => {
     e.preventDefault()
 
-      axios('https://api.spotify.com/v1/browse/categories/?locale=en_US', {
+      axios('https://api.spotify.com/v1/browse/categories/?locale=en_US&limit=40', {
         method: 'GET',
         headers: { Authorization: 'Bearer ' + token }
       }).then((genreResponse) => {
@@ -101,7 +101,7 @@ const Selection = () => {
     setArtistId(artistsInfo[0].id)
     console.log('val: ' + val)
 
-    axios(`https://api.spotify.com/v1/recommendations?limit=60&seed_artists=${val}`, {
+    axios(`https://api.spotify.com/v1/recommendations?limit=70&seed_artists=${val}`, {
       method: 'GET',
       headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token }
     }).then((artiststracksResponse) => {
@@ -126,8 +126,19 @@ const Selection = () => {
     })
   }
 
+    const filterbtnClicked = () => {
+      if (!filterbtnStatus){setFilterbtnStatus(true)}
+    }
+ 
+
   return (
-    artistId === '' ? ( 
+    artistId && filterbtnStatus ? 
+    ( <div className='filter-container'>
+        <Filter title='ArtistsTracks' artiststracklist={artistsTracks.listOfArtiststracksFromAPI}/>
+      </div>
+    )
+    :
+    ( 
     <div className='container'>
       <div className='inner-container'>
         <h3>Take your pick</h3>
@@ -160,8 +171,7 @@ const Selection = () => {
               <div>
                 {/* hier erscheint die artist id:
                 {artistId} */}
-                <ArtistsTrackListe title='ArtistsTracks' artiststracklist={artistsTracks.listOfArtiststracksFromAPI}/>
-              </div>
+             </div>
             </div>
           </TabPanel>
           <TabPanel>
@@ -174,16 +184,15 @@ const Selection = () => {
         <div className='choices'>
         <div className='boxresult'>
           <h1 className='happychoices'>Happy with your choices?</h1>          
-            <button className='filter-btn'>
-            Filter Songs
-              {/* <Link to='/filter' className='filter-firstlink'> Filter Songs
-              </Link>
-              <Link to='/filter'> Filter Songs
-         </Link> */}
+            <button className='filter-btn' onClick={filterbtnClicked}>
+            <div className='filter-firstlink'> Filter Songs
+            </div>
+            <div className='filter-secondlink'> Filter Songs
+       </div>
             </button>
           </div>
         </div>
-      </div>) : (<Filter title='ArtistsTracks' artiststracklist={artistsTracks.listOfArtiststracksFromAPI}/>)) 
+      </div>)) 
 }
 
 export default Selection

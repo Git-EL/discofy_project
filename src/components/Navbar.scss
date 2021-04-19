@@ -1,14 +1,6 @@
 $main-color: #8bffff;
 $main-bgcolor: #050124;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-
 nav {
   color: $main-color;
   display: flex;
@@ -20,7 +12,6 @@ nav {
   top: 0;
   right: 0;
 }
-
 
 .navlinks {
   display: flex;

@@ -14,6 +14,7 @@ const Filter = (props) => {
   const history = useHistory();
 
   const addTracks = event => {
+
    let addedTracks = [...selectedTracks.playlistTracks, event.target.value];
    if (selectedTracks.playlistTracks.includes(event.target.value)) {
      addedTracks = addedTracks.filter(track => track !== event.target.value);
@@ -23,6 +24,13 @@ const Filter = (props) => {
    }); 
  };console.log(selectedTracks)
  
+
+ const deleteTrack = event => {
+
+  setSelectedTracks(prevState => ({ playlistTracks: prevState.playlistTracks.filter(track =>  track !== event.target.value)     }))
+  }
+  console.log(selectedTracks) 
+
 
    useEffect(() => {
      axios('https://api.spotify.com/v1/me', {
@@ -63,39 +71,47 @@ const Filter = (props) => {
       console.log('playlist: ' + playlist)})
   }
 
+  // checked={false}
 
   return (
-    <div className='col-sm-10, filter-container'>
-      <form onSubmit={createPlaylist}>
-      <div key={0} className="track-liste">  
+    <div className='col-sm-10'>
+      <h3>Select your songs</h3>
+      <form onSubmit={createPlaylist} className="filter-box">
+      <div key={0} className="tracklist-box">  
+      <div className="tracklist-insidebox">  
         {props.artiststracklist.map((item, idx) =>  
           {const audio = new Audio(item.preview_url);
-            function playtrack() { audio.play();}
-            function stoptrack() { audio.pause();}
+            const playtrack = () => { audio.play(); audio.volume = 0.1; }
+            const stoptrack = () => { audio.pause() }
             return (
-              <div key={idx + 1} value={item.id}>
-                {item.preview_url ? 
-                 <div><img src={item.album.images[0].url} alt="test" className="trackalbum-image" id={item.id} width="100" height="100" onMouseOver={playtrack} onMouseLeave={stoptrack}/> 
-                    <div className="checkbox" >
-                      <input type="checkbox" className="custom-input" id={item.id} value={item.uri} name={item.name} onChange={addTracks}/>
-                      <label className="checkbox-label" for={item.name}> {item.name}</label>
+              item.preview_url ?  <div key={idx + 1} value={item.id} className='filter-outerbox'>
+                 <div className="filter-imagebox" onMouseOver={playtrack} onMouseLeave={stoptrack}><img src={item.album.images[0].url} alt="test" className="trackalbum-image" id={item.id} />
+                    <div className="checkbox-container" >
+                      <input type="checkbox" className="custom-input " id={item.id} value={item.uri} name={item.name} onChange={addTracks} onChangeCapture={stoptrack}/>
+                      <span className="checkmark"></span>
+             <div className="checkmark-box"><p>{item.artists[0].name}</p><p>{item.name}</p></div>
                    </div> 
                   </div>
-                : null}       
-              </div>)
+                  </div> 
+                : null      
+             )
           })
         }
-      </div>
+      </div></div>
       <div key={1} className="playlist-box">
+      <h2>Discofy Playlist</h2>
         {props.artiststracklist.map((item, idx) => 
           <div key={idx + 1} value={item.id}>
             <div className="playlist-preview">{selectedTracks.playlistTracks.includes(item.uri) ? 
-              <ul><li>{item.name}</li></ul> 
+              <div className="track-info"><p>Artist: {item.artists[0].name}</p><p> Title: {item.name}</p><p>Album: {item.album.name}</p>
+              <button onClick={deleteTrack} id={item.id} value={item.uri}>remove</button>
+              </div> 
               : null}
             </div>
           </div>)
         }
-       <button className="btn btn-primary">Submit</button></div>
+       <button className="playlist-btn">Create Playlist</button>
+       </div>
        </form>
        <button className="back-btn" onClick={() => history.goBack()}>Back</button>
       </div>
