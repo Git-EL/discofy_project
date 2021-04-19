@@ -99,6 +99,7 @@ const Filter = (props) => {
         }
       </div></div>
       <div key={1} className="playlist-box">
+      <div className="play-box1">
       <h2>Discofy Playlist</h2>
         {props.artiststracklist.map((item, idx) => 
           <div key={idx + 1} value={item.id}>
@@ -110,10 +111,18 @@ const Filter = (props) => {
             </div>
           </div>)
         }
+        </div>
+        <div className="playbox2">
        <button className="playlist-btn">Create Playlist</button>
        </div>
+        </div>
        </form>
+
+
+
+       <div>
        <button className="back-btn" onClick={() => history.goBack()}>Back</button>
+       </div>
       </div>
   )
  }
