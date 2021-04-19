@@ -9,8 +9,7 @@ const Filter = (props) => {
 
   const [selectedTracks, setSelectedTracks] = useState({ playlistTracks: [] })
   const [userID, setUserID] = useState('')
-  const [playlistID, setPlaylistID] = useState('')
-  const [playlist, setPlaylist] = useState('')
+  // const [playlistID, setPlaylistID] = useState('')
   const history = useHistory();
 
   const addTracks = event => {
@@ -27,10 +26,10 @@ const Filter = (props) => {
 
  const deleteTrack = event => {
 
-  setSelectedTracks(prevState => ({ playlistTracks: prevState.playlistTracks.filter(track =>  track !== event.target.value)     }))
-  }
-  console.log(selectedTracks) 
-
+  setSelectedTracks(prevState => ({ 
+    playlistTracks: prevState.playlistTracks.filter(track =>  track !== event.target.value) 
+    }))
+  };
 
    useEffect(() => {
      axios('https://api.spotify.com/v1/me', {
@@ -43,32 +42,34 @@ const Filter = (props) => {
    },[spotify_accessToken.access_token, userID]);
 
 
-  const createPlaylist = (e) => {
+   const createPlaylist = async (e) => {
     e.preventDefault();
 
-   axios(`https://api.spotify.com/v1/users/${userID}/playlists`, {
-      method: 'POST',
+    try{
+   let playlistIDResponse = await axios ({ 
+    method: 'POST',
+    url: `https://api.spotify.com/v1/users/${userID}/playlists`,
       headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token  },
-      body: {
-        'public': false
-      },
+      body: { 'public': false },
       data: JSON.stringify({
         name: 'Discofy Playlist',
         description: 'Hello! I am your newly created Discofy Playlist'
       })
-    }).then((playlistIDResponse) =>  {
-      setPlaylistID(playlistIDResponse.data.id)
-      console.log(playlistIDResponse)
-      console.log('playlistID: ' + playlistID) 
-     
-     return axios(`https://api.spotify.com/v1/users/${userID}/playlists/${playlistID}/tracks`, {
-          method: 'POST',
-          headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token },
-          data: JSON.stringify({ uris: selectedTracks.playlistTracks })})
-   }).then((playlistResponse) => {
-      setPlaylist(playlistResponse)
-      console.log(playlistResponse)
-      console.log('playlist: ' + playlist)})
+    });
+    let parsedData = await playlistIDResponse.data.id
+    console.log(playlistIDResponse)
+      //  setPlaylistID(parsedData)
+      // console.log('playlistID: ' + playlistID) 
+        let playlistResponse = await axios ({ 
+         method: 'POST',
+         url: `https://api.spotify.com/v1/users/${userID}/playlists/${parsedData}/tracks`,
+         headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token },
+         data: JSON.stringify({ uris: selectedTracks.playlistTracks })
+         });
+         console.log(playlistResponse)}
+      catch(error){
+        console.log(error)
+      }   
   }
 
   // checked={false}
@@ -112,17 +113,12 @@ const Filter = (props) => {
           </div>)
         }
         </div>
-        <div className="playbox2">
+        <div className="play-box2">
        <button className="playlist-btn">Create Playlist</button>
+       <button className="back-btn" onClick={() => history.goBack()}>Back</button>
        </div>
         </div>
        </form>
-
-
-
-       <div>
-       <button className="back-btn" onClick={() => history.goBack()}>Back</button>
-       </div>
       </div>
   )
  }
