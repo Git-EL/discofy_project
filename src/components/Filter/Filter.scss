@@ -19,16 +19,10 @@ height: 100px;
   flex-direction: row;
   justify-content: space-evenly;
   color: white;
-<<<<<<< HEAD
-  // border: solid 1px red;
-  padding: 30px;
-  height: 100vh;
-=======
   border: solid 1px red;
   padding: 0 30px 50px;
   min-height: 100vh;
   height: 100%;
->>>>>>> db4af080bd5bfa0a036f8106dfe8681d5d0cbb27
 }
 .filter-imagebox {
   height: 100px;
@@ -65,17 +59,6 @@ height: 100px;
   background-color: rgba(235, 233, 233, 0.091);
   border-radius: 5px 5px;
   max-width: 500px;
-<<<<<<< HEAD
-  width: 100%;
-
-}
-
-.play-box1{
-  
-  width: 100%;
-  margin: 0 20px;
-  height: 620px;
-=======
   width: 100%;
   height: 700px;
 }
@@ -83,7 +66,6 @@ height: 100px;
   width: 90%;
   margin: 30px auto;
   height: 550px;
->>>>>>> db4af080bd5bfa0a036f8106dfe8681d5d0cbb27
   overflow-y: scroll;
   border: solid 1px rgb(0, 255, 21);
 }
@@ -116,22 +98,6 @@ height: 100px;
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 0.5px;
   padding-bottom: 15px;
-<<<<<<< HEAD
-  
-}
-
-.filter-container .back-btn {
-  border-radius: 5px;
-  margin: 10px 20px;
-  width: 100px;
-  text-transform: uppercase;
-  padding: 10px;
-  border: solid transparent 1px;
-  margin-left: 200px;
-  margin-top: 10px;
-  
-=======
->>>>>>> db4af080bd5bfa0a036f8106dfe8681d5d0cbb27
 }
 .filter-imagebox:hover {
   cursor: pointer;
@@ -225,13 +191,6 @@ height: 100px;
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> db4af080bd5bfa0a036f8106dfe8681d5d0cbb27
 @media screen and (max-width: 760px) {
   .filter-box {
     flex-direction: column;
