@@ -19,9 +19,10 @@ height: 100px;
   flex-direction: row;
   justify-content: space-evenly;
   color: white;
-  // border: solid 1px red;
-  padding: 30px;
-  height: 100vh;
+  border: solid 1px red;
+  padding: 0 30px 50px;
+  min-height: 100vh;
+  height: 100%;
 }
 .filter-imagebox {
   height: 100px;
@@ -33,7 +34,7 @@ height: 100px;
   border-radius: 5px;
 }
 .tracklist-insidebox {
-  // border: solid 1px rgb(229, 255, 0);
+  border: solid 1px rgb(229, 255, 0);
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, auto));
@@ -59,26 +60,36 @@ height: 100px;
   border-radius: 5px 5px;
   max-width: 500px;
   width: 100%;
+  height: 700px;
 }
 .play-box1{
-  width: 100%;
-  margin: 0 20px;
-  height: 620px;
+  width: 90%;
+  margin: 30px auto;
+  height: 550px;
   overflow-y: scroll;
+  border: solid 1px rgb(0, 255, 21);
+}
+.play-box2{
+  width: 90%;
+  margin: 30px auto;
+  border: solid 1px rgb(0, 255, 21);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .playlist-box h2 {
-  margin: 30px 20px 20px;
+  margin: 0 20px 20px;
   border-bottom: 1px solid rgba(235, 233, 233, 0.282);
   line-height: 2.5em;
 }
-.playlist-btn {
+.playlist-btn, .filter-container .back-btn {
   border-radius: 5px;
-  margin: 10px 20px;
-  max-width: 100%;
   text-transform: uppercase;
   padding: 10px;
+  margin: 10px;
+  max-width: 170px;
+  width: 100%;
   border: solid transparent 1px;
-  margin-left: 180px;
 }
 .track-info {
   margin: 0 20px 10px;
@@ -87,16 +98,6 @@ height: 100px;
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 0.5px;
   padding-bottom: 15px;
-}
-.filter-container .back-btn {
-  border-radius: 5px;
-  margin: 10px 20px;
-  width: 100px;
-  text-transform: uppercase;
-  padding: 10px;
-  border: solid transparent 1px;
-  margin-left: 200px;
-  margin-top: 10px;
 }
 .filter-imagebox:hover {
   cursor: pointer;
