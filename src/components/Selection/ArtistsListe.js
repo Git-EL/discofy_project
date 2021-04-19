@@ -8,7 +8,7 @@ import './ArtistsListe.scss'
 const ArtistsListe = props => {
   
   const clicked = e => {
-    e.preventDefault();
+    // e.preventDefault();
     props.clicked(e.target.id);
 }    
 
@@ -21,6 +21,10 @@ const ArtistsListe = props => {
         {props.savedartistslist.length > 0 ? props.savedartistslist.map((item, idx) => 
         <div key={idx + 1}>
           <div onClick={clicked} id={item.id} className="artist-name">{item.name}</div>
+
+          <input type="radio" onChange={clicked} id={item.id} className="artist-checkbox" name="choice"></input>
+          <div className="box"></div>
+          
           <img src={item.images[0].url} alt="test" className="artist-image"  onClick={clicked} id={item.id} />
             </div>
           ) : <p className="missing-message">Du hast leider keine Top-Artists</p>
@@ -32,6 +36,10 @@ const ArtistsListe = props => {
       {props.artistslist.length > 0 ? props.artistslist.map((item, idx) => 
         <div key={idx + 1}>
           <div onClick={clicked} id={item.id} className="artist-name">{item.name}</div>
+
+          <input type="radio" onChange={clicked} id={item.id} className="artist-checkbox" name="choice"></input>
+          <div className="box"></div>
+
           <img src={item.images[0].url} alt="test" className="artist-image"  onClick={clicked} id={item.id} />
            
             </div>

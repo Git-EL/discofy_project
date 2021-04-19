@@ -117,6 +117,7 @@ $main-bgcolor: #050124;
 .filter-btn {
   @include animation-button;
   margin-top: 30px;
+  cursor: pointer;
 }
 .filter-btn,
 .filter-firstlink {
@@ -129,7 +130,7 @@ $main-bgcolor: #050124;
 .filter-firstlink {
   margin-top: 2px;
 }
-.filter-btn a {
+.filter-btn .filter-firstlink {
   color: $main-bgcolor;
   text-decoration: none;
   text-align: center;
@@ -138,15 +139,12 @@ $main-bgcolor: #050124;
 .filter-btn:hover {
   background-color: transparent;
   border-color: $main-color;
-  a {
+  .filter-secondlink {
     color: $main-color;
   }
   .filter-firstlink {
     margin-top: -39px;
   }
-}
-.filter-btn a:hover {
-  text-decoration: none;
 }
 
 @media screen and (max-width: 760px) {

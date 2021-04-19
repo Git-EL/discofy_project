@@ -1,6 +1,96 @@
-.filter-container {
-  width: 100vw;
-  height: 800px;
+$main-color: #8bffff;
+$main-bgcolor: #050124;
+
+.filter-container h3 {
+  color: $main-color;
+  font-size: 30px;
+  border-bottom: 1px solid rgba(235, 233, 233, 0.282);
+  line-height: 2.5em;
+  font-family: "Nunito Sans", sans-serif;
+  letter-spacing: 2px;
+  margin: 0 80px 0 80px;
+  padding-top: 80px;
+}
+
+.filter-outerbox {
+width: 100px;
+height: 100px;
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  color: white;
+  // border: solid 1px red;
+  padding: 30px;
+}
+
+.filter-imagebox {
+  height: 100px;
+  width: 100px;
+}
+
+.trackalbum-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+}
+
+.tracklist-insidebox {
+  // border: solid 1px rgb(229, 255, 0);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  gap: 10px;
+  margin: 50px 38px;
+}
+
+.tracklist-box {
+  display: flex;
+  justify-content: center;
+  border: solid 1px rgba(158, 134, 134, 0.282);
+  background-color: rgba(235, 233, 233, 0.091);
+  border-radius: 5px 5px;
+  max-width: 850px;
+  width: 100%;
+  height: 100%;
+  margin: 0 20px;
+}
+
+.playlist-box {
+  color: white;
+  border: solid 1px rgba(235, 233, 233, 0.282);
+  background-color: rgba(235, 233, 233, 0.091);
+  border-radius: 5px 5px;
+  max-width: 450px;
+  width: 100%;
+  margin: 0 20px;
+}
+
+.playlist-box h2 {
+  margin: 30px 20px 20px;
+  border-bottom: 1px solid rgba(235, 233, 233, 0.282);
+  line-height: 2.5em;
+}
+
+.playlist-btn {
+  border-radius: 5px;
+  margin: 10px 20px;
+  max-width: 100%;
+  text-transform: uppercase;
+  
+  padding: 10px;
+  border: solid transparent 1px;
+}
+
+.track-info {
+  margin: 0 20px 10px;
+  border-bottom: 1px solid rgba(235, 233, 233, 0.082);
+  line-height: 1.3em;
+  font-family: "Nunito Sans", sans-serif;
+  letter-spacing: 0.5px;
+  padding-bottom: 15px;
 }
 
 .filter-container .back-btn {
@@ -8,24 +98,120 @@
   width: 70px;
   height: 30px;
   border: 1px solid black;
-  border-radius: 5px;;
+  border-radius: 5px;
 }
 
-.checkbox {
-  display: flex;
-  flex-wrap: wrap;
-  width: 90px;
+.filter-imagebox:hover {
+  cursor: pointer;
+
+  .trackalbum-image {
+    box-shadow: 0 0 2px 2px #85fdff;
+  }
+
+  .checkmark {
+    position: absolute;
+    bottom: 52px;
+    right: 33px;
+    height: 35px;
+    width: 35px;
+    background-color: transparent;
+    border: 3px solid transparent;
+    border-radius: 50%;
+  }
 }
 
-.checkbox-label {
-  color:white;
+.checkmark {
+  position: absolute;
+  bottom: 52px;
+  right: 33px;
+  height: 35px;
+  width: 35px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.checkbox-container input:checked ~ .checkmark-box {
+  display: block;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  opacity: 0.9;
+  color: white;
   font-size: 10px;
+  padding-top: 55px;
+  text-align: center;
+  border-radius: 4%;
+  z-index: 0;
 }
 
-.playlist-preview ul {
-  color:white;
- list-style: none;}
+.checkmark-box {
+  display: none;
+}
 
-// .playlist-box {
-//   display:block
-// }
+.checkbox-container {
+  display: block;
+  position: relative;
+  bottom: 104px;
+  left: 0px;
+  height: 100px;
+  width: 100px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+}
+
+.checkbox-container input {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  opacity: 0;
+  z-index: 10;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: transparent;
+  border: 3px solid rgb(47, 250, 189);
+  z-index: 1;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 10px;
+  top: 3px;
+  width: 5px;
+  height: 15px;
+  border: solid rgb(47, 250, 189);
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+@media screen and (max-width: 760px) {
+  .filter-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tracklist-box {
+    padding: 20px;
+  }
+}
