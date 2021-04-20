@@ -9,7 +9,6 @@ const Filter = (props) => {
 
   const [selectedTracks, setSelectedTracks] = useState({ playlistTracks: [] })
   const [userID, setUserID] = useState('')
-  // const [playlistID, setPlaylistID] = useState('')
   const history = useHistory();
 
   const addTracks = event => {
@@ -30,6 +29,7 @@ const Filter = (props) => {
     playlistTracks: prevState.playlistTracks.filter(track =>  track !== event.target.value) 
     }))
   };
+  
 
    useEffect(() => {
      axios('https://api.spotify.com/v1/me', {
