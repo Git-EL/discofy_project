@@ -35,24 +35,34 @@ height: 100px;
 }
 .tracklist-insidebox {
   border: solid 1px rgb(229, 255, 0);
-  width: 100%;
+  width: 90%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, auto));
   gap: 10px;
-  margin: 50px 38px;
+  margin: 30px auto;
   overflow-y: scroll;
+  height: 550px;
+
+
+
+
 }
+
+
 .tracklist-box {
-  display: flex;
-  justify-content: center;
+  color: white;
   border: solid 1px rgba(158, 134, 134, 0.282);
   background-color: rgba(235, 233, 233, 0.091);
   border-radius: 5px 5px;
-  max-width: 850px;
+  max-width: 750px;
   width: 100%;
   height: 700px;
-  margin: 0 20px;
+  
+
 }
+
+
+
 .playlist-box {
   color: white;
   border: solid 1px rgba(235, 233, 233, 0.282);
@@ -62,12 +72,31 @@ height: 100px;
   width: 100%;
   height: 700px;
 }
+
+
 .play-box1{
   width: 90%;
   margin: 30px auto;
   height: 550px;
   overflow-y: scroll;
   border: solid 1px rgb(0, 255, 21);
+
+
+  
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.popup{
+  width: 187px;
+  height: 70px;
+  background-color: rgba(235, 233, 233, 0.282);
+  font-weight: bold;
+  margin-left: 10px;
+  
 }
 .play-box2{
   width: 90%;
@@ -81,8 +110,23 @@ height: 100px;
   margin: 0 20px 20px;
   border-bottom: 1px solid rgba(235, 233, 233, 0.282);
   line-height: 2.5em;
+ 
+ 
 }
-.playlist-btn, .back-btn {
+
+.track-box2{
+  width: 90%;
+  margin: 30px auto;
+  border: solid 1px rgb(0, 255, 21);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+ 
+}
+
+
+.playlist-btn, .filter-container .back-btn {
   border-radius: 5px;
   text-transform: uppercase;
   padding: 10px;
@@ -100,75 +144,11 @@ height: 100px;
   padding-bottom: 15px;
 }
 
- .testhoverbox {
-   display: none;
- }
 
-//   .testhoverbox {
-//     display: block;
-//     background-color: black;
-//     height: 100px;
-//     width: 100px;
-//     position: absolute;
-//     border-radius: 5%;
-//   }
-  
-//   .testhoverbox > .fa-minus-circle {
-//     text-align: center;
-//     width: 100%;
-//     font-size: 2.3em;
-//     margin-top: 12px;
-//     color: red;
-//     z-index: 100;
-//   }
-
-
-
-
-.filter-imagebox:hover  {
-  cursor: pointer;
-
-  .trackalbum-image {
-    box-shadow: 0 0 2px 2px #85FDFF;
-
-  }
-  .checkmark {
-    position: absolute;
-    bottom: 52px;
-    right: 33px;
-    height: 35px;
-    width: 35px;
-    background-color: transparent;
-    border: 3px solid transparent;
-    border-radius: 50%;
-  }
+.testhoverbox {
+  display: none;
 }
-.checkmark {
-  position: absolute;
-  bottom: 52px;
-  right: 33px;
-  height: 35px;
-  width: 35px;
-  background-color: transparent;
-  border-radius: 50%;
-}
-.checkbox-container input:checked ~ .checkmark-box {
-  display: block;
-  position: relative;
-  bottom: 0;
-  right: 0;
-  height: 100px;
-  width: 100px;
-  padding: 1.5px;
-  background-color: black;
-  opacity: 0.9;
-  color: white;
-  font-size: 10px;
-  padding-top: 55px;
-  text-align: center;
-  border-radius: 4%;
-  z-index: 0;
-}
+
 .checkbox-container input:checked:hover {
 
   ~ .checkmark {
@@ -186,6 +166,50 @@ height: 100px;
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
   }
+} 
+
+.filter-imagebox:hover {
+  cursor: pointer;
+  .trackalbum-image {
+    box-shadow: 0 0 2px 2px #85FDFF;
+  }
+  .checkmark {
+    position: absolute;
+    bottom: 52px;
+    right: 33px;
+    height: 35px;
+    width: 35px;
+    background-color: transparent;
+    border: 3px solid transparent;
+    border-radius: 50%;
+  }
+}
+
+
+.checkmark {
+  position: absolute;
+  bottom: 52px;
+  right: 33px;
+  height: 35px;
+  width: 35px;
+  background-color: transparent;
+  border-radius: 50%;
+}
+.checkbox-container input:checked ~ .checkmark-box {
+  display: block;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  opacity: 0.9;
+  color: white;
+  font-size: 10px;
+  padding-top: 55px;
+  text-align: center;
+  border-radius: 4%;
+  z-index: 0;
 }
 .checkmark-box {
   display: none;
@@ -218,8 +242,6 @@ height: 100px;
   background-color: transparent;
   border: 3px solid rgb(47, 250, 189);
   z-index: 1;
-
-  
 }
 .checkmark:after {
   content: "";
