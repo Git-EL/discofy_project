@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import './Filter.scss'
+import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
 
 const Filter = (props) => {
   const getAccessToken = localStorage.getItem('params')
@@ -70,7 +72,15 @@ const Filter = (props) => {
       catch(error){
         console.log(error)
       }   
-  }
+  
+    }
+  const PopupExample = () => (
+    <Popup trigger={<button className="playlist-btn">Create Playlist</button>} position="right center">
+      <div className="popup">Done! Take a look at your new Playlist on Spotify!</div>
+    </Popup>
+  )
+
+
 
   // checked={false}
 
@@ -82,7 +92,7 @@ const Filter = (props) => {
       <div className="tracklist-insidebox">  
         {props.artiststracklist.map((item, idx) =>  
           {const audio = new Audio(item.preview_url);
-            const playtrack = () => { audio.play(); audio.volume = 0.5; }
+            const playtrack = () => { audio.play(); audio.volume = 0.8; }
             const stoptrack = () => { audio.pause() }
             return (
               item.preview_url ?  <div key={idx + 1} value={item.id} className='filter-outerbox'>
@@ -98,7 +108,16 @@ const Filter = (props) => {
              )
           })
         }
-      </div></div>
+      </div>
+
+      <div className="track-box2">
+      <button className="back-btn" onClick={() => history.goBack()}>Back</button>
+      </div> 
+
+  </div>
+
+
+      
       <div key={1} className="playlist-box">
       <div className="play-box1">
       <h2>Discofy Playlist</h2>
@@ -114,8 +133,8 @@ const Filter = (props) => {
         }
         </div>
         <div className="play-box2">
-       <button className="playlist-btn">Create Playlist</button>
-       <button className="back-btn" onClick={() => history.goBack()}>Back</button>
+        <PopupExample />
+    
        </div>
         </div>
        </form>
