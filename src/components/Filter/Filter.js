@@ -82,7 +82,7 @@ const Filter = (props) => {
       <div className="tracklist-insidebox">  
         {props.artiststracklist.map((item, idx) =>  
           {const audio = new Audio(item.preview_url);
-            const playtrack = () => { audio.play(); audio.volume = 0.1; }
+            const playtrack = () => { audio.play(); audio.volume = 0.5; }
             const stoptrack = () => { audio.pause() }
             return (
               item.preview_url ?  <div key={idx + 1} value={item.id} className='filter-outerbox'>
