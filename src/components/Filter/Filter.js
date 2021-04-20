@@ -90,7 +90,7 @@ const Filter = (props) => {
                     <div className="checkbox-container" >
                       <input type="checkbox" className="custom-input " id={item.id} value={item.uri} name={item.name} onChange={addTracks} onChangeCapture={stoptrack}/>
                       <span className="checkmark"></span>
-             <div className="checkmark-box"><p>{item.artists[0].name}</p><p>{item.name}</p></div>
+             <div className="checkmark-box"><p>{item.artists[0].name}</p><p>{item.name.length > 33 ? item.name.substring(0, 33) + " . . ." : item.name}</p></div>
                    </div> 
                   </div>
                   </div> 

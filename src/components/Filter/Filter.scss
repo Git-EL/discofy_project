@@ -82,7 +82,7 @@ height: 100px;
   border-bottom: 1px solid rgba(235, 233, 233, 0.282);
   line-height: 2.5em;
 }
-.playlist-btn, .filter-container .back-btn {
+.playlist-btn, .back-btn {
   border-radius: 5px;
   text-transform: uppercase;
   padding: 10px;
@@ -99,10 +99,38 @@ height: 100px;
   letter-spacing: 0.5px;
   padding-bottom: 15px;
 }
-.filter-imagebox:hover {
+
+ .testhoverbox {
+   display: none;
+ }
+
+//   .testhoverbox {
+//     display: block;
+//     background-color: black;
+//     height: 100px;
+//     width: 100px;
+//     position: absolute;
+//     border-radius: 5%;
+//   }
+  
+//   .testhoverbox > .fa-minus-circle {
+//     text-align: center;
+//     width: 100%;
+//     font-size: 2.3em;
+//     margin-top: 12px;
+//     color: red;
+//     z-index: 100;
+//   }
+
+
+
+
+.filter-imagebox:hover  {
   cursor: pointer;
+
   .trackalbum-image {
     box-shadow: 0 0 2px 2px #85FDFF;
+
   }
   .checkmark {
     position: absolute;
@@ -131,6 +159,7 @@ height: 100px;
   right: 0;
   height: 100px;
   width: 100px;
+  padding: 1.5px;
   background-color: black;
   opacity: 0.9;
   color: white;
@@ -139,6 +168,24 @@ height: 100px;
   text-align: center;
   border-radius: 4%;
   z-index: 0;
+}
+.checkbox-container input:checked:hover {
+
+  ~ .checkmark {
+    border: 3px solid rgb(115, 124, 117);
+  }
+
+  ~ .checkmark:after {
+    left: 10px;
+    top: 4px;
+    width: 6px;
+    height: 15px;
+    border: solid rgb(115, 124, 117);
+    border-width: 0 4px 0 0;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
 }
 .checkmark-box {
   display: none;
@@ -171,6 +218,8 @@ height: 100px;
   background-color: transparent;
   border: 3px solid rgb(47, 250, 189);
   z-index: 1;
+
+  
 }
 .checkmark:after {
   content: "";
