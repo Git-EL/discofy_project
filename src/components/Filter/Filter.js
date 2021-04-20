@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import './Filter.scss'
+import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
 
 const Filter = (props) => {
   const getAccessToken = localStorage.getItem('params')
@@ -70,7 +72,15 @@ const Filter = (props) => {
       catch(error){
         console.log(error)
       }   
-  }
+  
+    }
+  const PopupExample = () => (
+    <Popup trigger={<button className="playlist-btn">Create Playlist</button>} position="right center">
+      <div className="popup">Done! Take a look at your new Playlist on Spotify!</div>
+    </Popup>
+  )
+
+
 
   // checked={false}
 
@@ -90,7 +100,7 @@ const Filter = (props) => {
                     <div className="checkbox-container" >
                       <input type="checkbox" className="custom-input " id={item.id} value={item.uri} name={item.name} onChange={addTracks} onChangeCapture={stoptrack}/>
                       <span className="checkmark"></span>
-             <div className="checkmark-box"><p>{item.artists[0].name}</p><p>{item.name}</p></div>
+             <div className="checkmark-box"><p>{item.artists[0].name}</p><p>{item.name.length > 33 ? item.name.substring(0, 33) + " . . ." : item.name}</p></div>
                    </div> 
                   </div>
                   </div> 
@@ -98,7 +108,16 @@ const Filter = (props) => {
              )
           })
         }
-      </div></div>
+      </div>
+
+      <div className="track-box2">
+      <button className="back-btn" onClick={() => history.goBack()}>Back</button>
+      </div> 
+
+  </div>
+
+
+      
       <div key={1} className="playlist-box">
       <div className="play-box1">
       <h2>Discofy Playlist</h2>
@@ -114,8 +133,8 @@ const Filter = (props) => {
         }
         </div>
         <div className="play-box2">
-       <button className="playlist-btn">Create Playlist</button>
-       <button className="back-btn" onClick={() => history.goBack()}>Back</button>
+        <PopupExample />
+    
        </div>
         </div>
        </form>
