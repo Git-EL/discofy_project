@@ -31,6 +31,7 @@ const Filter = (props) => {
     playlistTracks: prevState.playlistTracks.filter(track =>  track !== event.target.value) 
     }))
   };
+  
 
    useEffect(() => {
      axios('https://api.spotify.com/v1/me', {
@@ -69,7 +70,6 @@ const Filter = (props) => {
     } catch(error){
           console.log(error)
       }   
-  
    }
 
   const PopupExample = () => (

@@ -8,11 +8,52 @@ $main-bgcolor: #050124;
   border-radius: 0 5px 5px 5px;
 }
 
+.genre-container h4 {
+  margin: 20px 25px 0;
+}
+
+.genre-checkbox {
+	height: 100px;
+	width: 100px;
+	margin-top: 5px;
+	margin-left: 5px;
+	position: absolute;
+	z-index: 6;
+}
+
 .genre-box {
   margin: 19px;
   display: flex;
   flex-flow: row wrap;
   max-width: 900px;
+}
+
+.genre-box input {
+	opacity: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.genre-box input:checked {
+	opacity: 0;
+	background-color: transparent;
+}
+
+.genre-box input:checked ~ .box {
+	height: 98px;
+	width: 98px;
+	margin-top: 5px;
+	margin-left: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 2px 3px rgb(124, 240, 255);
+	position: absolute;
+	cursor: pointer;
+	z-index: 6;
+}
+
+.genre-image:hover,
+.genre-name:hover {
+	cursor: pointer;
 }
 
 .genre-name {
@@ -54,6 +95,36 @@ $main-bgcolor: #050124;
   font-size: 40px;
   color: $main-color;
   margin-bottom: 5px;
+}
+
+
+.UserGenreBox {
+  margin: 19px;
+  display: flex;
+  flex-flow: row wrap;
+  color: white;
+  max-width:900px;
+}
+
+.UserGenreBox ul {
+  list-style: none;
+}
+
+.UserGenreBox  li {
+  height: 100px;
+    width: 100px;
+    padding: 0 15px;
+   margin: 5px;
+    background-color: rgba(93, 134, 196, 0.315);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    text-transform: capitalize;
+    font-size: 14px;
+    border: 1px white solid;
 }
 
 @media screen and (max-width: 359px) {
