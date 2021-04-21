@@ -7,7 +7,6 @@ import Filter from '../Filter/Filter'
 import axios from 'axios'
 // import getParamValues from '../../utils/function'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-// import { Link } from 'react-router-dom'
 import artist_icon from '../../assets/artist_icon.svg'
 
 const Selection = () => {
@@ -32,10 +31,14 @@ const Selection = () => {
   const [artistsTracks, setArtiststracks] = useState({
     listOfArtiststracksFromAPI: []
   })
+  const [genreTracks,  setGenreTracks] = useState({
+    listOfGenretracksFromAPI: []
+  })
   const [usergenre, setUsergenre] = useState({
     listOfUsergenreFromAPI: []
   })
   const [artistId, setArtistId] = useState('')
+  const [genreId, setGenreId] = useState('')
   const [filterbtnStatus, setFilterbtnStatus] = useState(false)
 
   useEffect(() => {
@@ -73,6 +76,40 @@ const Selection = () => {
       })
   }
 
+  const genreboxClicked = async (val) => {
+    const currentGenres = genres.listOfGenresFromAPI
+    console.log(currentGenres)
+    const genreID = currentGenres.filter((t) => t.id === val)
+    console.log(genreID)
+    console.log('val: ' + val)
+    setGenreId(val)
+    setArtistId('')
+    console.log('val: ' + val)
+    
+    try{
+      let playlistIDResponse = await axios({
+      method: 'GET',
+      url: `https://api.spotify.com/v1/browse/categories/${val}/playlists`,
+      headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token },
+    })
+    let playlistID = await playlistIDResponse.data.playlists.items[Math.floor(Math.random() * 9) + 1].id
+    console.log(playlistID)
+    
+    let genreTracksResponse = await axios ({ 
+      method: 'GET',
+      url: `https://api.spotify.com/v1/playlists/${playlistID}/tracks`,
+      headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token },
+      });
+      setGenreTracks(
+        {listOfGenretracksFromAPI: genreTracksResponse.data.items.map(a => a.track)})
+        console.log(genreTracks.listOfGenretracksFromAPI)
+
+
+     } catch(error){
+      console.log(error)
+    }   
+  }
+
   const artistsbuttonClicked = (e) => {
     e.preventDefault()
     axios.all([
@@ -99,6 +136,7 @@ const Selection = () => {
     console.log(artistsInfo)
 
     setArtistId(artistsInfo[0].id)
+    setGenreId('')
     console.log('val: ' + val)
 
     axios(`https://api.spotify.com/v1/recommendations?limit=70&seed_artists=${val}`, {
@@ -132,10 +170,12 @@ const Selection = () => {
  
 
   return (
-    artistId && filterbtnStatus ? 
+    (genreId && filterbtnStatus) || (artistId && filterbtnStatus) ? 
     ( <div className='filter-container'>
-        <Filter title='ArtistsTracks' artiststracklist={artistsTracks.listOfArtiststracksFromAPI}/>
-      </div>
+    <Filter 
+    title='ArtistsTracks' 
+    artiststracklist={genreId ? genreTracks.listOfGenretracksFromAPI: artistId? artistsTracks.listOfArtiststracksFromAPI: null}/>
+  </div>
     )
     :
     ( 
@@ -157,8 +197,11 @@ const Selection = () => {
             </Tab>
           </TabList>
           <TabPanel>
-            <div className='tab-contentbox'>
-              <GenreListe title='Genre' genrelist={genres.listOfGenresFromAPI} />
+          <div className='tab-contentbox'>
+              <GenreListe 
+              title='Genre' 
+              genrelist={genres.listOfGenresFromAPI} 
+              clicked={genreboxClicked} />
             </div>
           </TabPanel>
           <TabPanel>

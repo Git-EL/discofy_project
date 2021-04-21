@@ -70,7 +70,6 @@ const Filter = (props) => {
     } catch(error){
           console.log(error)
       }   
-  
    }
 
   const PopupExample = () => (
