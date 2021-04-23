@@ -6,28 +6,24 @@ import React from 'react'
 // Get the current user’s top artists or tracks based on calculated affinity.
 // API: https://api.spotify.com/v1/me/top/artists
 
-
-
-
 const UserGenreListe = props => {
 
-  return (
-    <div className='col-sm-10 usergenre-container'>
-      <div key={0} className="UserGenreBox">
-        {props.usergenrelist.map((item, idx)  => 
-        item.genres[1] !== undefined ? 
-        <ul key={idx + 1} value={item.id}>
-         
-          <li>{item.genres[1]}</li>
-          </ul> : null
-          )
-          } {props.usergenrelist.map((item, idx) => 
-            item.genres[2] !== undefined ? 
-            <ul key={idx + 1} value={item.id}>
-              <li>{item.genres[2]}</li>
-              </ul> : null
-              )
-              }
+  const clicked = e => {
+    props.clicked(e.target.id);
+}    
+
+return (
+  <div className='col-sm-10 usergenre-container'>
+    <div key={0} className="usergenre-box">
+
+      {props.usergenrelist.map((item, idx)  => 
+              <div key={idx + 1}>
+              <div className="usergenre-name" id={item.value}><p>{item.name}</p></div>
+             
+              <input type="radio" onChange={clicked} id={item.value} className="usergenre-checkbox" name="choice"></input>
+              <div className="box"></div>
+               
+                </div>)}
       </div>
     </div>
   )

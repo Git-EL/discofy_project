@@ -14,7 +14,7 @@ const GenreListe = props => {
       <div key={0} className="genre-box">
 
         {props.genrelist.map((item, idx) => 
-        <div key={idx + 1} value={item.id} id={item.id} onClick={clicked}>
+        <div key={idx + 1}>
           <div className="genre-name" value={item.id} id={item.id} >{item.name}</div>
          
           <input type="radio" onChange={clicked} id={item.id} className="genre-checkbox" name="choice"></input>

@@ -34,11 +34,15 @@ const Selection = () => {
   const [genreTracks,  setGenreTracks] = useState({
     listOfGenretracksFromAPI: []
   })
+  const [userGenretracks,  setUserGenretracks] = useState({
+    listOfUserGenretracksFromAPI: []
+  })
   const [usergenre, setUsergenre] = useState({
     listOfUsergenreFromAPI: []
   })
   const [artistId, setArtistId] = useState('')
   const [genreId, setGenreId] = useState('')
+  const [userGenreId, setUserGenreId] = useState('')
   const [filterbtnStatus, setFilterbtnStatus] = useState(false)
 
   useEffect(() => {
@@ -81,10 +85,12 @@ const Selection = () => {
     console.log(currentGenres)
     const genreID = currentGenres.filter((t) => t.id === val)
     console.log(genreID)
-    console.log('val: ' + val)
+    
     setGenreId(val)
+    setUserGenreId('')
     setArtistId('')
     console.log('val: ' + val)
+    
     
     try{
       let playlistIDResponse = await axios({
@@ -137,6 +143,7 @@ const Selection = () => {
 
     setArtistId(artistsInfo[0].id)
     setGenreId('')
+    setUserGenreId('')
     console.log('val: ' + val)
 
     axios(`https://api.spotify.com/v1/recommendations?limit=70&seed_artists=${val}`, {
@@ -150,17 +157,55 @@ const Selection = () => {
     })
   }
 
-  const usergenrebuttonClicked = (e) => {
+  const usergenrebuttonClicked = async (e) => {
     e.preventDefault()
-
-    // Das hier zeigt die Genre basierend auf User Top Tracks an
-    axios('https://api.spotify.com/v1/me/top/artists', {
+    try{
+    // Das hier zeigt die Genre basierend auf followes artists Tracks an
+    let followedArtistResponse = await axios({ 
       method: 'GET',
+      url: 'https://api.spotify.com/v1/me/following?type=artist',
       headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token }
-    }).then((usergenreResponse) => {
-      setUsergenre({
-        listOfUsergenreFromAPI: usergenreResponse.data.items
-      })
+    })
+    let followedArtist = {
+      listOfFollowedArtistFromAPI: followedArtistResponse.data.artists.items }
+    
+    const genres = followedArtist.listOfFollowedArtistFromAPI.map(obj => {return obj.genres}).flat();
+    const genreObj = genres.map(obj => {return {value: obj.trim().replaceAll(" ", "%20"), name: obj}});
+    const uniqueGenres = genreObj.filter(function(el) {
+       if (!this[el.value]) { this[el.value] = true;
+        return true;
+      }
+       return false;
+    }, Object.create(null));
+
+    setUsergenre({
+        listOfUsergenreFromAPI: uniqueGenres 
+    })
+     console.log(usergenre)
+    } catch(error){
+      console.log(error)
+      }   
+  }
+  
+  const usergenreboxClicked = (val) => {
+    const currentUsergenres = usergenre.listOfUsergenreFromAPI
+    console.log(currentUsergenres)
+    const genreID = currentUsergenres.filter((t) => t.value === val)
+    console.log(genreID)
+
+    setUserGenreId(val)
+    setGenreId('')
+    setArtistId('')
+    console.log('val: ' + val)
+
+     axios(`https://api.spotify.com/v1/search?q=genre:%22${val}%22&type=track&limit=50`, {
+       method: 'GET',
+       headers: { Authorization: 'Bearer ' + token}
+     }).then((usergenretracksResponse) => {
+      setUserGenretracks({
+      listOfUserGenretracksFromAPI: usergenretracksResponse.data.tracks.items})
+      console.log(usergenretracksResponse)
+      console.log(userGenretracks)
     })
   }
 
@@ -168,14 +213,17 @@ const Selection = () => {
       if (!filterbtnStatus){setFilterbtnStatus(true)}
     }
  
-
   return (
-    (genreId && filterbtnStatus) || (artistId && filterbtnStatus) ? 
+    (genreId && filterbtnStatus) || (userGenreId && filterbtnStatus) || (artistId && filterbtnStatus) ? 
     ( <div className='filter-container'>
-    <Filter 
-    title='ArtistsTracks' 
-    artiststracklist={genreId ? genreTracks.listOfGenretracksFromAPI: artistId? artistsTracks.listOfArtiststracksFromAPI: null}/>
-  </div>
+        <Filter 
+        title='ArtistsTracks' 
+        artiststracklist={
+            genreId ? genreTracks.listOfGenretracksFromAPI
+          : artistId ? artistsTracks.listOfArtiststracksFromAPI 
+          : userGenreId ? userGenretracks.listOfUserGenretracksFromAPI
+          : null}/>
+      </div>
     )
     :
     ( 
@@ -193,7 +241,7 @@ const Selection = () => {
               Artists
             </Tab>
             <Tab onClick={usergenrebuttonClicked}>
-              User Track Genre (TOP)
+              Sub-Genre (based on followed artists)
             </Tab>
           </TabList>
           <TabPanel>
@@ -219,7 +267,10 @@ const Selection = () => {
           </TabPanel>
           <TabPanel>
             <div className='tab-contentbox'>
-              <UserGenreListe title='UserGenre' usergenrelist={usergenre.listOfUsergenreFromAPI} />
+              <UserGenreListe 
+              title='UserGenre' 
+              usergenrelist={usergenre.listOfUsergenreFromAPI}
+              clicked={usergenreboxClicked} />
             </div>
           </TabPanel>
         </Tabs>

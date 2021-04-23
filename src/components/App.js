@@ -7,15 +7,14 @@ import Selection from './Selection/Selection'
 import NotFound from './NotFound/NotFound'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-
 function App () {
   return (
     <Router>
       <div className='App'>
         <Navbar />
-    <Switch>
+        <Switch>
           {/* Umleitung von '/' zu '/test'
-                            <Redirect exact path='/' to='/test' />*/}
+                                                <Redirect exact path='/' to='/test' />*/}
           <Route exact path='/' component={Home} />
           <Route path='/intro' component={Intro} />
           <Route path='/redirect' component={Redirect} />

@@ -89,7 +89,7 @@ const Filter = (props) => {
               const playtrack = () => { audio.play(); audio.volume = 0.5; }
               const stoptrack = () => { audio.pause() }
                return (
-                item.preview_url ?  <div key={idx + 1} value={item.id} className='filter-outerbox'>
+                item.preview_url ?  <div key={idx + 1} className='filter-outerbox'>
                    <div className="filter-imagebox" onMouseOver={playtrack} onMouseLeave={stoptrack}>   
                       <img src={item.album.images[0].url} alt="test" className="trackalbum-image" id={item.id} />
                       <div className="checkbox-container" >
@@ -116,7 +116,8 @@ const Filter = (props) => {
       <div className="play-box1">
       <h2>Discofy Playlist</h2>
         {props.artiststracklist.map((item, idx) => 
-          <div key={idx + 1} value={item.id}>
+        // <div key={idx + 1} value={item.id}>
+          <div key={idx + 1}>
             <div className="playlist-preview">{selectedTracks.playlistTracks.includes(item.uri) ? 
               <div className="track-info"><p>Artist: {item.artists[0].name}</p><p> Title: {item.name}</p><p>Album: {item.album.name}</p>
               <button type="button" onClick={deleteTrack} id={item.id} value={item.uri}>remove</button>
