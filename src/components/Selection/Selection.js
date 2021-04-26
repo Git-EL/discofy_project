@@ -2,7 +2,7 @@ import './Selection.scss'
 import React, { useState , useEffect } from 'react'
 import GenreListe from './GenreListe'
 import ArtistsListe from './ArtistsListe'
-import UserGenreListe from './UserGenreListe'
+import SubGenreListe from './SubGenreListe'
 import DiscoverListe from './DiscoverListe'
 import Filter from '../Filter/Filter'
 import axios from 'axios'
@@ -13,9 +13,6 @@ import artist_icon from '../../assets/artist_icon.svg'
 const Selection = () => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
   const spotify_clientSecret = process.env.REACT_APP_CLIENT_SECRET
-  // const spotify_authorize = process.env.REACT_APP_AUTHORIZE_URL
-  // const spotify_redirect = process.env.REACT_APP_REDIRECT_URL
-
   const getAccessToken = localStorage.getItem('params')
   const spotify_accessToken = JSON.parse(getAccessToken)
 
@@ -41,15 +38,15 @@ const Selection = () => {
   const [genreTracks,  setGenreTracks] = useState({
     listOfGenretracksFromAPI: []
   })
-  const [userGenretracks,  setUserGenretracks] = useState({
-    listOfUserGenretracksFromAPI: []
+  const [subGenretracks,  setSubGenretracks] = useState({
+    listOfSubGenretracksFromAPI: []
   })
-  const [usergenre, setUsergenre] = useState({
-    listOfUsergenreFromAPI: []
+  const [subGenre, setSubGenre] = useState({
+    listOfSubGenreFromAPI: []
   })
   const [artistId, setArtistId] = useState('')
   const [genreId, setGenreId] = useState('')
-  const [userGenreId, setUserGenreId] = useState('')
+  const [subGenreId, setSubGenreId] = useState('')
   const [discoverId, setDiscoverId] = useState('')
   const [filterbtnStatus, setFilterbtnStatus] = useState(false)
 
@@ -89,18 +86,12 @@ const Selection = () => {
   }
 
   const genreboxClicked = async (val) => {
-    const currentGenres = genres.listOfGenresFromAPI
-    console.log(currentGenres)
-    const genreID = currentGenres.filter((t) => t.id === val)
-    console.log(genreID)
     
     setGenreId(val)
-    setUserGenreId('')
+    setSubGenreId('')
     setArtistId('')
     setDiscoverId('')
-    console.log('val: ' + val)
-    
-    
+        
     try{
       let playlistIDResponse = await axios({
       method: 'GET',
@@ -118,8 +109,6 @@ const Selection = () => {
       setGenreTracks(
         {listOfGenretracksFromAPI: genreTracksResponse.data.items.map(a => a.track)})
         console.log(genreTracks.listOfGenretracksFromAPI)
-
-
      } catch(error){
       console.log(error)
     }   
@@ -127,6 +116,7 @@ const Selection = () => {
 
   const artistsbuttonClicked = (e) => {
     e.preventDefault()
+
     axios.all([
       axios.get('https://api.spotify.com/v1/me/following?type=artist', {
         method: 'GET',
@@ -152,7 +142,7 @@ const Selection = () => {
 
     setArtistId(artistsInfo[0].id)
     setGenreId('')
-    setUserGenreId('')
+    setSubGenreId('')
     setDiscoverId('')
     console.log('val: ' + val)
 
@@ -167,10 +157,10 @@ const Selection = () => {
     })
   }
 
-  const usergenrebuttonClicked = async (e) => {
+  const subGenrebuttonClicked = async (e) => {
     e.preventDefault()
+
     try{
-    // Das hier zeigt die Genre basierend auf followed artists Tracks an
     let followedArtistResponse = await axios({ 
       method: 'GET',
       url: 'https://api.spotify.com/v1/me/following?type=artist',
@@ -181,7 +171,6 @@ const Selection = () => {
     
     const genres = followedArtist.listOfFollowedArtistFromAPI.map(obj => {return obj.genres}).flat();
     const genreObj = genres.map(obj => {return {value: obj, name: obj}});
-    // const genreObj = genres.map(obj => {return {value: obj.trim().replaceAll(" ", "%20"), name: obj}});
     const uniqueGenres = genreObj.filter(function(el) {
        if (!this[el.value]) { this[el.value] = true;
         return true;
@@ -189,22 +178,18 @@ const Selection = () => {
        return false;
     }, Object.create(null));
 
-    setUsergenre({
-        listOfUsergenreFromAPI: uniqueGenres 
+    setSubGenre({
+        listOfSubGenreFromAPI: uniqueGenres 
     })
-     console.log(usergenre)
+     console.log(subGenre)
     } catch(error){
       console.log(error)
       }   
   }
   
-  const usergenreboxClicked = (val) => {
-    const currentUsergenres = usergenre.listOfUsergenreFromAPI
-    console.log(currentUsergenres)
-    const genreID = currentUsergenres.filter((t) => t.value === val)
-    console.log(genreID)
+  const subGenreboxClicked = (val) => {
 
-    setUserGenreId(val)
+    setSubGenreId(val)
     setGenreId('')
     setArtistId('')
     setDiscoverId('')
@@ -213,11 +198,11 @@ const Selection = () => {
      axios(`https://api.spotify.com/v1/search?q=genre:%22${val}%22&type=track&limit=50`, {
        method: 'GET',
        headers: { Authorization: 'Bearer ' + token}
-     }).then((usergenretracksResponse) => {
-      setUserGenretracks({
-      listOfUserGenretracksFromAPI: usergenretracksResponse.data.tracks.items})
-      console.log(usergenretracksResponse)
-      console.log(userGenretracks)
+     }).then((subGenretracksResponse) => {
+      setSubGenretracks({
+      listOfSubGenretracksFromAPI: subGenretracksResponse.data.tracks.items})
+      console.log(subGenretracksResponse)
+      console.log(subGenretracks)
     })
   }
 
@@ -243,7 +228,7 @@ const Selection = () => {
 
     setDiscoverId(val)
     setGenreId('')
-    setUserGenreId('')
+    setSubGenreId('')
     setArtistId('')
     console.log('val: ' + val)
 
@@ -263,15 +248,15 @@ const Selection = () => {
     }
  
   return (
-    (genreId && filterbtnStatus) || (userGenreId && filterbtnStatus) || (artistId && filterbtnStatus) || (discoverId && filterbtnStatus) ? 
+    (genreId && filterbtnStatus) || (subGenreId && filterbtnStatus) || (artistId && filterbtnStatus) || (discoverId && filterbtnStatus) ? 
     ( <div className='filter-container'>
         <Filter 
         title='ArtistsTracks'
-        name={genreId || userGenreId || discoverId}
+        name={genreId || subGenreId || discoverId}
         artiststracklist={
             genreId ? genreTracks.listOfGenretracksFromAPI
           : artistId ? artistsTracks.listOfArtiststracksFromAPI 
-          : userGenreId ? userGenretracks.listOfUserGenretracksFromAPI
+          : subGenreId ? subGenretracks.listOfSubGenretracksFromAPI
           : discoverId ? discoverTracks.listOfDiscoverTracksFromAPI
           : null}/>
       </div>
@@ -279,15 +264,15 @@ const Selection = () => {
     :
     ( 
     <div className='container'>
+      <h3>Take your pick</h3>
       <div className='inner-container'>
-        <h3>Take your pick</h3>
         <Tabs>
           <TabList className='tab-title'>
             <Tab onClick={genrebuttonClicked}>
             <i className="fas fa-compact-disc"></i>
               Genre
             </Tab>
-            <Tab onClick={usergenrebuttonClicked}>
+            <Tab onClick={subGenrebuttonClicked}>
             <i className="fas fa-drum"></i>
               Sub-Genre
             </Tab>
@@ -310,10 +295,10 @@ const Selection = () => {
           </TabPanel>
           <TabPanel>
             <div className='tab-contentbox'>
-              <UserGenreListe 
-              title='UserGenre' 
-              usergenrelist={usergenre.listOfUsergenreFromAPI}
-              clicked={usergenreboxClicked} />
+              <SubGenreListe 
+              title='SubGenre' 
+              usergenrelist={subGenre.listOfSubGenreFromAPI}
+              clicked={subGenreboxClicked} />
             </div>
           </TabPanel>
           <TabPanel>
@@ -332,24 +317,24 @@ const Selection = () => {
           <TabPanel>
             <div className='tab-contentbox'>
               <DiscoverListe 
-              title='UserGenre' 
+              title='Discover' 
               discoverlist={discover.listOfDiscoverFromAPI}
               clicked={discoverboxClicked} 
               />
             </div>
           </TabPanel>
         </Tabs>
-        </div>
         <div className='choices'>
         <div className='boxresult'>
           <h1 className='happychoices'>Happy with your choices?</h1>          
             <button className='filter-btn' onClick={filterbtnClicked}>
-            <div className='filter-firstlink'> Filter Songs
+            <div className='filter-firstlink'> Get your Songs
             </div>
-            <div className='filter-secondlink'> Filter Songs
-       </div>
+            <div className='filter-secondlink'> Get your Songs
+           </div>
             </button>
           </div>
+        </div>
         </div>
       </div>)) 
 }

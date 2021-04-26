@@ -11,8 +11,9 @@ const GenreListe = props => {
 
   return (
     <div className='col-sm-10 genre-container'>
+      <h4>Browse All</h4>
+      <p className="info-message">Select a category below and get a bunch of track recommendations based on your chosen genre</p>
       <div key={0} className="genre-box">
-
         {props.genrelist.map((item, idx) => 
         <div key={idx + 1}>
           <div className="genre-name" value={item.id} id={item.id} >{item.name}</div>

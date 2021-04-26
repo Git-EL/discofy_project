@@ -14,8 +14,9 @@ const clicked = e => {
 
   return (
     <div className='col-sm-10 discover-container'>
+      <h4>Discover New Music</h4>
+      <p className="info-message">Following artists have new releases. Get to know them and discover their music.</p>
       <div key={0} className="discover-box">
-
         {props.discoverlist.map((item, idx)  => 
                 <div key={idx + 1}>
                 <div className="discover-name">

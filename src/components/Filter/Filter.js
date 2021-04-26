@@ -32,7 +32,6 @@ const Filter = (props) => {
     }))
   };
   
-
    useEffect(() => {
      axios('https://api.spotify.com/v1/me', {
        method: 'GET',
@@ -85,7 +84,7 @@ const Filter = (props) => {
        <form className="filter-box" onSubmit={createPlaylist}>
         <div key={0} className="tracklist-box">  
         <div className="tracklist-insidebox">  
-         {props.artiststracklist.map((item, idx) =>  
+         {props.artiststracklist.length > 0 ? props.artiststracklist.map((item, idx) =>  
             {const audio = new Audio(item.preview_url);
               const playtrack = () => { audio.play(); audio.volume = 0.5; }
               const stoptrack = () => { audio.pause() }
@@ -97,7 +96,7 @@ const Filter = (props) => {
                         <input type="checkbox" className="custom-input " checked={trackID === item.id && 
                             selectedTracks.playlistTracks.includes(item.uri)
                             ? true : selectedTracks.playlistTracks.includes(item.uri) ? true : (trackID === item.id) ? false : undefined                        }
-                            id={item.id} value={item.uri || ''} name={item.name} onChange={addTracks} onChangeCapture={stoptrack}/>
+                            id={item.id} value={item.uri} name={item.name} onChange={addTracks} onChangeCapture={stoptrack}/>
                        <span className="checkmark"></span>
                         <div className="checkmark-box"><p>{item.artists[0].name.length > 20 ? item.artists[0].name.substring(0, 18) + "..." : item.artists[0].name}</p>
                         <p>{item.name.length > 39 ? item.name.substring(0, 39) + "..." : item.name}</p></div>
@@ -106,7 +105,7 @@ const Filter = (props) => {
                 </div> 
                 : null        
                )
-           })
+           }) : <p className="missing-message"><i className="far fa-times-circle"></i> Unfortunately, there is no track available for this category.</p>
          }
        </div>
       <div className="track-box2">
@@ -121,7 +120,7 @@ const Filter = (props) => {
           <div key={idx + 1}>
             <div className="playlist-preview">{selectedTracks.playlistTracks.includes(item.uri) ? 
               <div className="track-info"><p>Artist: {item.artists[0].name}</p><p> Title: {item.name}</p><p>Album: {item.album.name}</p>
-              <button type="button" onClick={deleteTrack} id={item.id} value={item.uri || ''}>remove</button>
+              <button type="button" onClick={deleteTrack} id={item.id} value={item.uri}>remove</button>
               </div> 
               : null}
             </div>
