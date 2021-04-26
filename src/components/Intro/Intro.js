@@ -2,6 +2,9 @@ import './Intro.scss'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpotify } from '@fortawesome/free-brands-svg-icons'
+import discofy_logo_small from '../../assets/discofy_logo_small.svg'
+
+
 
 const spotifyIcon = <FontAwesomeIcon icon={faSpotify} className='spotifyIcon' />
 
@@ -15,9 +18,33 @@ const Intro = () => {
   }
 
   return <div className='intro-container'>
-           <h2>Test-Text</h2>
-           <button variant='info' type='submit' onClick={handleLogin}>
-             {spotifyIcon} Login with Spotify
+            <img src={discofy_logo_small} alt='discofy-logo' className='logo_small' />
+         <div>
+           <h1 className='Title'>Put your headphones or speakers on.</h1>
+              <p className='untertitile'>This website plays (lots of) music.</p>
+         </div>
+           <div className='card'>
+             <div className='card-image'>
+               <p className='icon-1'><i class="fas fa-hand-point-up"></i></p>
+               <p className='p-style'>Click to dag deeper</p>
+              
+             </div>
+             <div className='right'><i class="fas fa-angle-right"></i></div>
+             <div className='card-image'>
+               <p className='icon-2'><i class="fas fa-mouse-pointer"></i></p>
+               <p className='p-style'>Hover to listen a music</p>
+             </div>
+             
+             <div className='right'><i class="fas fa-angle-right"></i></div>
+             <div className='card-image'>
+               <p className='icon-3'><i class="fab fa-creative-commons-sampling-plus"></i></p>
+               <p className='p-style'>Save to build your collection</p>
+            </div>
+
+           </div>
+           <button className='intro-btn' variant='info' type='submit' onClick={handleLogin}>
+             <div className='intro-firstlink'> {spotifyIcon} Login with Spotify</div>
+             <div className='intro-secondlink'> {spotifyIcon} Login with Spotify</div>
            </button>
          </div>
 }

@@ -4,6 +4,7 @@ import axios from 'axios'
 import Popup from 'reactjs-popup'
 import 'reactjs-popup/dist/index.css'
 import './Filter.scss'
+import discofy_logo_small from '../../assets/discofy_logo_small.svg'
 
 const Filter = (props) => {
   const getAccessToken = localStorage.getItem('params');
@@ -79,6 +80,7 @@ const Filter = (props) => {
 
   return (
     <div className='col-sm-10'>
+      <img src={discofy_logo_small} alt='discofy-logo' className='logo_small2' />
       <h3>Select your songs</h3>
       <p className="choiceName">{props.name.trim().replaceAll("_", " ")}</p>
        <form className="filter-box" onSubmit={createPlaylist}>
