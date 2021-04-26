@@ -20,7 +20,7 @@ const ArtistsListe = props => {
       
         {props.savedartistslist.length > 0 ? props.savedartistslist.map((item, idx) => 
         <div key={idx + 1}>
-          <div onClick={clicked} id={item.id} className="artist-name">{item.name}</div>
+          <div onClick={clicked} id={item.id} className="artist-name">{item.name.length > 28 ? item.name.substring(0, 28) + "..." : item.name}</div>
 
           <input type="radio" onChange={clicked} id={item.id} className="artist-checkbox" name="choice"></input>
           <div className="box"></div>
@@ -35,7 +35,7 @@ const ArtistsListe = props => {
       <div key={1} className="ArtistsBox">
       {props.artistslist.length > 0 ? props.artistslist.map((item, idx) => 
         <div key={idx + 1}>
-          <div onClick={clicked} id={item.id} className="artist-name">{item.name}</div>
+          <div onClick={clicked} id={item.id} className="artist-name">{item.name.length > 28 ? item.name.substring(0, 28) + "..." : item.name}</div>
 
           <input type="radio" onChange={clicked} id={item.id} className="artist-checkbox" name="choice"></input>
           <div className="box"></div>

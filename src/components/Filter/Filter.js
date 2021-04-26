@@ -81,6 +81,7 @@ const Filter = (props) => {
   return (
     <div className='col-sm-10'>
       <h3>Select your songs</h3>
+      <p className="choiceName">{props.name.trim().replaceAll("_", " ")}</p>
        <form className="filter-box" onSubmit={createPlaylist}>
         <div key={0} className="tracklist-box">  
         <div className="tracklist-insidebox">  
@@ -96,7 +97,7 @@ const Filter = (props) => {
                         <input type="checkbox" className="custom-input " checked={trackID === item.id && 
                             selectedTracks.playlistTracks.includes(item.uri)
                             ? true : selectedTracks.playlistTracks.includes(item.uri) ? true : (trackID === item.id) ? false : undefined                        }
-                            id={item.id} value={item.uri} name={item.name} onChange={addTracks} onChangeCapture={stoptrack}/>
+                            id={item.id} value={item.uri || ''} name={item.name} onChange={addTracks} onChangeCapture={stoptrack}/>
                        <span className="checkmark"></span>
                         <div className="checkmark-box"><p>{item.artists[0].name.length > 20 ? item.artists[0].name.substring(0, 18) + "..." : item.artists[0].name}</p>
                         <p>{item.name.length > 39 ? item.name.substring(0, 39) + "..." : item.name}</p></div>
@@ -120,7 +121,7 @@ const Filter = (props) => {
           <div key={idx + 1}>
             <div className="playlist-preview">{selectedTracks.playlistTracks.includes(item.uri) ? 
               <div className="track-info"><p>Artist: {item.artists[0].name}</p><p> Title: {item.name}</p><p>Album: {item.album.name}</p>
-              <button type="button" onClick={deleteTrack} id={item.id} value={item.uri}>remove</button>
+              <button type="button" onClick={deleteTrack} id={item.id} value={item.uri || ''}>remove</button>
               </div> 
               : null}
             </div>
