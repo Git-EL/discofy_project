@@ -59,11 +59,12 @@ $main-bgcolor: #050124;
 .genre-name {
   margin: 0 5px;
   width: 100px;
-  font-size: 10px;
+	letter-spacing: 0.5px;
+	font-size: 10px;
   color: white;
   text-align: center;
   position: relative;
-  top: 80px;
+  top: 75px;
   height: 0;
 }
 
@@ -88,43 +89,13 @@ $main-bgcolor: #050124;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 2px hsl(0, 0%, 100%);
+  border: 1px solid rgba(235, 233, 233, 0.282);
 }
 
 .fa-compact-disc {
   font-size: 40px;
   color: $main-color;
   margin-bottom: 5px;
-}
-
-
-.UserGenreBox {
-  margin: 19px;
-  display: flex;
-  flex-flow: row wrap;
-  color: white;
-  max-width:900px;
-}
-
-.UserGenreBox ul {
-  list-style: none;
-}
-
-.UserGenreBox  li {
-  height: 100px;
-    width: 100px;
-    padding: 0 15px;
-   margin: 5px;
-    background-color: rgba(93, 134, 196, 0.315);
-    color: white;
-    border-radius: 5px;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    text-transform: capitalize;
-    font-size: 14px;
-    border: 1px white solid;
 }
 
 @media screen and (max-width: 359px) {

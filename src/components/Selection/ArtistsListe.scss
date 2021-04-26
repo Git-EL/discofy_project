@@ -65,16 +65,19 @@
 .artist-name {
 	font-size: 10px;
 	color: white;
-	letter-spacing: 0.5px;
-	position: relative;
-	height: 0;
+	background-color: rgba(19, 16, 43, 0.7);
+	letter-spacing: 1px;
 	text-align: center;
-	width: 100px;
-	margin:auto;
-	max-width: 95%;
-	top: 45%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 70px;
+	margin-left: 5px;
+	padding: 0 2px;
+	height: 30px;
+	width: 98px;
 	z-index: 5;
-	text-shadow: 0 0 5px black;
 }
 
 .artists-icon {

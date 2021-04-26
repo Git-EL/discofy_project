@@ -1,3 +1,6 @@
+$main-color: #8bffff;
+$main-bgcolor: #050124;
+
 .usergenre-container {
 	border: solid 1px rgba(235, 233, 233, 0.282);
 	border-radius: 20px;
@@ -5,25 +8,33 @@
 	border-radius: 5px 5px;
 }
 
+.fa-drum {
+	font-size: 40px;
+	color: $main-color;
+	margin-bottom: 5px;
+}
+
 .usergenre-box .usergenre-name {
+	// background-image: url("https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753__340.jpg");
 	height: 100px;
 	width: 100px;
 	margin: 5px;
-	background-color: #0c0631;
+	background-image: linear-gradient(to bottom right, rgba(235, 233, 233, 0.282),transparent,#191744);
 	border-radius: 5px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px white solid;
+	border: 1px solid rgba(235, 233, 233, 0.282);
 }
 
 .usergenre-name > p {
 	width: 90%;
-	color: #8bffff;
+	color: white;
   text-align: center;
 	justify-content: center;
 	text-transform: capitalize;
-	font-size: 12px;
+	letter-spacing: 1px;
+	font-size: 10px;
 }
 
 .usergenre-checkbox {
@@ -34,7 +45,6 @@
 	position: absolute;
 	z-index: 6;
 }
-
 
 .usergenre-box {
 	margin: 19px;

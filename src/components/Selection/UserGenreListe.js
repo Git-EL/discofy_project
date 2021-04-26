@@ -18,7 +18,7 @@ return (
 
       {props.usergenrelist.map((item, idx)  => 
               <div key={idx + 1}>
-              <div className="usergenre-name" id={item.value}><p>{item.name}</p></div>
+              <div className="usergenre-name" id={item.value}><p>{item.name.length > 28 ? item.name.substring(0, 28) + "..." : item.name}</p></div>
              
               <input type="radio" onChange={clicked} id={item.value} className="usergenre-checkbox" name="choice"></input>
               <div className="box"></div>

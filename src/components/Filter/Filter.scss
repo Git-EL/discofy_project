@@ -7,8 +7,13 @@ $main-bgcolor: #050124;
 	line-height: 2.5em;
 	font-family: 'Nunito Sans', sans-serif;
 	letter-spacing: 2px;
-	margin: 0 80px 0 80px;
+	margin: 0 105px;
 	padding-top: 80px;
+}
+.filter-container .choiceName {
+	text-transform: capitalize;
+	color: white;
+	margin: 10px 105px 20px;
 }
 .filter-outerbox {
 	width: 100px;
