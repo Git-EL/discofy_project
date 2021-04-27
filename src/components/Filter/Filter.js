@@ -77,7 +77,7 @@ const Filter = (props) => {
       <div className='playlist-firstlink'>Create Playlist</div>
       <div className='playlist-secondlink'>Create Playlist</div>
       </button>} position="right center">
-      <div className="popup">Done! Take a look at your new Playlist on Spotify!</div>
+      <div className="popup"><i className="far fa-thumbs-up"></i><p className="done">Done!</p><p> Take a look at your new Playlist on <a href="https://open.spotify.com/" target="_blank" rel="noreferrer">Spotify</a>!</p></div>
     </Popup>
   )
 
@@ -85,10 +85,17 @@ const Filter = (props) => {
     <div className='col-sm-10'>
       <img src={discofy_logo_small} alt='discofy-logo' className='logo_small2' />
       <h3>Select your songs</h3>
-      <p className="choiceName">{props.name.trim().replaceAll("_", " ")}</p>
        <form className="filter-box" onSubmit={createPlaylist}>
         <div key={0} className="tracklist-box">  
-        <div className="tracklist-insidebox">  
+        <div className="track-box2">
+      <button type="button" className="back-btn" onClick={() => history.goBack()}>
+        <i className="fas fa-arrow-left"></i>Back to Category Selection</button>
+      <p className="trackbox-titletext">These are your song recommendations for 
+      <span className="choiceName">{props.name.includes("_")? props.name.trim().replaceAll("_", " "): props.name}</span></p>
+      <p className="trackbox-text">Hover over the images to get song previews and pick your songs for your Discofy playlist</p>
+      </div> 
+        <div className="tracklist-insidebox">   
+        <div className="tracklist-insideflex"> 
          {props.artiststracklist.length > 0 ? props.artiststracklist.map((item, idx) =>  
             {const audio = new Audio(item.preview_url);
               const playtrack = () => { audio.play(); audio.volume = 0.5; }
@@ -112,10 +119,8 @@ const Filter = (props) => {
                )
            }) : <p className="missing-message"><i className="far fa-times-circle"></i> Unfortunately, there is no track available for this category.</p>
          }
+         </div>
        </div>
-      <div className="track-box2">
-      <button type="button" className="back-btn" onClick={() => history.goBack()}>Back</button>
-      </div> 
     </div>
     <div key={1} className="playlist-box">
       <div className="play-box1">
@@ -124,8 +129,11 @@ const Filter = (props) => {
         // <div key={idx + 1} value={item.id}>
           <div key={idx + 1}>
             <div className="playlist-preview">{selectedTracks.playlistTracks.includes(item.uri) ? 
-              <div className="track-info"><p>Artist: {item.artists[0].name}</p><p> Title: {item.name}</p><p>Album: {item.album.name}</p>
-              <button type="button" onClick={deleteTrack} id={item.id} value={item.uri}>remove</button>
+              <div className="track-info">
+                <button type="button" className="rmv-btn" onClick={deleteTrack} id={item.id} value={item.uri}><i class="fas fa-minus-circle"></i></button>
+                <p className="playlist-songtitle">{item.name}</p>
+                <p className="playlist-artistname">{item.artists[0].name}</p>
+                <p className="playlist-albumtitle">{item.album.album_type} | {item.album.name}</p>
               </div> 
               : null}
             </div>

@@ -19,7 +19,7 @@ const SubGenreListe = props => {
       <div key={0} className="subgenre-box">
         {props.usergenrelist.length > 0 ? props.usergenrelist.map((item, idx)  => 
                 <div key={idx + 1} div="genre-div">
-                <div className="subgenre-name" id={item.value}><p>{item.name}</p></div>
+                <div className="subgenre-name" id={item.value}><p>{item.name.length > 26 ? item.name.substring(0, 26) + "..." : item.name}</p></div>
                
                 <input type="radio" onChange={clicked} id={item.value} className="subgenre-checkbox" name="choice"></input>
                 <div className="box"><i className="far fa-heart"></i></div>

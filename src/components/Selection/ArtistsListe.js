@@ -22,7 +22,7 @@ const ArtistsListe = props => {
           <div onClick={clicked} id={item.id} className="artist-name">{item.name.length > 28 ? item.name.substring(0, 28) + "..." : item.name}</div>
 
           <input type="radio" onChange={clicked} id={item.id} className="artist-checkbox" name="choice"></input>
-          <div className="box"></div>
+          <div className="box"><i className="far fa-heart"></i></div>
 
           <img src={item.images[0].url} alt="test" className="artist-image"  onClick={clicked} id={item.id} />
            
@@ -41,7 +41,7 @@ const ArtistsListe = props => {
           <div onClick={clicked} id={item.id} className="artist-name">{item.name.length > 28 ? item.name.substring(0, 28) + "..." : item.name}</div>
 
           <input type="radio" onChange={clicked} id={item.id} className="artist-checkbox" name="choice"></input>
-          <div className="box"></div>
+          <div className="box"><i className="far fa-heart"></i></div>
           
           <img src={item.images[0].url} alt="artist" className="artist-image"  onClick={clicked} id={item.id} />
             </div>

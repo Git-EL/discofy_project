@@ -48,7 +48,9 @@ const Selection = () => {
   const [genreId, setGenreId] = useState('')
   const [subGenreId, setSubGenreId] = useState('')
   const [discoverId, setDiscoverId] = useState('')
+  const [artistName, setArtistName] = useState('')
   const [filterbtnStatus, setFilterbtnStatus] = useState(false)
+  const [buttonActive, setButtonActive] = useState(false)
 
   useEffect(() => {
     axios('https://accounts.spotify.com/api/token', {
@@ -91,6 +93,7 @@ const Selection = () => {
     setSubGenreId('')
     setArtistId('')
     setDiscoverId('')
+    setButtonActive(true)
         
     try{
       let playlistIDResponse = await axios({
@@ -141,9 +144,12 @@ const Selection = () => {
     console.log(artistsInfo)
 
     setArtistId(artistsInfo[0].id)
+    setArtistName(artistsInfo[0].name)
     setGenreId('')
     setSubGenreId('')
     setDiscoverId('')
+    setButtonActive(true)
+    console.log(artistName)
     console.log('val: ' + val)
 
     axios(`https://api.spotify.com/v1/recommendations?limit=70&seed_artists=${val}`, {
@@ -193,6 +199,7 @@ const Selection = () => {
     setGenreId('')
     setArtistId('')
     setDiscoverId('')
+    setButtonActive(true)
     console.log('val: ' + val)
 
      axios(`https://api.spotify.com/v1/search?q=genre:%22${val}%22&type=track&limit=50`, {
@@ -230,6 +237,7 @@ const Selection = () => {
     setGenreId('')
     setSubGenreId('')
     setArtistId('')
+    setButtonActive(true)
     console.log('val: ' + val)
 
       axios(`https://api.spotify.com/v1/search?q=artist:%22${val}%22&type=track&limit=50`, {
@@ -252,7 +260,7 @@ const Selection = () => {
     ( <div className='filter-container'>
         <Filter 
         title='ArtistsTracks'
-        name={genreId || subGenreId || discoverId}
+        name={genreId || subGenreId || discoverId || artistName}
         artiststracklist={
             genreId ? genreTracks.listOfGenretracksFromAPI
           : artistId ? artistsTracks.listOfArtiststracksFromAPI 
@@ -329,7 +337,7 @@ const Selection = () => {
         <div className='choices'>
         <div className='boxresult'>
           <h1 className='happychoices'>Happy with your choices?</h1>          
-            <button className='filter-btn' onClick={filterbtnClicked}>
+            <button className='filter-btn' disabled={!buttonActive} onClick={filterbtnClicked}>
             <div className='filter-firstlink'> Get your Songs
             </div>
             <div className='filter-secondlink'> Get your Songs

@@ -20,44 +20,54 @@ $main-bgcolor: #050124;
 }
 
 .discover-checkbox {
- 	height: 100px;
- 	width: 100px;
- 	margin-top: 5px;
- 	margin-left: 5px;
- 	position: absolute;
- 	z-index: 6;
- }
+	height: 100px;
+	width: 100px;
+	margin-top: 5px;
+	margin-left: 5px;
+	position: absolute;
+	z-index: 6;
+}
 
 .discover-box {
 	margin: 19px;
 	display: flex;
 	flex-flow: row wrap;
-  max-width: 900px;
-  width: 100%;
+	max-width: 900px;
+	width: 100%;
 }
 
- .discover-box input {
- 	opacity: 0;
- 	background-color: transparent;
- 	cursor: pointer;
- }
+.discover-box input {
+	opacity: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
 
- .discover-box input:checked {
- 	opacity: 0;
- 	background-color: transparent;
- }
+.discover-box input:checked {
+	opacity: 0;
+	background-color: transparent;
+}
 
- .discover-box input:checked ~ .box {
- 	height: 98px;
- 	width: 98px;
- 	margin-top: 5px;
- 	margin-left: 5px;
- 	border-radius: 5px;
- 	box-shadow: 0 0 2px 3px rgb(124, 240, 255);
- 	position: absolute;
- 	cursor: pointer;
- 	z-index: 6;
- }
+.discover-box input:checked ~ .box {
+	height: 98px;
+	width: 98px;
+	margin-top: 5px;
+	margin-left: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 2px 3px rgb(124, 240, 255);
+	background-color: #1a1737;
+	position: absolute;
+	cursor: pointer;
+	z-index: 5;
+}
+
+.discover-box input:checked ~ .box .fa-heart {
+	display: block;
+	color: $main-color;
+	font-size: 35px;
+	text-align: center;
+	margin-top: 25px;
+	z-index: 6;
+}
 
 .discover-image:hover,
 .discover-name:hover {
@@ -79,7 +89,7 @@ $main-bgcolor: #050124;
 	padding: 0 2px;
 	height: 30px;
 	width: 98px;
-	z-index: 5;
+	z-index: 6;
 }
 
 .discover-image {
