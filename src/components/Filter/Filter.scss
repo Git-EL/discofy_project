@@ -1,6 +1,19 @@
 $main-color: #8bffff;
 $main-bgcolor: #050124;
 
+@mixin animation-button {
+	height: 45px;
+	font: normal 700 1em/2.5em Arial, sans-serif;
+	overflow: hidden;
+	width: 200px;
+	background-color: $main-color;
+	border-radius: 50px;
+	border-style: solid;
+	border-color: $main-color;
+	outline: transparent;
+	text-transform: uppercase;
+  }
+
 .filter-container h3 {
 	color: $main-color;
 	font-size: 30px;
@@ -135,7 +148,6 @@ $main-bgcolor: #050124;
 	justify-content: center;
 }
 
-.playlist-btn,
 .filter-container .back-btn {
 	border-radius: 5px;
 	text-transform: uppercase;
@@ -144,6 +156,14 @@ $main-bgcolor: #050124;
 	max-width: 170px;
 	width: 100%;
 	border: solid transparent 1px;
+}
+
+.playlist-btn{
+	padding: 10px;
+	margin: 10px;
+	max-width: 170px;
+	width: 100%;
+
 }
 .track-info {
 	margin: 0 20px 10px;
@@ -270,6 +290,46 @@ $main-bgcolor: #050124;
 	-ms-transform: rotate(45deg);
 	transform: rotate(45deg);
 }
+.playlist-btn {
+	@include animation-button;
+	 cursor: pointer;
+	 margin-top: 10px;
+   }
+
+.playlist-btn, .playlist-firstlink{
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+
+.playlist-firstlink{
+	margin-top: -6px;
+}
+
+.playlist-btn, .playlist-firstlink{
+	color: $main-bgcolor;
+	text-decoration: none;
+	text-align: center;
+	display: block; /* important */
+}
+
+.playlist-btn:hover{
+  background-color: transparent;
+  border-color: $main-color;
+
+ .playlist-secondlink{
+    color: $main-color;
+  }
+  .playlist-firstlink{
+	  margin-top: -48px;
+  }
+}
+
+
+
 @media screen and (max-width: 760px) {
 	h3{
 		padding: 10px;
