@@ -10,6 +10,13 @@ const Navbar = () => {
   const handleLogin = () => {
     window.location = `${spotify_authUrl}?client_id=${spotify_clientId}&redirect_uri=${spotify_redirectUrl}&response_type=token&show_dialog=true&scope=user-library-read+user-follow-read+user-top-read+playlist-modify-private+playlist-modify-public`
   }
+  const logOut = () => {
+    localStorage.clear();
+    if (localStorage.getItem(handleLogin)){
+      window.location.reload();
+    }
+    return 'you were logout';
+  }
   const [navLinkOpen, navLinkToggle] = useState(false)
   const handleNavLinksToggle = () => {
     navLinkToggle(!navLinkOpen)
@@ -43,6 +50,12 @@ const Navbar = () => {
         <li className='link'>
           <button onClick={handleLogin}>
             <Link to='/'> Login
+            </Link>
+          </button>
+        </li>
+        <li className='link'>
+          <button onClick={logOut}>
+            <Link to='/'> Logout
             </Link>
           </button>
         </li>
