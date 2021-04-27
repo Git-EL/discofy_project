@@ -337,7 +337,7 @@ const Selection = () => {
         <div className='choices'>
         <div className='boxresult'>
          <h1 className='happychoices'>Happy with your choices?</h1>          
-         <div className='yourchoice'>Your pick is<p className='categorypick'>{genreId || subGenreId || discoverId || artistName}</p> </div>   
+         <div className='yourchoice'>Your pick is<p className='categorypick'>{genreId.trim().replaceAll("_", " ") || subGenreId || discoverId || artistName}</p> </div>   
          <button className='filter-btn' disabled={!buttonActive} onClick={filterbtnClicked}>
             <div className='filter-firstlink'> Get your Songs
             </div>
