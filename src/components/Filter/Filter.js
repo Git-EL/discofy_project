@@ -72,7 +72,7 @@ const Filter = (props) => {
       }   
    }
 
-   const PopupExample = () => (
+   const PopupPlaylist = () => (
     <Popup trigger={<button type="submit" className="playlist-btn">
       <div className='playlist-firstlink'>Create Playlist</div>
       <div className='playlist-secondlink'>Create Playlist</div>
@@ -90,8 +90,8 @@ const Filter = (props) => {
         <div className="track-box2">
       <button type="button" className="back-btn" onClick={() => history.goBack()}>
         <i className="fas fa-arrow-left"></i>Back to Category Selection</button>
-      <p className="trackbox-titletext">These are your song recommendations for 
-      <span className="choiceName">{props.name.includes("_")? props.name.trim().replaceAll("_", " "): props.name}</span></p>
+      <div className="trackbox-titletext">These are your song recommendations for 
+      <p className="choiceName">{props.name.includes("_")? props.name.trim().replaceAll("_", " ") : props.name}</p></div>
       <p className="trackbox-text">Hover over the images to get song previews and pick your songs for your Discofy playlist</p>
       </div> 
         <div className="tracklist-insidebox">   
@@ -141,7 +141,7 @@ const Filter = (props) => {
         }
       </div>
         <div className="play-box2">
-          <PopupExample />
+          <PopupPlaylist />
         </div>
       </div>
      </form>

@@ -33,6 +33,18 @@ $main-bgcolor: #050124;
   background-color: rgba(10, 1, 36, 0.529);
 }
 
+.yourchoice {
+  margin-top: 10px;
+  color: $main-color;
+  font-size: 25px;
+}
+
+.categorypick {
+  color: $main-color;
+  font-size: 30px;
+  text-transform: capitalize;
+}
+
 .tab-title {
   display: flex;
   align-content: center;
@@ -103,13 +115,13 @@ $main-bgcolor: #050124;
 .boxresult {
   position: fixed;
   margin: auto;
-  margin: 300px 30px 0 30px;
+  margin: 250px 30px 0 30px;
 }
 
 .happychoices {
   color: white;
   font-size: 3vw;
-  padding: 15px 10px 0;
+  padding: 0 10px;
   font-family: "Nunito Sans", sans-serif;
   letter-spacing: 2px;
 }
@@ -120,6 +132,43 @@ $main-bgcolor: #050124;
   width: 190px;
   cursor: pointer;
 }
+
+
+// .filter-btn:disabled,
+// .filter-btn[disabled] {
+//   border: 1px solid #999999;
+//   background-color: #cccccc;
+//   color: #666666;
+// }
+
+// .filter-btn:hover:disabled,.filter-firstlink:hover:disabled,
+// .filter-btn:hover[disabled],.filter-firstlink:hover[disabled] {
+//   border: 1px solid #999999;
+//   background-color: #cccccc;
+//   color: #666666;
+//   -webkit-transition: none;
+//   -moz-transition: none;
+//   -ms-transition: none;
+//   -o-transition: none;
+//   transition: none;
+// }
+
+.filter-btn[disabled]:active, .filter-btn[disabled],
+.filter-btn[disabled]:hover
+{
+  border: 2px solid ButtonFace;
+  color: GrayText;
+  cursor: inherit;
+  background-color: #ddd;
+  background: #ddd;
+  .filter-secondlink {
+    color: black;
+  }
+  .filter-firstlink {
+    margin-top: 2px;
+  }
+}
+
 .filter-btn,
 .filter-firstlink {
   -webkit-transition: 0.3s;
