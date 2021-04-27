@@ -46,7 +46,7 @@ $main-bgcolor: #050124;
   margin-bottom: 35px;
   border-bottom: 1px solid rgba(235, 233, 233, 0.282);
   line-height: 2.5em;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   letter-spacing: 2px;
 }
 
@@ -110,13 +110,14 @@ $main-bgcolor: #050124;
   color: white;
   font-size: 3vw;
   padding: 15px 10px 0;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   letter-spacing: 2px;
 }
 
 .filter-btn {
   @include animation-button;
   margin-top: 30px;
+  width: 190px;
   cursor: pointer;
 }
 .filter-btn,
@@ -146,8 +147,7 @@ $main-bgcolor: #050124;
     margin-top: -39px;
   }
 }
-
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 1030px) {
   .container {
     display: flex;
     flex-direction: column;

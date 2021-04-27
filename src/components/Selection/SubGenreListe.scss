@@ -1,0 +1,137 @@
+$main-color: #8bffff;
+$main-bgcolor: #050124;
+
+.subgenre-container {
+	border: solid 1px rgba(235, 233, 233, 0.282);
+	background-color: rgba(235, 233, 233, 0.091);
+	border-radius: 5px;
+	padding-right: 20px;
+}
+
+.fa-drum {
+	font-size: 40px;
+	color: $main-color;
+	margin-bottom: 5px;
+}
+
+.subgenre-container h4 {
+	margin: 20px 25px 0;
+	font-size: 17px;
+	color: white;
+}
+
+.subgenre-container .info-message {
+	color: rgba(235, 233, 233, 0.8);
+	font-size: 14px;
+	margin: 5px 25px 0;
+}
+
+.subgenre-container .missing-message {
+	color: white;
+	font-size: 14px;
+	padding: 20px 6px;
+}
+
+.subgenre-container .info-message {
+	color: rgba(235, 233, 233, 0.8);
+	font-size: 14px;
+	margin: 5px 25px 0;
+}
+
+.subgenre-container .missing-message > .fa-times-circle {
+	color: rgb(240, 113, 113);
+}
+
+.subgenre-container .missing-message > a {
+	color: $main-color;
+}
+
+.subgenre-container .missing-message > a:visited {
+	color: $main-color;
+}
+
+.subgenre-container .subgenre-name {
+	background-image: url('https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753__340.jpg');
+	height: 100px;
+	width: 100px;
+	margin: 5px;
+	// background-image: linear-gradient(to bottom right, rgba(235, 233, 233, 0.282),transparent,#191744);
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid rgba(235, 233, 233, 0.282);
+}
+
+.subgenre-name > p {
+	font-size: 10px;
+	color: white;
+	background-color: rgba(19, 16, 43, 0.7);
+	letter-spacing: 1px;
+	text-align: center;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: capitalize;
+	margin-top: 60px;
+	padding: 0 2px;
+	height: 30px;
+	width: 98px;
+	z-index: 6;
+}
+
+.subgenre-checkbox {
+	height: 100px;
+	width: 100px;
+	margin-top: -105px;
+	margin-left: 5px;
+	position: absolute;
+	z-index: 6;
+}
+
+.subgenre-box {
+	margin: 19px 0 19px 19px;
+	display: flex;
+	flex-flow: row wrap;
+	max-width: 900px;
+	color: white;
+}
+
+.subgenre-box > .genre-div {
+	width: 100px;
+	height: 100px;
+}
+
+.subgenre-box input {
+	opacity: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.subgenre-box input:checked {
+	opacity: 0;
+	background-color: transparent;
+}
+
+.subgenre-box input:checked ~ .box {
+	height: 98px;
+	width: 98px;
+	margin-top: -104px;
+	margin-left: 6px;
+	border-radius: 5px;
+	box-shadow: 0 0 2px 3px rgb(124, 240, 255);
+	background-color: #1a1737;
+	position: absolute;
+	cursor: pointer;
+	z-index: 5;
+}
+
+.subgenre-box input:checked ~ .box .fa-heart {
+	display: block;
+	color: $main-color;
+	font-size: 35px;
+	text-align: center;
+	margin-top: 25px;
+	z-index: 6;
+}
