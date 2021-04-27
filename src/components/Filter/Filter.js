@@ -72,8 +72,11 @@ const Filter = (props) => {
       }   
    }
 
-  const PopupExample = () => (
-    <Popup trigger={<button type="submit" className="playlist-btn">Create Playlist</button>} position="right center">
+   const PopupExample = () => (
+    <Popup trigger={<button type="submit" className="playlist-btn">
+      <div className='playlist-firstlink'>Create Playlist</div>
+      <div className='playlist-secondlink'>Create Playlist</div>
+      </button>} position="right center">
       <div className="popup">Done! Take a look at your new Playlist on Spotify!</div>
     </Popup>
   )
