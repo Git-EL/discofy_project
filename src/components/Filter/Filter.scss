@@ -12,7 +12,7 @@ $main-bgcolor: #050124;
 	border-color: $main-color;
 	outline: transparent;
 	text-transform: uppercase;
-  }
+}
 
 .filter-container h3 {
 	color: $main-color;
@@ -24,30 +24,27 @@ $main-bgcolor: #050124;
 	margin: 0 105px;
 	padding-top: 80px;
 }
-.logo_small2{
+.logo_small2 {
 	width: 90%;
 	max-width: 150px;
 	position: absolute;
 	margin-top: 20px;
 	margin-left: 700px;
-  }
-
-.filter-container .choiceName {
-	text-transform: capitalize;
-	color: white;
-	margin: 10px 105px 20px;
 }
+
+//filter image abstände
 .filter-outerbox {
 	width: 100px;
 	height: 100px;
+	margin: 4px;
 }
 .filter-box {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
 	color: white;
-	border: solid 1px red;
-	padding: 0 30px 50px;
+	// border: solid 1px red;
+	padding: 30px 30px 50px;
 	min-height: 100vh;
 	height: 100%;
 }
@@ -60,17 +57,21 @@ $main-bgcolor: #050124;
 	width: 100px;
 	border-radius: 5px;
 }
+
 .tracklist-insidebox {
-	border: solid 1px rgb(229, 255, 0);
+	border: solid 1px rgba(235, 233, 233, 0.282);
 	width: 90%;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(100px, auto));
-	gap: 10px;
-	margin: 30px auto;
+	margin: 0 auto;
 	overflow-y: scroll;
 	scrollbar-width: none; /* Firefox */
-	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
 	height: 600px;
+}
+
+.tracklist-insideflex {
+	display: flex;
+	flex-flow: wrap;
+	// margin: 10px;
 }
 
 .tracklist-box {
@@ -80,7 +81,7 @@ $main-bgcolor: #050124;
 	border-radius: 5px 5px;
 	max-width: 750px;
 	width: 100%;
-	height: 750px;
+	height: 770px;
 }
 
 .playlist-box {
@@ -90,20 +91,21 @@ $main-bgcolor: #050124;
 	border-radius: 5px 5px;
 	max-width: 500px;
 	width: 100%;
-	height: 750px;
+	height: 770px;
 }
 
 .play-box1 {
 	width: 90%;
-	margin: 30px auto;
-	height: 600px;
+	margin: 30px auto 10px;
+	height: 630px;
 	overflow-y: scroll;
 	scrollbar-width: none; /* Firefox */
-	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+	-ms-overflow-style: none; /* Internet Explorer 10+ */
 	border: solid 1px rgb(0, 255, 21);
 }
 
-.play-box1::-webkit-scrollbar, .tracklist-insidebox::-webkit-scrollbar {
+.play-box1::-webkit-scrollbar,
+.tracklist-insidebox::-webkit-scrollbar {
 	width: 0px;
 	background-color: transparent;
 }
@@ -118,57 +120,132 @@ $main-bgcolor: #050124;
 // 	width: 8px;
 // }
 
-.popup {
-	width: 187px;
-	height: 70px;
-	background-color: rgba(235, 233, 233, 0.282);
+.playlist-songtitle {
 	font-weight: bold;
-	margin-left: 10px;
+	font-size: 18px;
+	margin-bottom: 5px;
 }
+
+.playlist-artistname {
+	color: rgba(235, 233, 233, 0.7);
+	font-size: 16px;
+}
+
+.playlist-albumtitle {
+	color: rgba(235, 233, 233, 0.7);
+	font-size: 16px;
+	text-transform: capitalize;
+}
+
+.rmv-btn {
+	position: relative;
+	left: 380px;
+	top: 30px;
+	border: transparent;
+	background-color: transparent;
+	cursor: pointer;
+	margin-top: -30px;
+ }
+
+.track-info .fa-minus-circle {
+	font-size: 20px;
+	color: white;
+	pointer-events: none;
+}
+
+.popup {
+	width: 190px;
+	color: $main-color;
+	background-color: $main-bgcolor;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px;
+	border-radius: 5px;
+}
+.popup-content {
+	margin: auto;
+	background: $main-bgcolor;
+	width: 50%;
+	padding: 5px;
+	border: solid 2px rgba(235, 233, 233, 0.282);
+}
+.popup a {
+	color: $main-color;
+	font-weight: bold;
+}
+.popup a:hover {
+	color:white;
+}
+.fa-thumbs-up {
+	font-size: 30px;
+	padding-bottom: 5px;
+	color: white;
+}
+.done {
+	color: white;
+	font-size: 25px;
+}
+
 .play-box2 {
 	width: 90%;
-	margin: 30px auto;
-	border: solid 1px rgb(0, 255, 21);
+	margin: 0 auto;
+	border: solid 1px rgb(217, 255, 0);
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 }
 .playlist-box h2 {
-	margin: 0 20px 20px;
+	margin: 0 20px 10px;
 	border-bottom: 1px solid rgba(235, 233, 233, 0.282);
 	line-height: 2.5em;
 }
 
 .track-box2 {
 	width: 90%;
-	margin: 30px auto;
-	border: solid 1px rgb(0, 255, 21);
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	margin: 20px auto 20px;
+	// border: solid 1px rgb(255, 123, 0);
 }
 
-.filter-container .back-btn {
-	border-radius: 5px;
-	text-transform: uppercase;
-	padding: 10px;
-	margin: 10px;
-	max-width: 170px;
-	width: 100%;
+.trackbox-titletext {
+	font-size: 17px;
+	color: white;
+	font-weight: bold;
+}
+
+.trackbox-text {
+	color: rgba(235, 233, 233, 0.7);
+	font-size: 14px;
+	margin: 2px 0;
+}
+
+.filter-container .choiceName {
+	text-transform: capitalize;
+	color: $main-color;
+	margin-left: 5px;
+}
+
+button.back-btn {
 	border: solid transparent 1px;
+	color: rgba(235, 233, 233, 0.5);
+	font-size: 13px;
+	background-color: transparent;
+	cursor: pointer;
+	margin-bottom: 30px;
 }
 
-.playlist-btn{
-	padding: 10px;
-	margin: 10px;
-	max-width: 170px;
-	width: 100%;
-
+button.back-btn:hover {
+	color: white;
+	text-decoration: underline;
 }
+
+.fa-arrow-left {
+margin-right: 5px;
+}
+
 .track-info {
 	margin: 0 20px 10px;
 	border-bottom: 1px solid rgba(235, 233, 233, 0.082);
-	line-height: 1.3em;
+	line-height: 1.2em;
 	font-family: 'Nunito Sans', sans-serif;
 	letter-spacing: 0.5px;
 	padding-bottom: 15px;
@@ -292,50 +369,51 @@ $main-bgcolor: #050124;
 }
 .playlist-btn {
 	@include animation-button;
-	 cursor: pointer;
-	 margin-top: 10px;
-   }
-
-.playlist-btn, .playlist-firstlink{
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+	cursor: pointer;
+	padding: 8.5px;
+	margin: 10px;
+	max-width: 175px;
+	width: 100%;
 }
 
+.playlist-btn,
+.playlist-firstlink {
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
 
-.playlist-firstlink{
+.playlist-firstlink {
 	margin-top: -6px;
 }
 
-.playlist-btn, .playlist-firstlink{
+.playlist-btn,
+.playlist-firstlink {
 	color: $main-bgcolor;
 	text-decoration: none;
 	text-align: center;
 	display: block; /* important */
 }
 
-.playlist-btn:hover{
-  background-color: transparent;
-  border-color: $main-color;
+.playlist-btn:hover {
+	background-color: transparent;
+	border-color: $main-color;
 
- .playlist-secondlink{
-    color: $main-color;
-  }
-  .playlist-firstlink{
-	  margin-top: -48px;
-  }
+	.playlist-secondlink {
+		color: $main-color;
+	}
+	.playlist-firstlink {
+		margin-top: -47px;
+	}
 }
 
-
-
 @media screen and (max-width: 760px) {
-	h3{
+	h3 {
 		padding: 10px;
-		
 	}
-	
+
 	.filter-box {
 		flex-direction: column;
 		align-items: center;
@@ -346,5 +424,4 @@ $main-bgcolor: #050124;
 	.playlist-box {
 		margin-top: 80px;
 	}
-	
 }

@@ -25,7 +25,7 @@ const clicked = e => {
                 </div>
                
                 <input type="radio" onChange={clicked} id={item.id} value={item.artists[0].name} className="discover-checkbox" name="choice"></input>
-                <div className="box"></div>
+                <div className="box"><i className="far fa-heart"></i></div>
           
           <img src={item.images[0].url} alt="discover" className="discover-image" id={item.id} />
            
