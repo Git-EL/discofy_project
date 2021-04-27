@@ -3,9 +3,9 @@ $main-bgcolor: #050124;
 
 .discover-container {
 	border: solid 1px rgba(235, 233, 233, 0.282);
-	border-radius: 20px;
 	background-color: rgba(235, 186, 247, 0.1);
-	border-radius: 5px 0 0 5px;
+	border-radius: 5px;
+	padding-right: 35px;
 }
 
 .discover-container h4 {
@@ -82,25 +82,6 @@ $main-bgcolor: #050124;
 	z-index: 5;
 }
 
-// .newreleases-name {
-// 	font-size: 10px;
-// 	color: white;
-//   background-color: rgba(0,0,0,0.6);
-// 	letter-spacing: 1px;
-// 	text-align: center;
-// 	position: absolute;
-//   margin-top: 58px;
-//   margin-left: 5px;
-//   padding: 1px 2px;
-// 	height: 42px;
-// 	width: 98px;
-// 	z-index: 5;
-// }
-
-// .newreleases-name .artistname {
-// 	color: rgb(158, 176, 196);
-// }
-
 .discover-image {
 	height: 100px;
 	width: 100px;
@@ -115,6 +96,12 @@ $main-bgcolor: #050124;
 	font-size: 40px;
 	color: $main-color;
 	margin-bottom: 5px;
+}
+
+@media screen and (max-width: 660px) {
+	.discover-container {
+		border-radius: 5px 0;
+	}
 }
 
 @media screen and (max-width: 359px) {

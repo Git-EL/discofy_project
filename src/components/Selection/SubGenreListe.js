@@ -18,11 +18,11 @@ const SubGenreListe = props => {
       <p className="info-message">Get a variety of song recommendations based on your chosen sub-genre.</p>
       <div key={0} className="subgenre-box">
         {props.usergenrelist.length > 0 ? props.usergenrelist.map((item, idx)  => 
-                <div key={idx + 1} div="tree">
+                <div key={idx + 1} div="genre-div">
                 <div className="subgenre-name" id={item.value}><p>{item.name}</p></div>
                
                 <input type="radio" onChange={clicked} id={item.value} className="subgenre-checkbox" name="choice"></input>
-                <div className="box"></div>
+                <div className="box"><i className="far fa-heart"></i></div>
                  
                   </div>): <p className="missing-message"><i className="far fa-times-circle"></i> Unfortunately you are not following any artist.
                   Please <a href="https://open.spotify.com/" target="_blank" rel="noreferrer">follow some artists on Spotify</a> and come back!</p>

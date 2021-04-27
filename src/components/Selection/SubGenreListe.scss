@@ -4,26 +4,8 @@ $main-bgcolor: #050124;
 .subgenre-container {
 	border: solid 1px rgba(235, 233, 233, 0.282);
 	background-color: rgba(235, 233, 233, 0.091);
-	border-radius: 5px 0 0 5px;
-  min-height: 100vh;
-	margin: 0 auto 50px;
-	width: 60.4vw;
-}
-
-.subgenre-box {
-	margin: 19px;
-	display: flex;
-	flex-wrap: wrap;
-	color: white;
-	border: blue 1px solid;
-}
-
-.subgenre-box div {
-	height: 110px;
-}
-
-.subgenre-box .box {
-	display: none
+	border-radius: 5px;
+	padding-right: 20px;
 }
 
 .fa-drum {
@@ -48,6 +30,12 @@ $main-bgcolor: #050124;
 	color: white;
 	font-size: 14px;
 	padding: 20px 6px;
+}
+
+.subgenre-container .info-message {
+	color: rgba(235, 233, 233, 0.8);
+	font-size: 14px;
+	margin: 5px 25px 0;
 }
 
 .subgenre-container .missing-message > .fa-times-circle {
@@ -76,13 +64,21 @@ $main-bgcolor: #050124;
 }
 
 .subgenre-name > p {
-	width: 90%;
-	color: white;
-	text-align: center;
-	justify-content: center;
-	text-transform: capitalize;
-	letter-spacing: 1px;
 	font-size: 10px;
+	color: white;
+	background-color: rgba(19, 16, 43, 0.7);
+	letter-spacing: 1px;
+	text-align: center;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-transform: capitalize;
+	margin-top: 60px;
+	padding: 0 2px;
+	height: 30px;
+	width: 98px;
+	z-index: 6;
 }
 
 .subgenre-checkbox {
@@ -92,6 +88,19 @@ $main-bgcolor: #050124;
 	margin-left: 5px;
 	position: absolute;
 	z-index: 6;
+}
+
+.subgenre-box {
+	margin: 19px 0 19px 19px;
+	display: flex;
+	flex-flow: row wrap;
+	max-width: 900px;
+	color: white;
+}
+
+.subgenre-box > .genre-div {
+	width: 100px;
+	height: 100px;
 }
 
 .subgenre-box input {
@@ -106,21 +115,23 @@ $main-bgcolor: #050124;
 }
 
 .subgenre-box input:checked ~ .box {
-	display: block;
 	height: 98px;
 	width: 98px;
 	margin-top: -104px;
 	margin-left: 6px;
 	border-radius: 5px;
 	box-shadow: 0 0 2px 3px rgb(124, 240, 255);
+	background-color: #1a1737;
 	position: absolute;
 	cursor: pointer;
-	z-index: 6;
+	z-index: 5;
 }
 
-
-@media screen and (max-width: 950px) {
-	.subgenre-container {
-		width: 100%;
-	}
+.subgenre-box input:checked ~ .box .fa-heart {
+	display: block;
+	color: $main-color;
+	font-size: 35px;
+	text-align: center;
+	margin-top: 25px;
+	z-index: 6;
 }

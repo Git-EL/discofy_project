@@ -21,7 +21,7 @@ const clicked = e => {
                 <div key={idx + 1}>
                 <div className="discover-name">
                   {/* <p className="albumtitle">{item.name}</p> */}
-                  <p className="artistname">{item.artists[0].name}</p>
+                  <p className="artistname">{item.artists[0].name.length > 28 ? item.artists[0].name.substring(0, 28) + "..." : item.artists[0].name}</p>
                 </div>
                
                 <input type="radio" onChange={clicked} id={item.id} value={item.artists[0].name} className="discover-checkbox" name="choice"></input>

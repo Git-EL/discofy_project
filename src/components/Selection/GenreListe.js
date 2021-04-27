@@ -16,10 +16,10 @@ const GenreListe = props => {
       <div key={0} className="genre-box">
         {props.genrelist.map((item, idx) => 
         <div key={idx + 1}>
-          <div className="genre-name" value={item.id} id={item.id} >{item.name}</div>
+          <div className="genre-name">{item.name}</div>
          
           <input type="radio" onChange={clicked} id={item.id} className="genre-checkbox" name="choice"></input>
-          <div className="box"></div>
+          <div className="box"><i className="far fa-heart"></i></div>
          
           <img src={item.icons[0].url} alt="genre" className="genre-image" id={item.id} />
            

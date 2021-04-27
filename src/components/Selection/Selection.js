@@ -264,8 +264,8 @@ const Selection = () => {
     :
     ( 
     <div className='container'>
-      <h3>Take your pick</h3>
       <div className='inner-container'>
+      <h3>Take your pick</h3>
         <Tabs>
           <TabList className='tab-title'>
             <Tab onClick={genrebuttonClicked}>
@@ -324,6 +324,8 @@ const Selection = () => {
             </div>
           </TabPanel>
         </Tabs>
+
+        </div>
         <div className='choices'>
         <div className='boxresult'>
           <h1 className='happychoices'>Happy with your choices?</h1>          
@@ -331,10 +333,9 @@ const Selection = () => {
             <div className='filter-firstlink'> Get your Songs
             </div>
             <div className='filter-secondlink'> Get your Songs
-           </div>
+          </div>
             </button>
           </div>
-        </div>
         </div>
       </div>)) 
 }

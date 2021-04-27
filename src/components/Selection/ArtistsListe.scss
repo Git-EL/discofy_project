@@ -4,7 +4,8 @@ $main-bgcolor: #050124;
 .artist-container {
 	border: solid 1px rgba(235, 233, 233, 0.282);
 	background-color: rgba(235, 233, 233, 0.091);
-	border-radius: 5px 0 0 5px;
+	border-radius: 5px;
+	padding-right: 35px;
 }
 
 .artist-container h4 {
@@ -101,13 +102,18 @@ $main-bgcolor: #050124;
 .artist-name {
 	font-size: 10px;
 	color: white;
+	background-color: rgba(19, 16, 43, 0.7);
 	letter-spacing: 1px;
 	text-align: center;
-	position: relative;
-	height: 0;
-	text-align: center;
-	width: 108px;
-	top: 45%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 70px;
+	margin-left: 5px;
+	padding: 0 2px;
+	height: 30px;
+	width: 98px;
 	z-index: 5;
 }
 
