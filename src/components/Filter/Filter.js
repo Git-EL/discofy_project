@@ -13,6 +13,7 @@ const Filter = (props) => {
   const [selectedTracks, setSelectedTracks] = useState({ playlistTracks: [] });
   const [userID, setUserID] = useState('');
   const [trackID, setTrackID] = useState('');
+  const [songSelected, setSongSelected] = useState(0);
   const history = useHistory();
 
   const addTracks = event => {
@@ -23,6 +24,7 @@ const Filter = (props) => {
      addedTracks = addedTracks.filter(track => track !== event.target.value);
    } 
    setSelectedTracks({ playlistTracks: addedTracks }); 
+   setSongSelected(selectedTracks.playlistTracks.length + 1)
  };console.log(selectedTracks)
  
   const deleteTrack = event => {
@@ -31,6 +33,7 @@ const Filter = (props) => {
   setSelectedTracks(prevState => ({ 
     playlistTracks: prevState.playlistTracks.filter(track =>  track !== event.target.value) 
     }))
+    setSongSelected(selectedTracks.playlistTracks.length - 1)
   };
   
    useEffect(() => {
@@ -81,6 +84,10 @@ const Filter = (props) => {
     </Popup>
   )
 
+  const SelectedTracksCount = () => {
+    return <div className="track-counter">You have {songSelected} tracks selected</div>
+   }
+
   return (
     <div className='col-sm-10'>
       <img src={discofy_logo_small} alt='discofy-logo' className='logo_small' />
@@ -127,6 +134,7 @@ const Filter = (props) => {
     </div>
     <div key={1} className="playlist-box">
     <h2 className="playlist-title">Discofy Playlist</h2>
+    <SelectedTracksCount />  
       <div className="play-box1">
         {props.artiststracklist.map((item, idx) => 
         // <div key={idx + 1} value={item.id}>
@@ -144,7 +152,7 @@ const Filter = (props) => {
         }
       </div>
         <div className="play-box2">
-          <PopupPlaylist />
+         <PopupPlaylist />
         </div>
       </div>
      </form>

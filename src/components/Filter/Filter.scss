@@ -94,7 +94,7 @@ $main-bgcolor: #050124;
 .play-box1 {
 	width: 90%;
 	margin: 30px auto 10px;
-	height: 630px;
+	height: 600px;
 	overflow-y: scroll;
 	scrollbar-width: none; /* Firefox */
 	-ms-overflow-style: none; /* Internet Explorer 10+ */
@@ -217,6 +217,14 @@ h2.playlist-title {
 	font-family: 'Nunito Sans', sans-serif;
 	font-weight: bold;
 	letter-spacing: 0.6px;
+}
+
+.track-counter {
+	color: rgba(235, 233, 233, 0.7);
+	font-size: 14px;
+	margin: 30px 25px 0;
+	line-height: 0px;
+	font-family: 'Nunito Sans', sans-serif;
 }
 
 .trackbox-text {
