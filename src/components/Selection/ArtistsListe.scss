@@ -9,9 +9,11 @@ $main-bgcolor: #050124;
 }
 
 .artist-container h4 {
-	margin: 20px 25px 0;
-	font-size: 17px;
-	color: white;
+  margin: 20px 25px 0;
+  font-size: 17px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
+	letter-spacing: 0.6px;
 }
 
 .artist-box {
@@ -25,19 +27,14 @@ $main-bgcolor: #050124;
 .artist-container .info-message {
 	color: rgba(235, 233, 233, 0.8);
 	font-size: 14px;
-	margin: 5px 25px 0;
+	margin: 2px 25px 0;
+	font-family: 'Nunito Sans', sans-serif;
 }
 
 .artist-container .missing-message {
 	color: white;
 	font-size: 14px;
 	padding: 20px 6px;
-}
-
-.artist-container .info-message {
-	color: rgba(235, 233, 233, 0.8);
-	font-size: 14px;
-	margin: 5px 25px 0;
 }
 
 .artist-container .missing-message > .fa-times-circle {

@@ -34,15 +34,18 @@ $main-bgcolor: #050124;
 }
 
 .yourchoice {
-  margin-top: 10px;
+  margin-top: 15px;
   color: $main-color;
   font-size: 25px;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .categorypick {
   color: $main-color;
   font-size: 30px;
   text-transform: capitalize;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
 }
 
 .tab-title {
@@ -50,6 +53,9 @@ $main-bgcolor: #050124;
   align-content: center;
   text-align: center;
   color: $main-color;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .inner-container h3 {
