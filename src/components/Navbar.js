@@ -50,7 +50,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li className='link'>
-          <Link to='/' onClick={handleLinksToggle}> Contact
+          <Link to='/contact' onClick={handleLinksToggle}> Contact
           </Link>
         </li>
         <li className='link, spacing-deco'>|
