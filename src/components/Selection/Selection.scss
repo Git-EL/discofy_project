@@ -20,15 +20,6 @@ $main-bgcolor: #050124;
   grid-template-areas: "content choicebar";
 }
 
-.logo_small{
-  width: 90%;
-  max-width: 100px;
-  margin-top: 10px;
-  position: absolute;
-  left: 
-  20px; top: 0;
-}
-
 .inner-container {
   grid-area: content;
   color: white;

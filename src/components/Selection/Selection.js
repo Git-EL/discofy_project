@@ -9,6 +9,7 @@ import axios from 'axios'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import artist_icon from '../../assets/artist_icon.svg'
 import { Redirect } from 'react-router-dom';
+import discofy_logo_small from '../../assets/discofy_logo_small.svg'
 
 const Selection = (props) => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
@@ -293,6 +294,7 @@ const Selection = (props) => {
     :
     ( 
     <div className='container'>
+     <img src={discofy_logo_small} alt='discofy-logo' className='logo_small' />
       <div className='inner-container'>
       <h3>Take your pick</h3>
         <Tabs>
