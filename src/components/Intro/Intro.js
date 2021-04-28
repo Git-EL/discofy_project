@@ -21,10 +21,11 @@ const Intro = () => {
   }
 
   return <div className='intro-container'>
+    <div className='intro-box'>
             <img src={discofy_logo_small} alt='discofy-logo' className='logo_small' />
-         <div>
-           <h1 className='Title'>Put your headphones or speakers on</h1>
-              <p className='untertitile'>This website plays lots of music</p>
+         <div className="title-box">
+           <h1 className='title'>Grab your headphones and turn up your speakers</h1>
+              <p className='sub-title'>Discover new music and get a personalized playlist</p>
          </div>
            <div className='card'>
              <div className='card-box'>
@@ -49,6 +50,7 @@ const Intro = () => {
              <div className='intro-firstlink'> {spotifyIcon} Login with Spotify</div>
              <div className='intro-secondlink'> {spotifyIcon} Login with Spotify</div>
            </button>
+         </div>
          </div>
 }
 

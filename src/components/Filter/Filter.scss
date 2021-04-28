@@ -170,7 +170,7 @@ $main-bgcolor: #050124;
 	background: $main-bgcolor;
 	width: 50%;
 	padding: 5px;
-	border: solid 2px rgba(235, 233, 233, 0.282);
+	border: solid 3px $main-color;
 }
 .popup a {
 	color: $main-color;
