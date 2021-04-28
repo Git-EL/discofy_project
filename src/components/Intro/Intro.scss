@@ -14,11 +14,13 @@ $main-bgcolor: #050124;
 	text-transform: uppercase;
 }
 
-.logo_small {
-	width: 90%;
-	max-width: 200px;
-	position: absolute;
-	margin-top: 850px;
+.logo_small{
+  width: 90%;
+  max-width: 100px;
+  margin-top: 10px;
+  position: absolute;
+  left: 
+  20px; top: 0;
 }
 
 .intro-container {
@@ -165,18 +167,19 @@ $main-bgcolor: #050124;
 		display: none;
 	}
 
-	.Title {
-		margin-left: 70px;
-		margin-right: 90px;
-		margin-top: 120px;
-	}
+  .Title{
+    margin-left: 70px;
+    margin-right: 90px;
+    margin-top: 120px;
+  }
+  
+  .untertitile{
+    margin-left: 70px;
+    margin-right: 90px;
+  }
 
-	.untertitile {
-		margin-left: 70px;
-		margin-right: 90px;
-	}
-
-	.logo_small {
-		margin-top: 1760px;
-	}
+  .logo_small{
+    margin-top: 1760px;
+    margin-left: 330px;
+  }
 }
