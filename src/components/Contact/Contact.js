@@ -12,7 +12,7 @@ function Contact ()  {
   const [job2] = useState('Full Stack Web Developer');
   const [about2 ] = useState('My interest...');
   return (
-    <div className="container">
+    <div className="contact-container">
 
     <div className='Card'>
       <div className='upper-container'>
@@ -54,11 +54,9 @@ function Contact ()  {
    </div>
    <div className="ft-social">
      <ul className="ft-social-list">
-     <li><a href="https://github.com/Git-EL"><i class="fab fa-github" ></i></a></li>
-     <li><a href="mailto:lee_esther@live.com"><i class="fas fa-envelope-open-text"></i></a></li>
-     <li><a href="https://www.linkedin.com/in/esther-lee-627451205/"><i class="fab fa-linkedin"></i></a></li>
-
-    
+     <li><a href="https://github.com/Git-EL"><i className="fab fa-github" ></i></a></li>
+     <li><a href="mailto:lee_esther@live.com"><i className="fas fa-envelope-open-text"></i></a></li>
+     <li><a href="https://www.linkedin.com/in/esther-lee-627451205/"><i className="fab fa-linkedin"></i></a></li>
      </ul>
    </div>
    </div>

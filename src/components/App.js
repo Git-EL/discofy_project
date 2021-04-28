@@ -41,7 +41,7 @@ function App () {
             <Redirect isValidSession={isValidSession} setExpiryTime={setExpiryTime} {...props} />)} />
           <Route path='/selection' render={(props) => (
             <Selection isValidSession={isValidSession} {...props} />)} />
-          <Route path='*' component={Contact} />
+          <Route path='/contact' component={Contact} />
           <Route path='*' component={NotFound} />
         </Switch>
       </div>
