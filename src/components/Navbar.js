@@ -7,17 +7,25 @@ const Navbar = () => {
   const spotify_authUrl = process.env.REACT_APP_AUTHORIZE_URL
   // redirect muss noch geändert werden zur richtigen Adresse später
   const spotify_redirectUrl = process.env.REACT_APP_REDIRECT_URL
+  const [navLinkOpen, navLinkToggle] = useState(false)
+  const [logStatus, setLogStatus] = useState({loggedInStatus: false})
+
+
   const handleLogin = () => {
+    setLogStatus({loggedInStatus: false})
     window.location = `${spotify_authUrl}?client_id=${spotify_clientId}&redirect_uri=${spotify_redirectUrl}&response_type=token&show_dialog=true&scope=user-library-read+user-follow-read+user-top-read+playlist-modify-private+playlist-modify-public`
+
   }
+
   const logOut = () => {
+    setLogStatus({loggedInStatus: true})
     localStorage.clear();
     if (localStorage.getItem(handleLogin)){
       window.location.reload();
     }
     return 'you were logout';
   }
-  const [navLinkOpen, navLinkToggle] = useState(false)
+
   const handleNavLinksToggle = () => {
     navLinkToggle(!navLinkOpen)
   }
@@ -48,16 +56,16 @@ const Navbar = () => {
         <li className='link, spacing-deco'>|
           </li>
         <li className='link'>
-          <button onClick={handleLogin}>
-            <Link to='/'> Login
-            </Link>
-          </button>
-        </li>
-        <li className='link'>
-          <button onClick={logOut}>
-            <Link to='/'> Logout
-            </Link>
-          </button>
+        {logStatus.loggedInStatus ? (
+        <button onClick={handleLogin}>
+        <Link to='/'> Login
+        </Link>
+      </button>)
+        : (<button onClick={logOut}>
+        <Link to='/'> Logout
+        </Link>
+      </button>)
+        }
         </li>
       </ul>
       <div onClick={handleNavLinksToggle} className='hamburger-toggle'>

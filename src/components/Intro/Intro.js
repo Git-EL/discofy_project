@@ -3,12 +3,15 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpotify } from '@fortawesome/free-brands-svg-icons'
 import discofy_logo_small from '../../assets/discofy_logo_small.svg'
+import select_cat from '../../assets/select_cat.svg'
+import create_playlist from '../../assets/create_playlist.svg'
+import hover_icon from '../../assets/hover_icon.svg'
 
-
-
-const spotifyIcon = <FontAwesomeIcon icon={faSpotify} className='spotifyIcon' />
 
 const Intro = () => {
+
+  const spotifyIcon = <FontAwesomeIcon icon={faSpotify} className='spotifyIcon' />
+
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
   const spotify_authUrl = process.env.REACT_APP_AUTHORIZE_URL
   const spotify_redirectUrl = process.env.REACT_APP_REDIRECT_URL
@@ -18,27 +21,28 @@ const Intro = () => {
   }
 
   return <div className='intro-container'>
-            <img src={discofy_logo_small} alt='discofy-logo' className='logo_small' />
-         <div>
-           <h1 className='Title'>Put your headphones or speakers on.</h1>
-              <p className='untertitile'>This website plays (lots of) music.</p>
+    <div className='intro-box'>
+    <img src={discofy_logo_small} alt='discofy-logo' className='logo_small' />
+      <div className="title-box">
+           <h1 className='title'>Grab your headphones and turn up your speakers</h1>
+              <p className='sub-title'>Discover new music and get a personalized playlist</p>
          </div>
            <div className='card'>
-             <div className='card-image'>
-               <p className='icon-1'><i class="fas fa-hand-point-up"></i></p>
-               <p className='p-style'>Click to dag deeper</p>
+             <div className='card-box'>
+               <img src={select_cat} alt='select-category' className='select-category' />
+               <p className='p-style'>1. Choose your category</p>
               
              </div>
-             <div className='right'><i class="fas fa-angle-right"></i></div>
-             <div className='card-image'>
-               <p className='icon-2'><i class="fas fa-mouse-pointer"></i></p>
-               <p className='p-style'>Hover to listen a music</p>
+             <div className='right'><i className="fas fa-angle-right"></i></div>
+             <div className='card-box'>
+             <img src={hover_icon} alt='hover' className='hover-icon' />
+               <p className='p-style'>2. Hover to get song previews and pick your songs</p>
              </div>
              
-             <div className='right'><i class="fas fa-angle-right"></i></div>
-             <div className='card-image'>
-               <p className='icon-3'><i class="fab fa-creative-commons-sampling-plus"></i></p>
-               <p className='p-style'>Save to build your collection</p>
+             <div className='right'><i className="fas fa-angle-right"></i></div>
+             <div className='card-box'>
+             <img src={create_playlist} alt='create-playlist' className='create-playlist' />
+               <p className='p-style'>3. Create your playlist <br></br>and save it to Spotify</p>
             </div>
 
            </div>
@@ -46,6 +50,7 @@ const Intro = () => {
              <div className='intro-firstlink'> {spotifyIcon} Login with Spotify</div>
              <div className='intro-secondlink'> {spotifyIcon} Login with Spotify</div>
            </button>
+         </div>
          </div>
 }
 
