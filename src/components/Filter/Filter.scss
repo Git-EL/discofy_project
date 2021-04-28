@@ -26,10 +26,11 @@ $main-bgcolor: #050124;
 }
 .logo_small2 {
 	width: 90%;
-	max-width: 150px;
+	max-width: 100px;
+	margin-top: 10px;
 	position: absolute;
-	margin-top: 20px;
-	margin-left: 700px;
+	left: 
+	20px; top: 0;
 }
 
 //filter image abstände
@@ -425,4 +426,10 @@ margin-right: 5px;
 	.playlist-box {
 		margin-top: 80px;
 	}
+	.logo_small2{
+		margin-top: 1820px;
+		margin-left: 300px;
+		position: absolute;
+		
+	  }
 }

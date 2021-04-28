@@ -18,9 +18,11 @@ $main-bgcolor: #050124;
 
 .logo_small{
   width: 90%;
-  max-width: 200px;
+  max-width: 100px;
+  margin-top: 10px;
   position: absolute;
-  margin-top: 850px;
+  left: 
+  20px; top: 0;
 }
 
 
@@ -237,6 +239,7 @@ $main-bgcolor: #050124;
 
   .logo_small{
     margin-top: 1760px;
+    margin-left: 330px;
     
   }
   
