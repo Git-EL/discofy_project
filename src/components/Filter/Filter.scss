@@ -20,8 +20,8 @@ $main-bgcolor: #050124;
 	border-bottom: 1px solid rgba(235, 233, 233, 0.282);
 	line-height: 2.5em;
 	font-family: 'Nunito Sans', sans-serif;
-	letter-spacing: 2px;
-	margin: 0 105px;
+	letter-spacing: 1.5px;
+	margin: 0 105px 0 90px;
 	padding-top: 80px;
 }
 .logo_small2 {
@@ -59,7 +59,7 @@ $main-bgcolor: #050124;
 }
 
 .tracklist-insidebox {
-	border: solid 1px rgba(235, 233, 233, 0.282);
+	border: solid 1px rgba(158, 134, 134, 0.282);
 	width: 90%;
 	margin: 0 auto;
 	overflow-y: scroll;
@@ -81,7 +81,8 @@ $main-bgcolor: #050124;
 	border-radius: 5px 5px;
 	max-width: 750px;
 	width: 100%;
-	height: 770px;
+	height: 800px;
+	margin: 0 20px;
 }
 
 .playlist-box {
@@ -91,7 +92,8 @@ $main-bgcolor: #050124;
 	border-radius: 5px 5px;
 	max-width: 500px;
 	width: 100%;
-	height: 770px;
+	height: 800px;
+	margin: 0 30px;
 }
 
 .play-box1 {
@@ -197,7 +199,10 @@ $main-bgcolor: #050124;
 .playlist-box h2 {
 	margin: 0 20px 10px;
 	border-bottom: 1px solid rgba(235, 233, 233, 0.282);
-	line-height: 2.5em;
+	line-height: 2em;
+	font-family: 'Nunito Sans', sans-serif;
+	letter-spacing: 1.5px;
+	font-size: 30px;
 }
 
 .track-box2 {
@@ -207,15 +212,18 @@ $main-bgcolor: #050124;
 }
 
 .trackbox-titletext {
-	font-size: 17px;
+	font-size: 18px;
 	color: white;
+	font-family: 'Nunito Sans', sans-serif;
 	font-weight: bold;
+	letter-spacing: 0.6px;
 }
 
 .trackbox-text {
 	color: rgba(235, 233, 233, 0.7);
 	font-size: 14px;
 	margin: 2px 0;
+	font-family: 'Nunito Sans', sans-serif;
 }
 
 .filter-container .choiceName {
@@ -274,10 +282,23 @@ margin-right: 5px;
 	}
 }
 
+.fa-plus-circle {
+opacity: 0;
+	color: $main-color;
+	position: relative;
+	left: 33px;
+	bottom: 70px;
+	font-size: 35px;
+	z-index: 0
+}
+
 .filter-imagebox:hover {
 	cursor: pointer;
+	.fa-plus-circle {
+		opacity: 1;
+	}
 	.trackalbum-image {
-		box-shadow: 0 0 2px 2px #85fdff;
+		box-shadow: 0 0 2px 3px $main-color;
 	}
 	.checkmark {
 		position: absolute;
@@ -323,7 +344,7 @@ margin-right: 5px;
 .checkbox-container {
 	display: block;
 	position: relative;
-	bottom: 104px;
+	bottom: 138px;
 	left: 0px;
 	height: 100px;
 	width: 100px;
@@ -410,19 +431,15 @@ margin-right: 5px;
 	}
 }
 
-@media screen and (max-width: 760px) {
-	h3 {
-		padding: 10px;
+@media screen and (max-width: 790px) {
+	.filter-container h3 {
+		margin: 0 30px 0 30px;
 	}
-
 	.filter-box {
 		flex-direction: column;
 		align-items: center;
 	}
-	.tracklist-box {
-		padding: 20px;
-	}
 	.playlist-box {
-		margin-top: 80px;
+		margin-top: 40px;
 	}
 }

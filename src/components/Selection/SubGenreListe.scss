@@ -15,27 +15,24 @@ $main-bgcolor: #050124;
 }
 
 .subgenre-container h4 {
-	margin: 20px 25px 0;
-	font-size: 17px;
-	color: white;
+  margin: 20px 25px 0;
+  font-size: 17px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: bold;
+	letter-spacing: 0.6px;
 }
 
 .subgenre-container .info-message {
 	color: rgba(235, 233, 233, 0.8);
 	font-size: 14px;
-	margin: 5px 25px 0;
+	margin: 2px 25px 0;
+	font-family: 'Nunito Sans', sans-serif;
 }
 
 .subgenre-container .missing-message {
 	color: white;
 	font-size: 14px;
 	padding: 20px 6px;
-}
-
-.subgenre-container .info-message {
-	color: rgba(235, 233, 233, 0.8);
-	font-size: 14px;
-	margin: 5px 25px 0;
 }
 
 .subgenre-container .missing-message > .fa-times-circle {

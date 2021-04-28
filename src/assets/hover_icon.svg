@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="204.97969"
+   height="247.88098"
+   viewBox="0 0 204.97969 247.88097"
+   version="1.1"
+   id="svg7"
+   sodipodi:docname="hover_icon.svg"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)">
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview9"
+     showgrid="false"
+     inkscape:zoom="2.4270424"
+     inkscape:cx="109.61551"
+     inkscape:cy="112.67824"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg7"
+     inkscape:document-rotation="0" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">
+      .cls-1 {
+        fill: #c31616;
+      }
+    </style>
+  </defs>
+  <path
+     id="Icon_material-library-music"
+     data-name="Icon material-library-music"
+     class="cls-1"
+     d="M 97.831,59.394255 H 13.976 C 6.266615,59.416775 0.022517,65.66087 0,73.370255 v 83.854995 c 0.02252,7.70939 6.266615,13.95348 13.976,13.976 h 79.855 c 1.927346,-0.006 -14.896807,-31.69788 -13.843215,-34.82467 1.053591,-3.12679 -3.175121,-10.56831 -2.734005,-14.73454 0.441115,-4.16623 13.238771,6.23969 13.238771,6.23969 l 6.722069,1.97839 6.59238,2.88326 8,3.51812 V 125.77963 115.29775 104.81588 94.334004 83.852129 73.370255 c -0.0225,-7.709385 -6.26661,-13.953483 -13.975997,-13.976 z m -13.976,34.94 H 62.891 V 132.76726 C 62.8883,148.33245 44.069379,156.12147 33.066351,145.11467 22.063324,134.10786 29.85881,115.29159 45.424,115.29426 c 3.792549,-0.007 7.4799,1.24649 10.482,3.564 V 80.358255 h 27.952 z"
+     style="fill:#8bffff"
+     sodipodi:nodetypes="ccccccscccccccccccccccscccccc" />
+  <path
+     id="Icon_metro-volume-high"
+     data-name="Icon metro-volume-high"
+     d="m 172.58848,77.517496 a 5.469648,5.469648 0 0 1 -8.52594,-5.426526 52.873264,52.873264 0 0 0 -42.91568,-61.233354 5.4704727,5.4704727 0 0 1 1.89728,-10.77518385 63.80756,63.80756 0 0 1 51.79432,73.90164585 5.452646,5.452646 0 0 1 -2.24867,3.530058 z m -21.82792,2.703029 a 5.469648,5.469648 0 0 1 -8.52594,-5.426526 38.331541,38.331541 0 0 0 -31.07693,-44.341479 5.470473,5.470473 0 0 1 1.89311,-10.775919 49.226832,49.226832 0 0 1 39.95556,57.009771 5.4516459,5.4516459 0 0 1 -2.24867,3.530058 z m -21.83177,2.704506 a 5.469648,5.469648 0 0 1 -8.52594,-5.426526 23.728811,23.728811 0 0 0 -19.23818,-27.449604 5.469648,5.469648 0 0 1 1.89483,-10.773462 34.680109,34.680109 0 0 1 28.11682,40.117896 5.4536461,5.4536461 0 0 1 -2.24868,3.530058 z"
+     style="fill:#8bffff;fill-opacity:1;stroke-width:1.00012" />
+  <path
+     id="FontAwsome_mouse-pointer_"
+     data-name="FontAwsome (mouse-pointer)"
+     class="cls-1"
+     d="m 164.13724,168.2626 -21.99794,8.44422 22.40126,23.75594 c 1.52764,1.6119 1.50542,4.14373 -0.0503,5.72856 l -8.48466,8.35986 c -1.58419,1.52886 -4.11527,1.45777 -5.61117,-0.1576 l -21.28074,-22.55579 -10.8748,25.3831 c -1.42764,3.26105 -6.10873,3.09558 -7.30254,-0.25814 l -6.40503,-16.68571 -27.796162,-72.41143 c -1.30518,-3.4001 2.18945,-6.64393 5.25521,-5.07542 l 82.264592,38.02137 c 3.21823,1.47767 3.14571,6.07562 -0.11754,7.45104 z"
+     style="fill:none;stroke:#8bffff;stroke-width:5;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+     sodipodi:nodetypes="ccccccccccccccc" />
+</svg>

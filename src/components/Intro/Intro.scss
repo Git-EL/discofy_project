@@ -12,237 +12,171 @@ $main-bgcolor: #050124;
 	border-color: $main-color;
 	outline: transparent;
 	text-transform: uppercase;
-  
-  
-  }
-
-.logo_small{
-  width: 90%;
-  max-width: 200px;
-  position: absolute;
-  margin-top: 850px;
 }
 
-
-
-
-
-.intro-container  {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  height: 100%;
- 
+.logo_small {
+	width: 90%;
+	max-width: 200px;
+	position: absolute;
+	margin-top: 850px;
 }
 
-.Title{
-  color: $main-color;
-  margin-right: 470px;
-  margin-top: 100px;
+.intro-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	height: 100%;
 }
 
-.untertitile{
-  color: $main-color;
-  border-bottom: 1px solid rgba(235, 233, 233, 0.282);
+.Title {
+	color: $main-color;
+	margin-right: 470px;
+	margin-top: 100px;
+}
+
+.untertitile {
+	color: $main-color;
+	border-bottom: 1px solid rgba(235, 233, 233, 0.282);
 	line-height: 2.5em;
 }
 
-.button{
-  
-  height: 45px;
-  margin: 15px;
-  background-color: $main-color;
-  border-radius: 50px;
-  border-style: solid;
-  border-color: $main-color;
-  outline:transparent;
- 
+.button {
+	height: 45px;
+	margin: 15px;
+	background-color: $main-color;
+	border-radius: 50px;
+	border-style: solid;
+	border-color: $main-color;
+	outline: transparent;
 }
 
 .intro-container button:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
-
 
 .intro-btn {
 	@include animation-button;
-	 cursor: pointer;
-	 margin-top: 60px;
-   margin-bottom: 100px;
-   }
+	cursor: pointer;
+	margin-top: 60px;
+	margin-bottom: 100px;
+  width: 230px;
+}
 
 .intro-btn,
-.intro-firstlink{
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+.intro-firstlink {
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
 }
 
-
-.intro-firstlink{
-	margin-top: 4px;
+.intro-firstlink {
+	margin-top: 2px;
 }
 
-.intro-btn, .intro-firstlink{
+.intro-btn,
+.intro-firstlink {
 	color: $main-bgcolor;
 	text-decoration: none;
 	text-align: center;
 	display: block; /* important */
 }
 
-.intro-btn:hover{
-  background-color: transparent;
-  border-color: $main-color;
+.intro-btn:hover {
+	background-color: transparent;
+	border-color: $main-color;
 
-  .intro-secondlink{
-    color: $main-color;
-  }
-  .intro-firstlink{
-	  margin-top: -38px;
-  }
+	.intro-secondlink {
+		color: $main-color;
+	}
+	.intro-firstlink {
+		margin-top: -39px;
+	}
 }
 
+.card .right {
+	margin: 0 30px;
+	margin-top: 50px;
+	color: $main-color;
+	font-size: 5em !important;
+}
 
 .card {
-	grid-template-columns: repeat(auto-fit, minmax(100px, auto));
-  display: flex;
-  align-items: center;
-  width: 1100px;
-  
-  
-
-
-}
-
-.card-image{
-  color: white;
-	border: solid 1px rgba(158, 134, 134, 0.282);
-	background-color: rgba(235, 233, 233, 0.091);
-	border-radius: 5px 5px;
-	max-width: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
-	height: 420px;
-  margin-left: 35px;
-  border: solid $main-color;
-  border-radius: 30px;
-  margin-top: 80px ;
-
-
+  padding: 0 30px;
 }
 
-.icon-1{
-  margin-top: 100px;
-  margin-left: 80px;
-  font-size: 8em !important;
-  color: $main-color;
-  
+.card-box {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	// border: solid 1px rgba(158, 134, 134, 0.282);
+	border: solid $main-color;
+	background-color: rgba(235, 233, 233, 0.091);
+	border-radius: 30px;
+	max-width: 290px;
+  width: 100%;
+	height: 410px;
+	margin-top: 50px;
+  padding: 0 10px;
 }
 
-.icon-2{
-  margin-top: 100px;
-  margin-left: 90px;
-  font-size: 8em !important;
-  color: $main-color;
-  
+.select-category {
+	height: 140px;
+	color: $main-color;
 }
 
-
-
-.icon-3{
-  margin-top: 100px;
-  margin-left: 65px;
-  font-size: 8em !important;
-  color: $main-color;
+.hover-icon {
+	height: 180px;
+	color: $main-color;
 }
 
+.create-playlist {
+	height: 130px;
+	color: $main-color;
+  margin: 10px;
+}
 
 .p-style {
-  margin-left: 30px;
-  margin-top: 50px;
-  font-weight: bold;
-  color: $main-color;
-  font-size: 20px;
-  
-
+	margin-top: 30px;
+	font-weight: bold;
+	color: $main-color;
+	font-size: 20px;
+	text-align: center;
 }
-
-
-.right{
-  margin-left: 20px;
-  margin-top: 110px;
-  color: $main-color;
-  font-size: 8em !important;
-}
-
-
 
 @media screen and (max-width: 860px) {
-	.intro-container  {
+	.intro-container {
+		flex-direction: column;
+	}
 
-    flex-direction: column;
-    justify-content: center;
-   
-   
-  }
-  
-  .card {
+	.card {
 		display: flex;
-    flex-direction: column;
-
-   
-   
+		flex-direction: column;
 	}
 
-	.card-image {
-    margin: 0 auto;
-    position: relative;
-    margin-top: 150px;
+	.card .right {
+		display: none;
 	}
-  
-  .right{
-    visibility: hidden;
-    margin-top: -290px;
-  }
-  .icon-1{
-    margin-left: 90px ;
-  }
-  .icon-2{
-    margin-left: 100px;
-  }
-  .icon-3{
-    margin-left: 85px;
-  
-  }
-  .p-style {
-    margin-left: 50px;
-  
-  }
 
-  .Title{
-    margin-left: 70px;
-    margin-right: 90px;
-    margin-top: 120px;
-  }
-  
-  .untertitile{
-    margin-left: 70px;
-    margin-right: 90px;
-  
-    
-  }
+	.Title {
+		margin-left: 70px;
+		margin-right: 90px;
+		margin-top: 120px;
+	}
 
-  .logo_small{
-    margin-top: 1760px;
-    
-  }
-  
-	
+	.untertitile {
+		margin-left: 70px;
+		margin-right: 90px;
+	}
+
+	.logo_small {
+		margin-top: 1760px;
+	}
 }
-
-
-
-
