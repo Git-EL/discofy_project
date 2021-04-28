@@ -100,10 +100,13 @@ const Filter = (props) => {
             {const audio = new Audio(item.preview_url);
               const playtrack = () => { audio.play(); audio.volume = 0.5; }
               const stoptrack = () => { audio.pause() }
+              
                return (
                 item.preview_url ?  <div key={idx + 1} className='filter-outerbox'>
                    <div className="filter-imagebox" onMouseOver={playtrack} onMouseLeave={stoptrack}>   
+
                       <img src={item.album.images[0].url} alt="test" className="trackalbum-image" id={item.id} />
+                      <i className="fas fa-plus-circle"></i>
                       <div className="checkbox-container" >
                         <input type="checkbox" className="custom-input " checked={trackID === item.id && 
                             selectedTracks.playlistTracks.includes(item.uri)
@@ -115,7 +118,7 @@ const Filter = (props) => {
                       </div> 
                    </div>
                 </div> 
-                : null        
+                :  null
                )
            }) : <p className="missing-message"><i className="far fa-times-circle"></i> Unfortunately, there is no track available for this category.</p>
          }

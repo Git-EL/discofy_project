@@ -6,15 +6,16 @@ import SubGenreListe from './SubGenreListe'
 import DiscoverListe from './DiscoverListe'
 import Filter from '../Filter/Filter'
 import axios from 'axios'
-// import getParamValues from '../../utils/function'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import artist_icon from '../../assets/artist_icon.svg'
+import { Redirect } from 'react-router-dom';
 
-const Selection = () => {
+const Selection = (props) => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
   const spotify_clientSecret = process.env.REACT_APP_CLIENT_SECRET
   const getAccessToken = localStorage.getItem('params')
   const spotify_accessToken = JSON.parse(getAccessToken)
+  const { isValidSession, history } = props;
 
   const [token, setToken] = useState('')
   const [genres, setGenres] = useState({
@@ -52,7 +53,9 @@ const Selection = () => {
   const [filterbtnStatus, setFilterbtnStatus] = useState(false)
   const [buttonActive, setButtonActive] = useState(false)
 
+
   useEffect(() => {
+    if (isValidSession()) {
     axios('https://accounts.spotify.com/api/token', {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -71,10 +74,18 @@ const Selection = () => {
           listOfGenresFromAPI: genreResponse.data.categories.items
         })
       })
-    })
-  },[spotify_clientId, spotify_clientSecret]);
+    })  } else {
+      history.push({
+        pathname: '/',
+        state: {
+          session_expired: true
+        }
+      });
+    }
+  },[history, isValidSession, spotify_clientId, spotify_clientSecret]);
 
   const genrebuttonClicked = (e) => {
+    if (isValidSession()) {
     e.preventDefault()
 
       axios('https://api.spotify.com/v1/browse/categories/?locale=en_US&limit=40', {
@@ -84,7 +95,14 @@ const Selection = () => {
         setGenres({
           listOfGenresFromAPI: genreResponse.data.categories.items
         })
-      })
+      })} else {
+        history.push({
+          pathname: '/',
+          state: {
+            session_expired: true
+          }
+        });
+      }
   }
 
   const genreboxClicked = async (val) => {
@@ -255,7 +273,10 @@ const Selection = () => {
       if (!filterbtnStatus){setFilterbtnStatus(true)}
     }
  
-  return (
+
+    
+    return (
+    isValidSession() ? (
     (genreId && filterbtnStatus) || (subGenreId && filterbtnStatus) || (artistId && filterbtnStatus) || (discoverId && filterbtnStatus) ? 
     ( <div className='filter-container'>
         <Filter 
@@ -332,7 +353,6 @@ const Selection = () => {
             </div>
           </TabPanel>
         </Tabs>
-
         </div>
         <div className='choices'>
         <div className='boxresult'>
@@ -346,7 +366,17 @@ const Selection = () => {
             </button>
           </div>
         </div>
-      </div>)) 
+      </div>)): (
+        <Redirect
+          to={{
+            pathname: '/',
+            state: {
+              session_expired: true
+            }
+          }}
+        />
+      )
+   )
 }
 
 export default Selection
