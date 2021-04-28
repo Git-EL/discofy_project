@@ -24,35 +24,28 @@ $main-bgcolor: #050124;
 	margin: 0 105px 0 90px;
 	padding-top: 80px;
 }
-.logo_small2 {
-	width: 90%;
-	max-width: 100px;
-	margin-top: 10px;
-	position: absolute;
-	left: 
-	20px; top: 0;
-}
 
-//filter image abstände
 .filter-outerbox {
 	width: 100px;
 	height: 100px;
 	margin: 4px;
 }
+
 .filter-box {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
 	color: white;
-	// border: solid 1px red;
 	padding: 30px 30px 50px;
 	min-height: 100vh;
 	height: 100%;
 }
+
 .filter-imagebox {
 	height: 100px;
 	width: 100px;
 }
+
 .trackalbum-image {
 	height: 100px;
 	width: 100px;
@@ -72,7 +65,6 @@ $main-bgcolor: #050124;
 .tracklist-insideflex {
 	display: flex;
 	flex-flow: wrap;
-	// margin: 10px;
 }
 
 .tracklist-box {
@@ -148,7 +140,7 @@ $main-bgcolor: #050124;
 	background-color: transparent;
 	cursor: pointer;
 	margin-top: -30px;
- }
+}
 
 .track-info .fa-minus-circle {
 	font-size: 20px;
@@ -165,6 +157,7 @@ $main-bgcolor: #050124;
 	padding: 15px;
 	border-radius: 5px;
 }
+
 .popup-content {
 	margin: auto;
 	background: $main-bgcolor;
@@ -172,18 +165,22 @@ $main-bgcolor: #050124;
 	padding: 5px;
 	border: solid 3px $main-color;
 }
+
 .popup a {
 	color: $main-color;
 	font-weight: bold;
 }
+
 .popup a:hover {
-	color:white;
+	color: white;
 }
+
 .fa-thumbs-up {
 	font-size: 30px;
 	padding-bottom: 5px;
 	color: white;
 }
+
 .done {
 	color: white;
 	font-size: 25px;
@@ -192,11 +189,11 @@ $main-bgcolor: #050124;
 .play-box2 {
 	width: 90%;
 	margin: 0 auto;
-	border: solid 1px rgb(217, 255, 0);
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
 }
+
 .playlist-box h2 {
 	margin: 0 20px 10px;
 	border-bottom: 1px solid rgba(235, 233, 233, 0.282);
@@ -209,7 +206,6 @@ $main-bgcolor: #050124;
 .track-box2 {
 	width: 90%;
 	margin: 20px auto 20px;
-	// border: solid 1px rgb(255, 123, 0);
 }
 
 .trackbox-titletext {
@@ -249,7 +245,7 @@ button.back-btn:hover {
 }
 
 .fa-arrow-left {
-margin-right: 5px;
+	margin-right: 5px;
 }
 
 .track-info {
@@ -284,13 +280,13 @@ margin-right: 5px;
 }
 
 .fa-plus-circle {
-opacity: 0;
+	opacity: 0;
 	color: $main-color;
 	position: relative;
 	left: 33px;
 	bottom: 70px;
 	font-size: 35px;
-	z-index: 0
+	z-index: 0;
 }
 
 .filter-imagebox:hover {
@@ -322,6 +318,7 @@ opacity: 0;
 	background-color: transparent;
 	border-radius: 50%;
 }
+
 .checkbox-container input:checked ~ .checkmark-box {
 	display: block;
 	position: relative;
@@ -339,9 +336,11 @@ opacity: 0;
 	z-index: 0;
 	max-lines: 3;
 }
+
 .checkmark-box {
 	display: none;
 }
+
 .checkbox-container {
 	display: block;
 	position: relative;
@@ -355,6 +354,7 @@ opacity: 0;
 	user-select: none;
 	width: 100%;
 }
+
 .checkbox-container input {
 	position: absolute;
 	cursor: pointer;
@@ -366,6 +366,7 @@ opacity: 0;
 	opacity: 0;
 	z-index: 10;
 }
+
 .checkbox-container input:checked ~ .checkmark {
 	background-color: transparent;
 	border: 3px solid rgb(47, 250, 189);
@@ -443,10 +444,9 @@ opacity: 0;
 	.playlist-box {
 		margin-top: 40px;
 	}
-	.logo_small2{
+	.logo_small2 {
 		margin-top: 1820px;
 		margin-left: 300px;
 		position: absolute;
-		
-	  }
+	}
 }

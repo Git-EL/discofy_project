@@ -83,7 +83,7 @@ const Filter = (props) => {
 
   return (
     <div className='col-sm-10'>
-      <img src={discofy_logo_small} alt='discofy-logo' className='logo_small2' />
+      <img src={discofy_logo_small} alt='discofy-logo' className='logo_small' />
       <h3>Select your songs</h3>
        <form className="filter-box" onSubmit={createPlaylist}>
         <div key={0} className="tracklist-box">  
