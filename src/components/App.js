@@ -5,7 +5,7 @@ import Home from './Home/Home'
 import Intro from './Intro/Intro'
 import Redirect from './Redirect/Redirect'
 import Selection from './Selection/Selection'
-import NotFound from './NotFound/NotFound'
+import Contact from './Contact/Contact'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 function App () {
@@ -40,7 +40,7 @@ function App () {
             <Redirect isValidSession={isValidSession} setExpiryTime={setExpiryTime} {...props} />)} />
           <Route path='/selection' render={(props) => (
             <Selection isValidSession={isValidSession} {...props} />)} />
-          <Route path='*' component={NotFound} />
+          <Route path='*' component={Contact} />
         </Switch>
       </div>
     </Router>
