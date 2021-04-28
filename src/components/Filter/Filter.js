@@ -126,8 +126,8 @@ const Filter = (props) => {
        </div>
     </div>
     <div key={1} className="playlist-box">
+    <h2 className="playlist-title">Discofy Playlist</h2>
       <div className="play-box1">
-      <h2>Discofy Playlist</h2>
         {props.artiststracklist.map((item, idx) => 
         // <div key={idx + 1} value={item.id}>
           <div key={idx + 1}>
