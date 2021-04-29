@@ -57,7 +57,7 @@ function Contact() {
           <div className="upper-container">
             <div className="image-container">
               <img
-                src="https://media-exp1.licdn.com/dms/image/C4E35AQFWgoJeYA-J_g/profile-framedphoto-shrink_800_800/0/1616377997019?e=1619769600&v=beta&t=HQ0Ow5Yjv7WUXbYnLTiZZlk10Ce_diqpd3jKeUCSohQ"
+                src="https://avatars.githubusercontent.com/u/65949739?v=4"
                 alt=""
                 height="100px"
                 width="100px"
