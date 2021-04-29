@@ -6,8 +6,9 @@ $main-bgcolor: #050124;
   background-color: rgba(235, 186, 247, 0.1);
   border-radius: 0 5px 5px;
   padding-right: 35px;
+  max-width: 810px;
+  height: 766px;
 }
-
 .genre-container h4 {
   margin: 20px 25px 0;
   font-size: 17px;
@@ -26,19 +27,37 @@ $main-bgcolor: #050124;
 .genre-checkbox {
 	height: 100px;
 	width: 100px;
-	margin-top: 5px;
-	margin-left: 5px;
-	position: absolute;
+	top: 5px;
+  left: 5px;
+	position: relative;
 	z-index: 6;
 }
 
 .genre-box {
-  margin: 19px;
-  display: flex;
-  flex-flow: row wrap;
-  max-width: 900px;
-  width: 100%;
+	margin: 19px;
+	display: flex;
+	flex-flow: row wrap;
+	height: 650px;
+	max-height: 100%;
+	width: 100%;
+	overflow-y: auto;
+  overflow-x: hidden;
 }
+
+// .genre-box::-webkit-scrollbar {
+// 	width: 0px;
+// 	background-color: transparent;
+// }
+
+// ::-webkit-scrollbar {
+// 	width: 10px;
+// 	background-color: #181435;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background: #36324f;
+// 	width: 8px;
+// }
 
 .genre-box input {
 	opacity: 0;
@@ -52,16 +71,20 @@ $main-bgcolor: #050124;
 }
 
 .genre-box input:checked ~ .box {
-	height: 98px;
-	width: 98px;
-	margin-top: 5px;
+	height: 100px;
+	width: 100px;
+	bottom: 99px;
 	margin-left: 5px;
 	border-radius: 5px;
 	box-shadow: 0 0 2px 3px rgb(124, 240, 255);
   background-color: #1a1737;
-	position: absolute;
+	position: relative;
 	cursor: pointer;
 	z-index: 5;
+}
+
+.genre-box input:checked ~ .genre-image {
+	display:none;
 }
 
 .fa-heart {
@@ -73,12 +96,19 @@ display: block;
 color: $main-color;
 font-size: 35px;
 text-align: center;
-margin-top: 25px;
+position: relative;
+top: 20px;
 }
 
 .genre-image:hover,
 .genre-name:hover {
 	cursor: pointer;
+}
+
+.genre-innerbox {
+	height: 100px;
+	width: 100px;
+  margin: 3px;
 }
 
 .genre-name {
@@ -95,13 +125,12 @@ margin-top: 25px;
 }
 
 .genre-image {
+  position:relative;
+  bottom: 105px;
   height: 100px;
   padding: 0;
   margin: 5px;
   border-radius: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   border: 1px solid rgba(235, 233, 233, 0.282);
 }
 
@@ -112,6 +141,22 @@ margin-top: 25px;
 }
 
 @media screen and (max-width: 359px) {
+  .genre-container h4 {
+    text-align: center;
+  }
+
+  .genre-container .info-message {
+    font-size: 11px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .genre-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
   .genre-image {
     display: none;
   }

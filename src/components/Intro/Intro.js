@@ -22,8 +22,8 @@ const Intro = () => {
 
   return <div className='intro-container'>
     <div className='intro-box'>
-    <img src={discofy_logo_small} alt='discofy-logo' className='logo_small' />
-      <div className="title-box">
+    <a href="/"><img src={discofy_logo_small} alt='discofy-logo' className='logo_small' /></a>
+     <div className="title-box">
            <h1 className='title'>Grab your headphones and turn up your speakers</h1>
               <p className='sub-title'>Discover new music and get a personalized playlist</p>
          </div>
