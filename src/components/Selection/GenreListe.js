@@ -15,7 +15,7 @@ const GenreListe = props => {
       <p className="info-message">Select a category below and get a bunch of track recommendations based on your chosen genre</p>
       <div key={0} className="genre-box">
         {props.genrelist.map((item, idx) => 
-        <div key={idx + 1}>
+        <div key={idx + 1} className="genre-innerbox">
           <div className="genre-name">{item.name}</div>
          
           <input type="radio" onChange={clicked} id={item.id} className="genre-checkbox" name="choice"></input>

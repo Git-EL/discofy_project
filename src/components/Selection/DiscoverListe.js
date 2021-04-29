@@ -18,7 +18,7 @@ const clicked = e => {
       <p className="info-message">Following artists have new releases. Get to know them and discover their music.</p>
       <div key={0} className="discover-box">
         {props.discoverlist.map((item, idx)  => 
-                <div key={idx + 1}>
+                <div key={idx + 1} className="discover-innerbox">
                 <div className="discover-name">
                   {/* <p className="albumtitle">{item.name}</p> */}
                   <p className="artistname">{item.artists[0].name.length > 28 ? item.artists[0].name.substring(0, 28) + "..." : item.artists[0].name}</p>

@@ -14,27 +14,43 @@ $main-bgcolor: #050124;
   text-transform: uppercase;
 }
 
+ .preview-image {
+   width: 200px;
+   max-width: 100%;
+   margin: 10px auto 30px;
+   border-radius: 5px;
+   border: 2px solid white;
+ }
+
 .container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-areas: "content choicebar";
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
 }
 
 .inner-container {
-  grid-area: content;
   color: white;
-  margin: 80px 50px 40px;
+  margin: 80px 40px 50px 40px;
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .choices {
-  grid-area: choicebar;
-  min-height: 100vh;
   text-align: center;
-  background-color: rgba(10, 1, 36, 0.529);
+	background-color: rgba(235, 233, 233, 0.091);
+	border: solid 1px rgba(235, 233, 233, 0.282);
+  height: 767px;
+  max-height: 100%;
+  width: 450px;
+  max-width: 100%;
+  margin: 120px 0;
+  border-radius: 5px;
+  display:flex;
 }
 
 .yourchoice {
-  margin-top: 15px;
   color: $main-color;
   font-size: 25px;
   font-family: 'Nunito Sans', sans-serif;
@@ -78,7 +94,6 @@ $main-bgcolor: #050124;
   padding: 0;
 }
 
-// Tab-button inneres
 .react-tabs__tab {
   display: flex;
   flex-direction: column;
@@ -119,9 +134,8 @@ $main-bgcolor: #050124;
 }
 
 .boxresult {
-  position: fixed;
   margin: auto;
-  margin: 250px 30px 0 30px;
+  margin: 100px 30px 0 30px;
 }
 
 .happychoices {
@@ -138,26 +152,6 @@ $main-bgcolor: #050124;
   width: 190px;
   cursor: pointer;
 }
-
-
-// .filter-btn:disabled,
-// .filter-btn[disabled] {
-//   border: 1px solid #999999;
-//   background-color: #cccccc;
-//   color: #666666;
-// }
-
-// .filter-btn:hover:disabled,.filter-firstlink:hover:disabled,
-// .filter-btn:hover[disabled],.filter-firstlink:hover[disabled] {
-//   border: 1px solid #999999;
-//   background-color: #cccccc;
-//   color: #666666;
-//   -webkit-transition: none;
-//   -moz-transition: none;
-//   -ms-transition: none;
-//   -o-transition: none;
-//   transition: none;
-// }
 
 .filter-btn[disabled]:active, .filter-btn[disabled],
 .filter-btn[disabled]:hover
@@ -202,37 +196,50 @@ $main-bgcolor: #050124;
     margin-top: -39px;
   }
 }
-@media screen and (max-width: 1030px) {
-  .container {
-    display: flex;
-    flex-direction: column;
-  }
-
+@media screen and (max-width: 890px) {
   .inner-container {
-    color: white;
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
   }
 
-  .choices {
-    max-width: 100%;
-    min-height: 0vh;
-    position: relative;
-    bottom: 0;
-    text-align: center;
-    background-color: rgba(10, 1, 36, 0.529);
+  div.choices {
+    width: 100%;
+    min-height: 100%;
+    height: 570px;
+    margin-top: 20px;
   }
 
   .boxresult {
-    margin: 0 auto;
-    position: relative;
+    margin: auto;
   }
 
-  .happychoices {
-    font-size: 30px;
-    margin-top: 40px;
-  }
+   .happychoices {
+     font-size: 2em;
+   }
 
-  .filter-btn {
-    margin-top: 30px;
-    margin-bottom: 50px;
-  }
 }
+
+// @media screen and (max-width: 670px) {
+//   .inner-container {
+//     display: flex;
+//     flex-direction: column;   
+//     align-items: center;
+//   }
+
+//   div.choices {
+//     width: 100%;
+//     min-height: 100%;
+//     height: 570px;
+//     margin-top: 20px;
+//   }
+
+//   .boxresult {
+//     margin: auto;
+//   }
+
+//    .happychoices {
+//      font-size: 2em;
+//    }
+
+// }

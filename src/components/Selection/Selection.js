@@ -54,6 +54,8 @@ const Selection = (props) => {
   const [filterbtnStatus, setFilterbtnStatus] = useState(false)
   const [buttonActive, setButtonActive] = useState(false)
 
+  const [discoverPicture, setDiscoverPicture] = useState('')
+  
 
   useEffect(() => {
     if (isValidSession()) {
@@ -107,7 +109,12 @@ const Selection = (props) => {
   }
 
   const genreboxClicked = async (val) => {
-    
+    const currentGenre = genres.listOfGenresFromAPI
+    const genreId = currentGenre.filter((t) => t.id === val)
+   
+    setDiscoverPicture(genreId[0].icons[0].url)
+
+
     setGenreId(val)
     setSubGenreId('')
     setArtistId('')
@@ -121,8 +128,7 @@ const Selection = (props) => {
       headers: { Authorization: 'Bearer ' + spotify_accessToken.access_token },
     })
     let playlistID = await playlistIDResponse.data.playlists.items[Math.floor(Math.random() * 9) + 1].id
-    console.log(playlistID)
-    
+      
     let genreTracksResponse = await axios ({ 
       method: 'GET',
       url: `https://api.spotify.com/v1/playlists/${playlistID}/tracks`,
@@ -130,7 +136,6 @@ const Selection = (props) => {
       });
       setGenreTracks(
         {listOfGenretracksFromAPI: genreTracksResponse.data.items.map(a => a.track)})
-        console.log(genreTracks.listOfGenretracksFromAPI)
      } catch(error){
       console.log(error)
     }   
@@ -162,6 +167,8 @@ const Selection = (props) => {
     const artistsInfo = currentArtists.filter((t) => t.id === val)
     console.log(artistsInfo)
 
+    
+    setDiscoverPicture(artistsInfo[0].images[0].url)
     setArtistId(artistsInfo[0].id)
     setArtistName(artistsInfo[0].name)
     setGenreId('')
@@ -214,6 +221,8 @@ const Selection = (props) => {
   
   const subGenreboxClicked = (val) => {
 
+    setDiscoverPicture("https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753__340.jpg")
+
     setSubGenreId(val)
     setGenreId('')
     setArtistId('')
@@ -249,9 +258,11 @@ const Selection = (props) => {
   const discoverboxClicked = (val) => {
     const currentDiscoverArtists = discover.listOfDiscoverFromAPI
     console.log(currentDiscoverArtists)
-    const discoverArtistsId = currentDiscoverArtists.filter((t) => t.id === val)
+    const discoverArtistsId = currentDiscoverArtists.filter((t) => t.artists[0].name === val)
     console.log(discoverArtistsId)
 
+    setDiscoverPicture(discoverArtistsId[0].images[0].url)
+    console.log(discoverPicture)
     setDiscoverId(val)
     setGenreId('')
     setSubGenreId('')
@@ -294,9 +305,9 @@ const Selection = (props) => {
     :
     ( 
     <div className='container'>
-     <img src={discofy_logo_small} alt='discofy-logo' className='logo_small' />
-      <div className='inner-container'>
-      <h3>Take your pick</h3>
+    <a href="/"><img src={discofy_logo_small} alt='discofy-logo' className='logo_small' /></a>
+    <h3>Take your pick</h3>
+     <div className='inner-container'>
         <Tabs>
           <TabList className='tab-title'>
             <Tab onClick={genrebuttonClicked}>
@@ -340,8 +351,6 @@ const Selection = (props) => {
                 savedartistslist={savedArtists.listOfSavedartistsFromAPI}
                 clicked={artistsboxClicked} />
               <div>
-                {/* hier erscheint die artist id:
-                {artistId} */}
              </div>
             </div>
           </TabPanel>
@@ -355,12 +364,12 @@ const Selection = (props) => {
             </div>
           </TabPanel>
         </Tabs>
-        </div>
         <div className='choices'>
         <div className='boxresult'>
-         <h1 className='happychoices'>Happy with your choices?</h1>          
-         <div className='yourchoice'>Your pick is<p className='categorypick'>{genreId.trim().replaceAll("_", " ") || subGenreId || discoverId || artistName}</p> </div>   
-         <button className='filter-btn' disabled={!buttonActive} onClick={filterbtnClicked}>
+        <div className='yourchoice'>Your pick is<p className='categorypick'>{genreId.trim().replaceAll("_", " ") || subGenreId || discoverId || artistName}</p> </div>   
+        {discoverPicture ? <div className="preview-imagewrap"><img src={discoverPicture} alt="preview" className="preview-image" /></div>: null}
+        <h1 className='happychoices'>Happy with your choice?</h1>                 
+          <button className='filter-btn' disabled={!buttonActive} onClick={filterbtnClicked}>
             <div className='filter-firstlink'> Get your Songs
             </div>
             <div className='filter-secondlink'> Get your Songs
@@ -368,6 +377,7 @@ const Selection = (props) => {
             </button>
           </div>
         </div>
+      </div>
       </div>)): (
         <Redirect
           to={{
