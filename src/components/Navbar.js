@@ -48,6 +48,10 @@ const Navbar = () => {
           </Link>
         </li>
         <li className='link'>
+          <Link to='/intro' onClick={handleLinksToggle}> Intro
+          </Link>
+        </li>
+        <li className='link'>
           <Link to='/contact' onClick={handleLinksToggle}> Contact
           </Link>
         </li>
