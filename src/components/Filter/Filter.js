@@ -168,7 +168,7 @@ const Filter = (props) => {
           <div key={idx + 1}>
             <div className="playlist-preview">{selectedTracks.playlistTracks.includes(item.uri) ? 
               <div className="track-info">
-                <button type="button" className="rmv-btn" onClick={deleteTrack} id={item.id} value={item.uri}><i class="fas fa-minus-circle"></i></button>
+                <button type="button" className="rmv-btn" onClick={deleteTrack} id={item.id} value={item.uri}><i className="fas fa-minus-circle"></i></button>
                 <p className="playlist-songtitle">{item.name}</p>
                 <p className="playlist-artistname">{item.artists[0].name}</p>
                 <p className="playlist-albumtitle">{item.album.album_type} | {item.album.name}</p>

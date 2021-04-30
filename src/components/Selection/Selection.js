@@ -11,6 +11,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import artist_icon from '../../assets/artist_icon.svg'
 import { Redirect } from 'react-router-dom';
 import discofy_logo_small from '../../assets/discofy_logo_small.svg'
+import aurora from '../../assets/aurora.jpeg'
 
 const Selection = (props) => {
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
@@ -157,10 +158,13 @@ const Selection = (props) => {
     ]).then(axios.spread((artistsResponse, savedartistsResponse) => {
       setArtists({
       listOfArtistsFromAPI: artistsResponse.data.artists.items})
+      console.log(artists)  
       setSavedartists({
-      listOfSavedartistsFromAPI: savedartistsResponse.data.items})
-    }))
+      listOfSavedartistsFromAPI: savedartistsResponse.data.items})}
+     ))   
+ 
   }
+
 
   const artistsboxClicked = (val) => {
     const currentArtists = [...artists.listOfArtistsFromAPI, ...savedArtists.listOfSavedartistsFromAPI]
@@ -169,7 +173,7 @@ const Selection = (props) => {
     console.log(artistsInfo)
 
     
-    setDiscoverPicture(artistsInfo[0].images[0].url)
+    setDiscoverPicture(artistsInfo[0].images.length === 0 ? aurora : artistsInfo[0].images[0].url)
     setArtistId(artistsInfo[0].id)
     setArtistName(artistsInfo[0].name)
     setGenreId('')
@@ -222,7 +226,7 @@ const Selection = (props) => {
   
   const subGenreboxClicked = (val) => {
 
-    setDiscoverPicture("https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753__340.jpg")
+    setDiscoverPicture(aurora)
 
     setSubGenreId(val)
     setGenreId('')
@@ -262,7 +266,8 @@ const Selection = (props) => {
     const discoverArtistsId = currentDiscoverArtists.filter((t) => t.artists[0].name === val)
     console.log(discoverArtistsId)
 
-    setDiscoverPicture(discoverArtistsId[0].images[0].url)
+    setDiscoverPicture(discoverArtistsId[0].images.length === 0 ? aurora : discoverArtistsId[0].images[0].url)
+    
     console.log(discoverPicture)
     setDiscoverId(val)
     setGenreId('')

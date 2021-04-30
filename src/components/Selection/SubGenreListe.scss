@@ -51,7 +51,7 @@ $main-bgcolor: #050124;
 }
 
 .subgenre-container .subgenre-name {
-	background-image: url('https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753__340.jpg');
+	background-image: url('../../assets/aurora.jpeg');
 	background-position: top;
 	background-size: 235px;
 	height: 100px;
@@ -76,6 +76,7 @@ $main-bgcolor: #050124;
 	color: white;
 	background-color: rgba(19, 16, 43, 0.7);
 	letter-spacing: 1px;
+	text-transform: capitalize;
 	text-align: center;
 	position: relative;
 	display: flex;
@@ -179,7 +180,7 @@ $main-bgcolor: #050124;
 		max-width: 330px;
 	}
 	.subgenre-outerbox {
-		height: 600px;
+		height: 610px;
 		max-height: 100%;
 	}
 }
@@ -187,6 +188,9 @@ $main-bgcolor: #050124;
 @media screen and (max-width: 380px) {
 	.subgenre-container {
 		max-width: 300px;
+	}
+	.subgenre-outerbox {
+		height: 590px;
 	}
 }
 
@@ -201,7 +205,7 @@ $main-bgcolor: #050124;
 		max-width: 255px;
 	}
 	.subgenre-outerbox {
-		height: 555px;
+		height: 585px;
 		max-height: 100%;
 		flex-direction: row;
 		justify-content: center;
