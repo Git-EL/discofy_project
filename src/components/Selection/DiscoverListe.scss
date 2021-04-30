@@ -4,17 +4,17 @@ $main-bgcolor: #050124;
 .discover-container {
 	border: solid 1px rgba(235, 233, 233, 0.282);
 	background-color: rgba(235, 186, 247, 0.1);
-	border-radius: 5px;
+	border-radius: 5px 0 0 5px;
 	padding-right: 35px;
-	max-width: 810px;
-  height: 766px;
+	max-width: 855px;
+	height: 766px;
 }
 
 .discover-container h4 {
-  margin: 20px 25px 0;
-  font-size: 17px;
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: bold;
+	margin: 20px 25px 0;
+	font-size: 17px;
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: bold;
 	letter-spacing: 0.6px;
 }
 
@@ -41,24 +41,9 @@ $main-bgcolor: #050124;
 	height: 630px;
 	max-height: 100%;
 	width: 100%;
-	overflow-y: scroll;
+	overflow-y: auto;
 	overflow-x: hidden;
 }
-
-// .discover-box::-webkit-scrollbar {
-// 	width: 0px;
-// 	background-color: transparent;
-// }
-
-// ::-webkit-scrollbar {
-// 	width: 10px;
-// 	background-color: #181435;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//   background: #36324f;
-// 	width: 8px;
-// }
 
 .discover-box input {
 	opacity: 0;
@@ -78,14 +63,14 @@ $main-bgcolor: #050124;
 	margin-left: 5px;
 	border-radius: 5px;
 	box-shadow: 0 0 2px 3px rgb(124, 240, 255);
-  background-color: #1a1737;
+	background-color: #15122e;
 	position: relative;
 	cursor: pointer;
 	z-index: 5;
 }
 
 .discover-box input:checked ~ .discover-image {
-	display:none;
+	display: none;
 }
 
 .discover-box input:checked ~ .box .fa-heart {
@@ -105,7 +90,7 @@ $main-bgcolor: #050124;
 .discover-innerbox {
 	height: 100px;
 	width: 100px;
-  margin: 3px;
+	margin: 3px;
 }
 
 .discover-name {
@@ -131,11 +116,11 @@ $main-bgcolor: #050124;
 	width: 100px;
 	border-radius: 5px;
 	border: 1px solid rgb(144, 134, 168);
-	opacity: 0.6;
+	opacity: 0.7;
 	outline: transparent;
 	margin: 4px 4px 0px 4px;
 	position: relative;
-	
+
 	bottom: 135px;
 }
 
@@ -145,9 +130,9 @@ $main-bgcolor: #050124;
 	margin-bottom: 5px;
 }
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 890px) {
 	.discover-container {
-		border-radius: 5px 0;
+		border-radius: 5px;
 	}
 }
 

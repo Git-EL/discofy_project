@@ -4,9 +4,9 @@ $main-bgcolor: #050124;
 .subgenre-container {
   border: solid 1px rgba(235, 233, 233, 0.282);
   background-color: rgba(235, 186, 247, 0.1);
-  border-radius: 5px 5px 5px;
+	border-radius: 5px 0 0 5px;
   padding-right: 35px;
-  max-width: 810px;
+	max-width: 855px;
 	width: 100%;
   height: 766px;
 }
@@ -53,8 +53,7 @@ $main-bgcolor: #050124;
 .subgenre-container .subgenre-name {
 	background-image: url('https://cdn.pixabay.com/photo/2016/02/13/12/26/aurora-1197753__340.jpg');
   background-position: top;
-  background-size: 250px;
-
+  background-size: 235px;
 	height: 100px;
 	width: 100px;
 	margin: 5px;
@@ -112,21 +111,6 @@ $main-bgcolor: #050124;
 	max-height: 100%;
 }
 
-// .subgenre-box::-webkit-scrollbar {
-// 	width: 0px;
-// 	background-color: transparent;
-// }
-
-// ::-webkit-scrollbar {
-// 	width: 10px;
-// 	background-color: #181435;
-// }
-
-// ::-webkit-scrollbar-thumb {
-//   background: #36324f;
-// 	width: 8px;
-// }
-
 .subgenre-box input {
 	opacity: 0;
 	background-color: transparent;
@@ -145,7 +129,7 @@ $main-bgcolor: #050124;
 	margin-left: 5px;
 	border-radius: 5px;
 	box-shadow: 0 0 2px 3px rgb(124, 240, 255);
-  background-color: #1a1737;
+  background-color: #15122e;
 	position: relative;
 	cursor: pointer;
 	z-index: 5;

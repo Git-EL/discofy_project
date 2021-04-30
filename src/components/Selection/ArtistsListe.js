@@ -14,8 +14,8 @@ const ArtistsListe = props => {
 
   return (
     <div className='col-sm-10 artist-container'>
-      <h4>Your Followed Artists</h4>
-      <p className="info-message">Get tracks from similar artists based on your followed artists</p>
+      <h4 className="followedartist-title">Your Followed Artists</h4>
+      <p className="followedartist-message">Get tracks from similar artists based on your followed artists</p>
       <div className="artist-outerbox">
       <div key={1} className="artist-box">
       {props.artistslist.length > 0 ? props.artistslist.map((item, idx) => 
@@ -32,8 +32,8 @@ const ArtistsListe = props => {
           Please <a href="https://open.spotify.com/" target="_blank" rel="noreferrer">follow some artists on Spotify</a> and come back!</p>
           }
       </div>
-      <h4>Your Top Listened Artists</h4>
-      <p className="info-message">Get tracks from similar artists based on your top listened artists
+      <h4 className="topartist-title">Your Top Listened Artists</h4>
+      <p className="topartist-message">Get tracks from similar artists based on your top listened artists
       </p>
       <div key={0} className="artist-box">
       

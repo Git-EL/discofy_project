@@ -306,7 +306,7 @@ const Selection = (props) => {
     ( 
     <div className='container'>
     <a href="/"><img src={discofy_logo_small} alt='discofy-logo' className='logo_small' /></a>
-    <h3>Take your pick</h3>
+    <h3 className='selection-title'>Take your pick</h3>
      <div className='inner-container'>
         <Tabs>
           <TabList className='tab-title'>
