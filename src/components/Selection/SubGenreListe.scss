@@ -163,3 +163,12 @@ text-align: center;
 position: relative;
 top: 20px;
 }
+@media screen and (max-width: 375px) {
+	.subgenre-container  {
+		text-align: center;
+        width: 47%;
+		margin-left: 203px;
+		height: 100%;
+	 
+	}
+}

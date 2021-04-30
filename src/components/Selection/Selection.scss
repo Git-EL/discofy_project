@@ -243,3 +243,15 @@ $main-bgcolor: #050124;
 //    }
 
 // }
+
+@media screen and (max-width: 375px) {
+	.tab-title {
+    text-align: center;
+    width: 47%;
+		margin-left: 203px;
+	  height: 100%;
+	
+
+	
+  }
+}

@@ -164,3 +164,12 @@ $main-bgcolor: #050124;
 	color: white;
 }
 
+@media screen and (max-width: 375px) {
+	.artist-container  {
+		text-align: center;
+        width: 47%;
+		margin-left: 203px;
+		height: 100%;
+	 
+	}
+}

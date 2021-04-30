@@ -151,53 +151,18 @@ $main-bgcolor: #050124;
 	}
 }
 
-@media screen and (max-width: 359px) {
-	.discover-box input:checked ~ .box {
-		display: none;
-	}
 
-  .discover-container h4 {
-    text-align: center;
-  }
+@media screen and (max-width: 375px) {
+	.discover-container {
+		text-align: center;
+         width: 47%;
+		margin-left: 203px;
+		height: 100%;
+	
 
-  .discover-container .info-message {
-    font-size: 11px;
-    margin-bottom: 10px;
-    text-align: center;
+	
   }
   
-  .discover-container {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-  }
 
-  .discover-image {
-    display: none;
-  }
-
-  .discover-name {
-    margin: 5px 10px;
-    padding: 10px;
-    font-size: 13px;
-    width: 150px;
-    height: 40px;
-    color: $main-bgcolor;
-    background-color: rgba(255, 255, 255, 0.205);
-    text-align: center;
-    border-radius: 5px;
-		position: unset;
-  }
-
-  .discover-name:hover {
-    color: $main-color;
-    -webkit-box-shadow: 0 0 2px 1px;
-    -moz-box-shadow: 0 0 2px 1px;
-    box-shadow: 0 0 2px 1px;
-  }
-
-  .discover-box {
-    display: flex;
-    justify-content: center;
-  }
+  
 }
