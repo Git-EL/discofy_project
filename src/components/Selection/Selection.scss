@@ -270,3 +270,15 @@ h3.selection-title {
 		font-size: 14px;
 	}
 }
+
+@media screen and (max-width: 375px) {
+	.tab-title {
+		margin: 0 auto;
+        width: 370px;
+        margin-left: 20px;
+		margin-right: 20px;
+	
+
+	
+  }
+}
