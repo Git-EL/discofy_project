@@ -180,3 +180,13 @@ top: 20px;
     }
 
 }
+
+@media screen and (max-width: 375px) {
+	.subgenre-container  {
+		margin: 0 auto;
+        width: 370px;
+        margin-left: 20px;
+		margin-right: 20px;
+	 
+	}
+}
