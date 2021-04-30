@@ -190,13 +190,76 @@ $main-bgcolor: #050124;
 	}
 
 }
-@media screen and (max-width: 375px) {
-	.artist-container  {
-		margin: 0 auto;
-        width: 370px;
-        margin-left: 20px;
-		margin-right: 20px;
-		
-	 
+
+@media screen and (max-width: 415px) {
+	.artist-container {
+		max-width: 330px;
+	}
+	.artist-outerbox {
+		height: 590px;
+		max-height: 100%;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.artist-container {
+		max-width: 300px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.artist-container {
+    max-width: 290px;
+  }
+}
+
+@media screen and (max-width: 321px) {
+	.artist-container {
+		max-width: 255px;
+	}
+	.artist-outerbox {
+    flex-direction: row;
+    justify-content: center;
+	}
+	.artist-innerbox {
+    height: 160px;
+    width: 160px;
+    margin: 5px;
+    bottom: 210px;
+  }
+	.artist-image {
+    width: 160px;
+    height: 160px;
+    margin: 0;
+    bottom: 210px;
+  }
+	.artist-checkbox {
+    height: 160px;
+    width: 160px;
+    bottom: 45px;
+    right: 5px;
+  }
+	.artist-box input:checked ~ .box {
+    height: 160px;
+    width: 160px;
+    bottom: 210px;
+    margin-left: 0px;
+  }
+  
+	.artist-box input:checked ~ .box .fa-heart {
+    font-size: 65px;
+  }
+	.artist-name{
+		top: 105px;
+		left: 0;
+		font-size: 18px;
+		height: 55px;
+		width: 160px;
+	}
+}
+
+@media screen and (max-width: 281px) {
+	.artist-container {
+		max-width: 225px;
 	}
 }

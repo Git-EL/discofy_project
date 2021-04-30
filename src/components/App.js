@@ -1,6 +1,5 @@
 import './App.scss'
 import React, { useState, useEffect } from 'react'
-import Navbar from './Navbar'
 import Home from './Home/Home'
 import Intro from './Intro/Intro'
 import Redirect from './Redirect/Redirect'
@@ -32,8 +31,7 @@ function App () {
 
   return (
     <Router>
-      <div className='App'>
-        <Navbar />
+      <div className='App'>        
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/intro' component={Intro} />

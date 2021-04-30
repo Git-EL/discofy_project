@@ -1,5 +1,6 @@
 import './Selection.scss'
 import React, { useState , useEffect } from 'react'
+import Navbar from '../Navbar/NavbarOut'
 import GenreListe from './GenreListe'
 import ArtistsListe from './ArtistsListe'
 import SubGenreListe from './SubGenreListe'
@@ -291,6 +292,7 @@ const Selection = (props) => {
     isValidSession() ? (
     (genreId && filterbtnStatus) || (subGenreId && filterbtnStatus) || (artistId && filterbtnStatus) || (discoverId && filterbtnStatus) ? 
     ( <div className='filter-container'>
+      <Navbar />
         <Filter 
         title='ArtistsTracks'
         name={genreId || subGenreId || discoverId || artistName}
@@ -305,6 +307,7 @@ const Selection = (props) => {
     :
     ( 
     <div className='container'>
+      <Navbar />
     <a href="/"><img src={discofy_logo_small} alt='discofy-logo' className='logo_small' /></a>
     <h3 className='selection-title'>Take your pick</h3>
      <div className='inner-container'>
