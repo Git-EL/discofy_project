@@ -19,7 +19,6 @@ $main-bgcolor: #050124;
 	height: 100%;
 }
 
-
 .filter-container h3 {
 	color: $main-color;
 	font-size: 30px;
@@ -112,53 +111,55 @@ $main-bgcolor: #050124;
 .tracklist-insidebox::-webkit-scrollbar {
 	width: 15px;
 }
-.play-box1::-webkit-scrollbar-thumb, .tracklist-insidebox::-webkit-scrollbar-thumb {
-  background: rgba(132, 138, 170, 0.282);
+.play-box1::-webkit-scrollbar-thumb,
+.tracklist-insidebox::-webkit-scrollbar-thumb {
+	background: rgba(132, 138, 170, 0.282);
 }
 
 .tracklist-insidebox::-webkit-scrollbar-thumb:hover {
-  background: #1a1535;
+	background: #1a1535;
 }
 
-.play-box1::-webkit-scrollbar-track, .tracklist-insidebox::-webkit-scrollbar-track {
-  background-color: transparent;
+.play-box1::-webkit-scrollbar-track,
+.tracklist-insidebox::-webkit-scrollbar-track {
+	background-color: transparent;
 }
 
 .play-box1::-webkit-scrollbar-button:single-button,
 .tracklist-insidebox::-webkit-scrollbar-button:single-button {
-  background-color: transparent;
-  display: block;
-  border-style: solid;
-  height: 13px;
-  width: 16px;
+	background-color: transparent;
+	display: block;
+	border-style: solid;
+	height: 13px;
+	width: 16px;
 }
 .play-box1::-webkit-scrollbar-button:single-button:hover,
 .tracklist-insidebox::-webkit-scrollbar-button:single-button:hover {
-  background-color: rgba(132, 138, 170, 0.282);
-  display: block;
-  border-style: solid;
-  height: 13px;
-  width: 16px;
+	background-color: rgba(132, 138, 170, 0.282);
+	display: block;
+	border-style: solid;
+	height: 13px;
+	width: 16px;
 }
 
 .play-box1::-webkit-scrollbar-button:single-button:vertical:decrement,
 .tracklist-insidebox::-webkit-scrollbar-button:single-button:vertical:decrement {
-  border-width: 0 8px 8px 8px;
-  border-color: transparent transparent rgba(132, 138, 170, 0.282) transparent;
+	border-width: 0 8px 8px 8px;
+	border-color: transparent transparent rgba(132, 138, 170, 0.282) transparent;
 }
 .play-box1::-webkit-scrollbar-button:single-button:vertical:decrement:hover,
 .tracklist-insidebox::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
-  border-color: transparent transparent #1a1535 transparent;
+	border-color: transparent transparent #1a1535 transparent;
 }
 
 .play-box1::-webkit-scrollbar-button:single-button:vertical:increment,
 .tracklist-insidebox::-webkit-scrollbar-button:single-button:vertical:increment {
-  border-width: 8px 8px 0 8px;
-  border-color: rgba(132, 138, 170, 0.282) transparent transparent transparent;
+	border-width: 8px 8px 0 8px;
+	border-color: rgba(132, 138, 170, 0.282) transparent transparent transparent;
 }
 .play-box1::-webkit-scrollbar-button:single-button:vertical:increment:hover,
 .tracklist-insidebox::-webkit-scrollbar-button:vertical:single-button:increment:hover {
-  border-color: #1a1535 transparent transparent transparent;
+	border-color: #1a1535 transparent transparent transparent;
 }
 
 .playlist-songtitle {
@@ -333,6 +334,16 @@ button.back-btn:hover {
 	}
 }
 
+.no-preview-box .fa-plus-circle {
+	opacity: 0;
+	color: $main-color;
+	position: relative;
+	left: 33px;
+	bottom: 105px;
+	font-size: 35px;
+	z-index: 0;
+}
+
 .fa-plus-circle {
 	opacity: 0;
 	color: $main-color;
@@ -343,14 +354,39 @@ button.back-btn:hover {
 	z-index: 0;
 }
 
+.no-songpreview {
+	opacity: 1;
+	color: white;
+	background-color: rgba(19, 16, 43, 0.7);
+	position: relative;
+	bottom: 35px;
+	text-align: center;
+	font-size: 10px;
+	letter-spacing: 1px;
+	z-index: 0;
+}
+
 .filter-imagebox:hover {
 	cursor: pointer;
+	z-index: 10;
+	box-shadow: 0 0 2px 3px $main-color;
+	border-radius: 5px;
+
+	.no-songpreview {
+		opacity: 1;
+		color: $main-color;
+		background-color: transparent;
+	}
+	.no-preview-box .fa-plus-circle {
+		opacity: 1;
+	}
 	.fa-plus-circle {
 		opacity: 1;
 	}
 	.trackalbum-image {
-		box-shadow: 0 0 2px 3px $main-color;
+		opacity: 0.2;
 	}
+
 	.checkmark {
 		position: absolute;
 		bottom: 52px;
@@ -391,6 +427,24 @@ button.back-btn:hover {
 	max-lines: 3;
 }
 
+.noprev-checkbox input:checked ~ .checkmark-box {
+	display: block;
+	position: relative;
+	bottom: 1px;
+	right: 0;
+	height: 100px;
+	width: 100px;
+	background-color: black;
+	opacity: 0.9;
+	color: white;
+	font-size: 10px;
+	padding-top: 55px;
+	text-align: center;
+	border-radius: 4%;
+	z-index: 0;
+	max-lines: 3;
+}
+
 .checkmark-box {
 	display: none;
 }
@@ -399,6 +453,20 @@ button.back-btn:hover {
 	display: block;
 	position: relative;
 	bottom: 138px;
+	left: 0px;
+	height: 100px;
+	width: 100px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	width: 100%;
+}
+
+.noprev-checkbox {
+	display: block;
+	position: relative;
+	bottom: 163px;
 	left: 0px;
 	height: 100px;
 	width: 100px;
@@ -421,7 +489,24 @@ button.back-btn:hover {
 	z-index: 10;
 }
 
+.noprev-checkbox input {
+	position: absolute;
+	cursor: pointer;
+	bottom: 1px;
+	left: 0;
+	height: 100px;
+	width: 100px;
+	border-radius: 5px;
+	opacity: 0;
+	z-index: 10;
+}
+
 .checkbox-container input:checked ~ .checkmark {
+	background-color: transparent;
+	border: 3px solid rgb(47, 250, 189);
+	z-index: 1;
+}
+.noprev-checkbox input:checked ~ .checkmark {
 	background-color: transparent;
 	border: 3px solid rgb(47, 250, 189);
 	z-index: 1;
@@ -431,10 +516,32 @@ button.back-btn:hover {
 	position: absolute;
 	display: none;
 }
+
+.noprev-checkbox input:checked ~ .checkmark {
+	background-color: transparent;
+	border: 3px solid rgb(47, 250, 189);
+	z-index: 1;
+}
+
 .checkbox-container input:checked ~ .checkmark:after {
 	display: block;
 }
+
+.noprev-checkbox input:checked ~ .checkmark:after {
+	display: block;
+}
 .checkbox-container .checkmark:after {
+	left: 10px;
+	top: 3px;
+	width: 5px;
+	height: 15px;
+	border: solid rgb(47, 250, 189);
+	border-width: 0 4px 4px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.noprev-checkbox .checkmark:after {
 	left: 10px;
 	top: 3px;
 	width: 5px;
@@ -505,18 +612,11 @@ button.back-btn:hover {
 	}
 }
 
-
 @media screen and (max-width: 375px) {
 	.tracklist-box {
 		margin: 0 auto;
-        width: 410px;
-        margin-left: 20px;
+		width: 410px;
+		margin-left: 20px;
 		margin-right: 20px;
-	
-	
-	
-  }
-  
-
-  
+	}
 }

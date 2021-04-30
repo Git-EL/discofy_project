@@ -133,13 +133,29 @@ const Filter = (props) => {
                             id={item.id} value={item.uri} name={item.name} onChange={addTracks} onChangeCapture={stoptrack}/>
                        <span className="checkmark"></span>
                         <div className="checkmark-box"><p>{item.artists[0].name.length > 20 ? item.artists[0].name.substring(0, 18) + "..." : item.artists[0].name}</p>
-                        <p>{item.name.length > 39 ? item.name.substring(0, 39) + "..." : item.name}</p></div>
+                        <p>{item.name.length > 38 ? item.name.substring(0, 38) + "..." : item.name}</p></div>
                       </div> 
                    </div>
                 </div> 
-                :  null
+                :  
+                <div key={idx + 1} className='filter-outerbox'>
+                <div className="filter-imagebox">  
+                   <img src={item.album.images[0].url} alt="test" className="trackalbum-image" id={item.id} />
+                   <div className="no-preview-box"><p className="no-songpreview">Sorry! No preview available!</p>
+                   <i className="fas fa-plus-circle"></i></div>
+                   <div className="noprev-checkbox " >
+                     <input type="checkbox" className="custom-input " checked={trackID === item.id && 
+                         selectedTracks.playlistTracks.includes(item.uri)
+                         ? true : selectedTracks.playlistTracks.includes(item.uri) ? true : (trackID === item.id) ? false : undefined                        }
+                         id={item.id} value={item.uri} name={item.name}/>
+                    <span className="checkmark"></span>
+                     <div className="checkmark-box"><p>{item.artists[0].name.length > 20 ? item.artists[0].name.substring(0, 18) + "..." : item.artists[0].name}</p>
+                     <p>{item.name.length > 38 ? item.name.substring(0, 38) + "..." : item.name}</p></div>
+                   </div> 
+                </div>
+             </div> 
                )
-           }) : <p className="missing-message"><i className="far fa-times-circle"></i> Unfortunately, there is no track available for this category.</p>
+           }) : <p className="missing-message"><i className="far fa-times-circle"></i> Unfortunately, there is no track-preview available for this category.</p>
          }
          </div>
        </div>

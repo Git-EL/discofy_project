@@ -30,6 +30,9 @@ $main-bgcolor: #050124;
 	flex-direction: column;
 	min-height: 100vh;
 	height: 100%;
+	min-width: 100vw;
+	width: 100%;
+	overflow-x: hidden;
 }
 
 .inner-container {
@@ -250,12 +253,6 @@ h3.selection-title {
 		width: 400px;
 	}
 
-	// .tab-title .fas,
-	// .tab-title .fab,
-	// .artists-icon {
-	// 	font-size: 35px;
-	// }
-
 	.react-tabs__tab {
 		padding: 25px 12px 95px;
 		width: 100px;
@@ -271,14 +268,68 @@ h3.selection-title {
 	}
 }
 
-@media screen and (max-width: 375px) {
-	.tab-title {
-		margin: 0 auto;
-        width: 370px;
-        margin-left: 20px;
-		margin-right: 20px;
-	
+@media screen and (max-width: 415px) {
+	.react-tabs__tab {
+		width: 82.5px;
+	}
 
-	
-  }
+	.react-tabs__tab--selected {
+		width: 82.5px;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.react-tabs__tab {
+		padding: 25px 5px 95px;
+		width: 75px;
+	}
+
+	.react-tabs__tab--selected {
+		padding: 25px 5px 95px;
+		width: 75px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.react-tabs__tab {
+		padding: 25px 5px 95px;
+		width: 72.5px;
+	}
+
+	.react-tabs__tab--selected {
+		padding: 25px 5px 95px;
+		width: 72.5px;
+	}
+}
+
+@media screen and (max-width: 321px) {
+	.react-tabs__tab {
+		padding: 25px 0px 95px;
+		width: 63.7px;
+	}
+
+	.react-tabs__tab--selected {
+		padding: 25px 0px 95px;
+		width: 63.7px;
+	}
+
+	.tab-title {
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 281px) {
+	.react-tabs__tab {
+		padding: 25px 0px 95px;
+		width: 56.6px;
+	}
+
+	.react-tabs__tab--selected {
+		padding: 25px 0px 95px;
+		width: 56.6px;
+	}
+
+	.tab-title {
+		font-size: 10px;
+	}
 }

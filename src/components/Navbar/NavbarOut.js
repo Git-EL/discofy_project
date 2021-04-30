@@ -7,16 +7,13 @@ const Navbar = () => {
   const spotify_authUrl = process.env.REACT_APP_AUTHORIZE_URL
   const spotify_redirectUrl = process.env.REACT_APP_REDIRECT_URL
   const [navLinkOpen, navLinkToggle] = useState(false)
-  const [logStatus, setLogStatus] = useState({loggedInStatus: false})
 
 
   const handleLogin = () => {
-    setLogStatus({loggedInStatus: false})
     window.location = `${spotify_authUrl}?client_id=${spotify_clientId}&redirect_uri=${spotify_redirectUrl}&response_type=token&show_dialog=true&scope=user-library-read+user-follow-read+user-top-read+playlist-modify-private+playlist-modify-public`
   }
 
   const logOut = () => {
-    setLogStatus({loggedInStatus: true})
     localStorage.clear();
     if (localStorage.getItem(handleLogin)){
       window.location.reload();
@@ -28,6 +25,7 @@ const Navbar = () => {
     navLinkToggle(!navLinkOpen)
   }
   const handleLinksToggle = () => {
+    localStorage.clear();
     if (navLinkOpen) {
     navLinkToggle(!navLinkOpen)}
   }
@@ -44,30 +42,24 @@ const Navbar = () => {
       <div onClick={handleNavLinksToggle} className='hamburger-toggle'>
         <i className='fas fa-times'></i></div>
         <li className='link'>
-          <Link to='/' onClick={handleLinksToggle}> Home
+          <Link to='/' onClick={ handleLinksToggle}> Home
           </Link>
         </li>
         <li className='link'>
-          <Link to='/intro' onClick={handleLinksToggle}> Intro
+          <Link to='/intro' onClick={handleLinksToggle} onChange={logOut}> Intro
           </Link>
         </li>
         <li className='link'>
-          <Link to='/contact' onClick={handleLinksToggle}> Contact
+          <Link to='/contact' onClick={handleLinksToggle} onChange={logOut}> Contact
           </Link>
         </li>
         <li className='link, spacing-deco'>|
           </li>
         <li className='link'>
-        {logStatus.loggedInStatus ? (
-        <button onClick={handleLogin}>
-        <Link to='/'> Login
-        </Link>
-      </button>)
-        : (<button onClick={logOut}>
+        <button onClick={logOut}>
         <Link to='/'> Logout
         </Link>
-      </button>)
-        }
+      </button>
         </li>
       </ul>
       <div onClick={handleNavLinksToggle} className='hamburger-toggle'>

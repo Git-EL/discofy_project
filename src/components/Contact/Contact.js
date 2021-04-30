@@ -1,4 +1,5 @@
 import "./Contact.scss";
+import Navbar from '../Navbar/NavbarIn'
 import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react/cjs/react.development";
@@ -12,6 +13,8 @@ function Contact() {
   const [job2] = useState("Full Stack Web Developer");
   const [about2] = useState("My interest...");
   return (
+    <div>
+    <Navbar />
     <div className="contact-container">
       <img src={discofy_logo_small} alt="discofy-logo" className="logo_small" />
       <div className="big-container">
@@ -36,17 +39,17 @@ function Contact() {
             <ul className="ft-social-list">
               <li>
                 <a href="https://github.com/Suzy1412">
-                  <i class="fab fa-github"></i>
+                  <i className="fab fa-github"></i>
                 </a>
               </li>
               <li>
                 <a href="mailto:suzy.91@outlook.com">
-                  <i class="fas fa-envelope-open-text"></i>
+                  <i className="fas fa-envelope-open-text"></i>
                 </a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/suzana-jovanovic-1b9ab81b2/">
-                  <i class="fab fa-linkedin"></i>
+                  <i className="fab fa-linkedin"></i>
                 </a>
               </li>
             </ul>
@@ -99,6 +102,7 @@ function Contact() {
           <Link to="/"> Back to Home</Link>
         </button>
       </div>
+    </div>
     </div>
   );
 }
