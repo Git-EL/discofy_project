@@ -21,6 +21,51 @@ $main-bgcolor: #050124;
   z-index: 0;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(132, 138, 170, 0.282);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1a1535;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #2f2858;
+}
+/* Buttons */
+::-webkit-scrollbar-button:single-button {
+  background-color: #2f2858;
+  display: block;
+  border-style: solid;
+  height: 13px;
+  width: 16px;
+}
+::-webkit-scrollbar-button:single-button:hover {
+  background-color: rgba(132, 138, 170, 0.282);
+  width: 16px;
+}
+/* Up */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent rgba(132, 138, 170, 0.282) transparent;
+}
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+  border-color: transparent transparent #1a1535 transparent;
+}
+
+/* Down */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+  border-width: 8px 8px 0 8px;
+  border-color: rgba(132, 138, 170, 0.282) transparent transparent transparent;
+}
+::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+  border-color: #1a1535 transparent transparent transparent;
+}
+
 .logo_small {
 	width: 90%;
 	max-width: 100px;

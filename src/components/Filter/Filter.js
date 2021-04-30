@@ -48,6 +48,8 @@ const Filter = (props) => {
 
    const createPlaylist = async (e) => {
     e.preventDefault();
+    setSelectedTracks({ playlistTracks: ''});
+    setSongSelected(0);
 
     try{
      let playlistIDResponse = await axios ({ 
@@ -105,7 +107,17 @@ const Filter = (props) => {
         <div className="tracklist-insideflex"> 
          {props.artiststracklist.length > 0 ? props.artiststracklist.map((item, idx) =>  
             {const audio = new Audio(item.preview_url);
-              const playtrack = () => { audio.play(); audio.volume = 0.5; }
+              const playtrack = () => { 
+                let playPromise = audio.play();
+                if (playPromise !== undefined) {
+                  playPromise
+                    .then(_ => {
+                      console.log("audio played");
+                    })
+                    .catch(error => {
+                      console.log("playback prevented");
+                    });
+                } }
               const stoptrack = () => { audio.pause() }
               
                return (
@@ -137,7 +149,6 @@ const Filter = (props) => {
     <SelectedTracksCount />  
       <div className="play-box1">
         {props.artiststracklist.map((item, idx) => 
-        // <div key={idx + 1} value={item.id}>
           <div key={idx + 1}>
             <div className="playlist-preview">{selectedTracks.playlistTracks.includes(item.uri) ? 
               <div className="track-info">
