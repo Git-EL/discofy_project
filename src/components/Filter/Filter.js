@@ -121,7 +121,7 @@ const Filter = (props) => {
               const stoptrack = () => { audio.pause() }
               
                return (
-                item.preview_url ?  <div key={idx + 1} className='filter-outerbox'>
+                item.preview_url && !null ? <div key={idx + 1} className='filter-outerbox'>
                    <div className="filter-imagebox" onMouseOver={playtrack} onMouseLeave={stoptrack}>   
 
                       <img src={item.album.images[0].url} alt="test" className="trackalbum-image" id={item.id} />
