@@ -24,16 +24,21 @@ const Filter = (props) => {
      addedTracks = addedTracks.filter(track => track !== event.target.value);
    } 
    setSelectedTracks({ playlistTracks: addedTracks }); 
-   setSongSelected(selectedTracks.playlistTracks.length + 1)
- };console.log(selectedTracks)
+ };
  
+useEffect(() => {
+  setSongSelected(selectedTracks.playlistTracks.length)
+}, [selectedTracks.playlistTracks.length])
+
   const deleteTrack = event => {
   setTrackID(event.target.id)
 
   setSelectedTracks(prevState => ({ 
-    playlistTracks: prevState.playlistTracks.filter(track =>  track !== event.target.value) 
-    }))
-    setSongSelected(selectedTracks.playlistTracks.length - 1)
+    playlistTracks: prevState.playlistTracks.filter(track => track !== event.target.value)
+  }
+   )
+    )
+   console.log(songSelected)
   };
   
    useEffect(() => {
@@ -129,7 +134,7 @@ const Filter = (props) => {
                       <div className="checkbox-container" >
                         <input type="checkbox" className="custom-input " checked={trackID === item.id && 
                             selectedTracks.playlistTracks.includes(item.uri)
-                            ? true : selectedTracks.playlistTracks.includes(item.uri) ? true : (trackID === item.id) ? false : undefined                        }
+                            ? true : selectedTracks.playlistTracks.includes(item.uri) ? true : (trackID === item.id) ? false : undefined}
                             id={item.id} value={item.uri} name={item.name} onChange={addTracks} onChangeCapture={stoptrack}/>
                        <span className="checkmark"></span>
                         <div className="checkmark-box"><p>{item.artists[0].name.length > 20 ? item.artists[0].name.substring(0, 18) + "..." : item.artists[0].name}</p>
@@ -147,7 +152,7 @@ const Filter = (props) => {
                      <input type="checkbox" className="custom-input " checked={trackID === item.id && 
                          selectedTracks.playlistTracks.includes(item.uri)
                          ? true : selectedTracks.playlistTracks.includes(item.uri) ? true : (trackID === item.id) ? false : undefined                        }
-                         id={item.id} value={item.uri} name={item.name}/>
+                         id={item.id} value={item.uri} name={item.name}  onChange={addTracks}/>
                     <span className="checkmark"></span>
                      <div className="checkmark-box"><p>{item.artists[0].name.length > 20 ? item.artists[0].name.substring(0, 18) + "..." : item.artists[0].name}</p>
                      <p>{item.name.length > 38 ? item.name.substring(0, 38) + "..." : item.name}</p></div>
