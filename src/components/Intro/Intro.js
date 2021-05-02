@@ -1,4 +1,4 @@
-import './Intro.scss'
+import '../Intro/Intro.scss'
 import Navbar from '../Navbar/NavbarIn'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
