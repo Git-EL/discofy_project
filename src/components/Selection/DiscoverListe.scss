@@ -1,9 +1,8 @@
-$main-color: #8bffff;
-$main-bgcolor: #050124;
+@import '../../styles/base/mixins.scss';
+@import '../../styles/base/variables.scss';
 
 .discover-container {
-	border: solid 1px rgba(235, 233, 233, 0.282);
-	background-color: rgba(235, 186, 247, 0.1);
+	@include standard-boxstyle;
 	border-radius: 5px 0 0 5px;
 	padding-right: 35px;
 	max-width: 855px;
@@ -23,15 +22,6 @@ $main-bgcolor: #050124;
 	font-size: 14px;
 	margin: 2px 25px 0;
 	font-family: 'Nunito Sans', sans-serif;
-}
-
-.discover-checkbox {
-	height: 100px;
-	width: 100px;
-	bottom: 26px;
-	margin-left: 5px;
-	position: relative;
-	z-index: 6;
 }
 
 .discover-box {
@@ -57,8 +47,7 @@ $main-bgcolor: #050124;
 }
 
 .discover-box input:checked ~ .box {
-	height: 100px;
-	width: 100px;
+	@include standardimage-size;
 	bottom: 130px;
 	margin-left: 5px;
 	border-radius: 5px;
@@ -82,14 +71,8 @@ $main-bgcolor: #050124;
 	top: 20px;
 }
 
-.discover-image:hover,
-.discover-name:hover {
-	cursor: pointer;
-}
-
 .discover-innerbox {
-	height: 100px;
-	width: 100px;
+	@include standardimage-size;
 	margin: 3px;
 }
 
@@ -111,9 +94,21 @@ $main-bgcolor: #050124;
 	z-index: 6;
 }
 
+.discover-checkbox {
+	@include standardimage-size;
+	bottom: 26px;
+	margin-left: 5px;
+	position: relative;
+	z-index: 6;
+}
+
+.discover-image:hover,
+.discover-name:hover {
+	cursor: pointer;
+}
+
 .discover-image {
-	height: 100px;
-	width: 100px;
+	@include standardimage-size;
 	border-radius: 5px;
 	border: 1px solid rgb(144, 134, 168);
 	opacity: 0.7;
@@ -150,6 +145,7 @@ $main-bgcolor: #050124;
 		margin: 0 auto;
 	}
 }
+
 @media screen and (max-width: 415px) {
 	.discover-container {
 		max-width: 330px;

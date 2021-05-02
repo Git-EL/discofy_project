@@ -1,25 +1,25 @@
 import './Selection.scss'
 import React, { useState , useEffect } from 'react'
+import { Redirect } from 'react-router-dom';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import axios from 'axios'
 import Navbar from '../Navbar/NavbarOut'
 import GenreListe from './GenreListe'
 import ArtistsListe from './ArtistsListe'
 import SubGenreListe from './SubGenreListe'
 import DiscoverListe from './DiscoverListe'
 import Filter from '../Filter/Filter'
-import axios from 'axios'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import artist_icon from '../../assets/artist_icon.svg'
-import { Redirect } from 'react-router-dom';
 import discofy_logo_small from '../../assets/discofy_logo_small.svg'
 import aurora from '../../assets/aurora.jpeg'
 
 const Selection = (props) => {
+
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
   const spotify_clientSecret = process.env.REACT_APP_CLIENT_SECRET
   const getAccessToken = localStorage.getItem('params')
   const spotify_accessToken = JSON.parse(getAccessToken)
   const { isValidSession, history } = props;
-
   const [token, setToken] = useState('')
   const [genres, setGenres] = useState({
     listOfGenresFromAPI: []
@@ -55,10 +55,8 @@ const Selection = (props) => {
   const [artistName, setArtistName] = useState('')
   const [filterbtnStatus, setFilterbtnStatus] = useState(false)
   const [buttonActive, setButtonActive] = useState(false)
-
   const [discoverPicture, setDiscoverPicture] = useState('')
   
-
   useEffect(() => {
     if (isValidSession()) {
     axios('https://accounts.spotify.com/api/token', {
@@ -79,7 +77,7 @@ const Selection = (props) => {
           listOfGenresFromAPI: genreResponse.data.categories.items
         })
       })
-    })  } else {
+    })} else {
       history.push({
         pathname: '/',
         state: {
@@ -115,8 +113,6 @@ const Selection = (props) => {
     const genreId = currentGenre.filter((t) => t.id === val)
    
     setDiscoverPicture(genreId[0].icons[0].url)
-
-
     setGenreId(val)
     setSubGenreId('')
     setArtistId('')
@@ -165,14 +161,10 @@ const Selection = (props) => {
  
   }
 
-
   const artistsboxClicked = (val) => {
     const currentArtists = [...artists.listOfArtistsFromAPI, ...savedArtists.listOfSavedartistsFromAPI]
-    console.log(currentArtists)
     const artistsInfo = currentArtists.filter((t) => t.id === val)
-    console.log(artistsInfo)
 
-    
     setDiscoverPicture(artistsInfo[0].images.length === 0 ? aurora : artistsInfo[0].images[0].url)
     setArtistId(artistsInfo[0].id)
     setArtistName(artistsInfo[0].name)
@@ -227,7 +219,6 @@ const Selection = (props) => {
   const subGenreboxClicked = (val) => {
 
     setDiscoverPicture(aurora)
-
     setSubGenreId(val)
     setGenreId('')
     setArtistId('')
@@ -262,13 +253,11 @@ const Selection = (props) => {
 
   const discoverboxClicked = (val) => {
     const currentDiscoverArtists = discover.listOfDiscoverFromAPI
-    console.log(currentDiscoverArtists)
     const discoverArtistsId = currentDiscoverArtists.filter((t) => t.artists[0].name === val)
     console.log(discoverArtistsId)
 
     setDiscoverPicture(discoverArtistsId[0].images.length === 0 ? aurora : discoverArtistsId[0].images[0].url)
     
-    console.log(discoverPicture)
     setDiscoverId(val)
     setGenreId('')
     setSubGenreId('')
@@ -287,12 +276,10 @@ const Selection = (props) => {
      })
   }
 
-    const filterbtnClicked = () => {
-      if (!filterbtnStatus){setFilterbtnStatus(true)}
-    }
+  const filterbtnClicked = () => {
+    if (!filterbtnStatus){setFilterbtnStatus(true)}
+  }
  
-
-    
     return (
     isValidSession() ? (
     (genreId && filterbtnStatus) || (subGenreId && filterbtnStatus) || (artistId && filterbtnStatus) || (discoverId && filterbtnStatus) ? 
@@ -336,7 +323,7 @@ const Selection = (props) => {
             </Tab>
           </TabList>
           <TabPanel>
-          <div className='tab-contentbox'>
+           <div className='tab-contentbox'>
               <GenreListe 
               title='Genre' 
               genrelist={genres.listOfGenresFromAPI} 
@@ -373,17 +360,17 @@ const Selection = (props) => {
           </TabPanel>
         </Tabs>
         <div className='choices'>
-        <div className='boxresult'>
-        <div className='yourchoice'>Your pick is<p className='categorypick'>{genreId.trim().replaceAll("_", " ") || subGenreId || discoverId || artistName}</p> </div>   
-        {discoverPicture ? <div className="preview-imagewrap"><img src={discoverPicture} alt="preview" className="preview-image" /></div>: null}
-        <h1 className='happychoices'>Happy with your choice?</h1>                 
-          <button className='filter-btn' disabled={!buttonActive} onClick={filterbtnClicked}>
+         <div className='boxresult'>
+           <div className='yourchoice'>Your pick is<p className='categorypick'>{genreId.trim().replaceAll("_", " ") || subGenreId || discoverId || artistName}</p> </div>   
+           {discoverPicture ? <div className="preview-imagewrap"><img src={discoverPicture} alt="preview" className="preview-image" /></div>: null}
+           <h1 className='happychoices'>Happy with your choice?</h1>                 
+           <button className='filter-btn' disabled={!buttonActive} onClick={filterbtnClicked}>
             <div className='filter-firstlink'> Get your Songs
             </div>
             <div className='filter-secondlink'> Get your Songs
-          </div>
-            </button>
-          </div>
+            </div>
+           </button>
+         </div>
         </div>
       </div>
       </div>)): (

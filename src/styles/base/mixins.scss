@@ -1,0 +1,40 @@
+@import "../base/variables.scss";
+
+@mixin full-height {
+	min-height: 100vh;
+	height: 100%;
+}
+
+@mixin full-width {
+	min-width: 100vw;
+	width: 100%;
+}
+
+@mixin standard-boxstyle {
+	border: solid 1px rgba(235, 233, 233, 0.282);
+	background-color: rgba(235, 186, 247, 0.1);
+}
+
+@mixin standardimage-size {
+	width: 100px;
+	height: 100px;
+}
+
+@mixin animation-button {
+	height: 45px;
+	font: normal 700 1em/2.5em Arial, sans-serif;
+	overflow: hidden;
+	background-color: $main-color;
+	border-radius: 50px;
+	border-style: solid;
+	border-color: $main-color;
+	outline: transparent;
+	text-transform: uppercase;
+}
+
+@mixin maintitle-style {
+	color: $main-color;
+	font-size: 30px;
+	font-family: 'Nunito Sans', sans-serif;
+	letter-spacing: 1.5px;
+}
