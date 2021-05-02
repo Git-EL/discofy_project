@@ -1,5 +1,5 @@
-@import '../../styles/base/mixins.scss';
-@import '../../styles/base/variables.scss';
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
 .filter-container {
 	@include full-height;
@@ -83,7 +83,8 @@ button.back-btn:hover {
 	width: 90%;
 	margin: 0 auto;
 	overflow-y: scroll;
-	scrollbar-width: none; /* Firefox */
+	scrollbar-width: thin; /* Firefox */
+	scrollbar-color: #1a1535 rgba(132, 138, 170, 0.282);
 	-ms-overflow-style: none; /* Internet Explorer 10+ */
 	height: 600px;
 }
@@ -257,6 +258,12 @@ button.back-btn:hover {
 	border-radius: 4%;
 	z-index: 0;
 	max-lines: 3;
+}
+
+@supports (-moz-appearance:none) {
+	.checkbox-container input:checked ~ .checkmark-box {
+		bottom: 2px;
+	}
 }
 
 .checkbox-container input:checked ~ .checkmark {
@@ -575,7 +582,7 @@ h2.playlist-title {
 		margin: 0 auto;
 		width: 79%;
 	}
-	.filter-box {
+	form.filter-box {
 		flex-direction: column;
 		align-content: center;
 		padding: 30px 30px;
@@ -612,6 +619,10 @@ h2.playlist-title {
 	.rmv-btn {
 		position: unset;
 		margin: 10px 0 10px;
+	}
+	.checkbox-container input:checked ~ .checkmark-box {
+		@include standardimage-size;
+		bottom: 2px;
 	}
 }
 
