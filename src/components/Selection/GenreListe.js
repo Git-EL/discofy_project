@@ -8,7 +8,6 @@ const GenreListe = props => {
     props.clicked(e.target.id);
 }    
 
-
   return (
     <div className='col-sm-10 genre-container'>
       <h4>Browse All</h4>
@@ -17,13 +16,10 @@ const GenreListe = props => {
         {props.genrelist.map((item, idx) => 
         <div key={idx + 1} className="genre-innerbox">
           <div className="genre-name">{item.name}</div>
-         
           <input type="radio" onChange={clicked} id={item.id} className="genre-checkbox" name="choice"></input>
           <div className="box"><i className="far fa-heart"></i></div>
-         
           <img src={item.icons[0].url} alt="genre" className="genre-image" id={item.id} />
-           
-            </div>)}
+        </div>)}
       </div>
     </div>
   )

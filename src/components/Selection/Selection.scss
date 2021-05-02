@@ -1,38 +1,23 @@
-$main-color: #8bffff;
-$main-bgcolor: #050124;
-
-@mixin animation-button {
-	height: 45px;
-	font: normal 700 1em/2.5em Arial, sans-serif;
-	overflow: hidden;
-	width: 150px;
-	background-color: $main-color;
-	border-radius: 50px;
-	border-style: solid;
-	border-color: $main-color;
-	outline: transparent;
-	text-transform: uppercase;
-}
-
-.preview-image {
-	height: 200px;
-	max-height: 100%;
-	width: 200px;
-	max-width: 100%;
-	margin: 10px auto 30px;
-	border-radius: 5px;
-	border: 2px solid white;
-}
+@import '../../styles/base/mixins.scss';
+@import '../../styles/base/variables.scss';
 
 .container {
+	@include full-height;
+	@include full-width;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	min-height: 100vh;
-	height: 100%;
-	min-width: 100vw;
-	width: 100%;
 	overflow-x: hidden;
+}
+
+h3.selection-title {
+	@include maintitle-style;
+	border-bottom: 1px solid rgba(235, 233, 233, 0.282);
+	line-height: 2.5em;
+	margin: 0 auto;
+	max-width: 1300px;
+	width: 80%;
+	padding-top: 80px;
 }
 
 .inner-container {
@@ -45,9 +30,8 @@ $main-bgcolor: #050124;
 }
 
 .choices {
+	@include standard-boxstyle;
 	text-align: center;
-	background-color: rgba(235, 233, 233, 0.091);
-	border: solid 1px rgba(235, 233, 233, 0.282);
 	border-left: none;
 	height: 766px;
 	max-height: 100%;
@@ -58,10 +42,9 @@ $main-bgcolor: #050124;
 	display: flex;
 }
 
-.yourchoice {
-	color: $main-color;
-	font-size: 25px;
-	font-family: 'Nunito Sans', sans-serif;
+.boxresult {
+	margin: auto;
+	margin: 100px 30px 0 30px;
 }
 
 .categorypick {
@@ -72,6 +55,84 @@ $main-bgcolor: #050124;
 	font-weight: bold;
 }
 
+.preview-image {
+	height: 200px;
+	max-height: 100%;
+	width: 200px;
+	max-width: 100%;
+	margin: 10px auto 30px;
+	border-radius: 5px;
+	border: 2px solid white;
+}
+
+.yourchoice {
+	color: $main-color;
+	font-size: 25px;
+	font-family: 'Nunito Sans', sans-serif;
+}
+
+.happychoices {
+	color: white;
+	font-size: 3vw;
+	padding: 0 10px;
+	font-family: 'Nunito Sans', sans-serif;
+	letter-spacing: 2px;
+}
+
+.filter-btn {
+	@include animation-button;
+	margin-top: 30px;
+	width: 190px;
+	cursor: pointer;
+}
+
+.filter-btn,
+.filter-firstlink {
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.filter-firstlink {
+	margin-top: 2px;
+}
+
+.filter-btn .filter-firstlink {
+	color: $main-bgcolor;
+	text-decoration: none;
+	text-align: center;
+	display: block; /* important */
+}
+
+.filter-btn:hover {
+	background-color: transparent;
+	border-color: $main-color;
+	.filter-secondlink {
+		color: $main-color;
+	}
+	.filter-firstlink {
+		margin-top: -39px;
+	}
+}
+
+.filter-btn[disabled]:active,
+.filter-btn[disabled],
+.filter-btn[disabled]:hover {
+	border: 2px solid ButtonFace;
+	color: GrayText;
+	cursor: inherit;
+	background-color: #ddd;
+	background: #ddd;
+	.filter-secondlink {
+		color: black;
+	}
+	.filter-firstlink {
+		margin-top: 2px;
+	}
+}
+
 .tab-title {
 	display: flex;
 	align-content: center;
@@ -80,19 +141,6 @@ $main-bgcolor: #050124;
 	font-family: 'Nunito Sans', sans-serif;
 	font-weight: bold;
 	letter-spacing: 1px;
-}
-
-h3.selection-title {
-	color: $main-color;
-	font-size: 30px;
-	border-bottom: 1px solid rgba(235, 233, 233, 0.282);
-	line-height: 2.5em;
-	font-family: 'Nunito Sans', sans-serif;
-	letter-spacing: 1.5px;
-	margin: 0 auto;
-	max-width: 1300px;
-	width: 80%;
-	padding-top: 80px;
 }
 
 .react-tabs {
@@ -120,9 +168,8 @@ h3.selection-title {
 }
 
 .react-tabs__tab--selected {
-	border: solid 1px rgba(235, 233, 233, 0.282);
+	@include standard-boxstyle;
 	border-radius: 20px;
-	background-color: rgba(235, 233, 233, 0.091);
 	border-bottom: none;
 	color: white;
 	border-radius: 5px 5px 0 0;
@@ -144,69 +191,6 @@ h3.selection-title {
 	display: block;
 }
 
-.boxresult {
-	margin: auto;
-	margin: 100px 30px 0 30px;
-}
-
-.happychoices {
-	color: white;
-	font-size: 3vw;
-	padding: 0 10px;
-	font-family: 'Nunito Sans', sans-serif;
-	letter-spacing: 2px;
-}
-
-.filter-btn {
-	@include animation-button;
-	margin-top: 30px;
-	width: 190px;
-	cursor: pointer;
-}
-
-.filter-btn[disabled]:active,
-.filter-btn[disabled],
-.filter-btn[disabled]:hover {
-	border: 2px solid ButtonFace;
-	color: GrayText;
-	cursor: inherit;
-	background-color: #ddd;
-	background: #ddd;
-	.filter-secondlink {
-		color: black;
-	}
-	.filter-firstlink {
-		margin-top: 2px;
-	}
-}
-
-.filter-btn,
-.filter-firstlink {
-	-webkit-transition: 0.3s;
-	-moz-transition: 0.3s;
-	-ms-transition: 0.3s;
-	-o-transition: 0.3s;
-	transition: 0.3s;
-}
-.filter-firstlink {
-	margin-top: 2px;
-}
-.filter-btn .filter-firstlink {
-	color: $main-bgcolor;
-	text-decoration: none;
-	text-align: center;
-	display: block; /* important */
-}
-.filter-btn:hover {
-	background-color: transparent;
-	border-color: $main-color;
-	.filter-secondlink {
-		color: $main-color;
-	}
-	.filter-firstlink {
-		margin-top: -39px;
-	}
-}
 @media screen and (max-width: 890px) {
 	.inner-container {
 		display: flex;

@@ -9,7 +9,9 @@ const NotFound = () => {
       <Navbar />
       <h1>404</h1>
       <h2>Page not found.</h2>
-      <button>
+      <button className='notfound-btn'>
+        <Link to='/' className='notfound-link'> Back to Home
+        </Link>
         <Link to='/'> Back to Home
         </Link>
       </button>
