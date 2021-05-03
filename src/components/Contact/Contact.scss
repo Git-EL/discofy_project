@@ -3,7 +3,7 @@
 
 h3.contact-title {
 	@include maintitle-style;
-	border-bottom: 1px solid rgba(235, 233, 233, 0.282);
+	border-bottom: $main-border;
 	line-height: 2.5em;
 	margin: 0 auto;
 	width: 84%;
@@ -21,7 +21,7 @@ h3.contact-title {
 
 .home-button {
   @include animation-button;
-  font: normal 700 1em/2.6em Arial, sans-serif;
+  font: normal 700 1em/2.9em Arial, sans-serif;
   width: 150px;
   margin: 50px auto;
 }
@@ -30,12 +30,12 @@ h3.contact-title {
   color: $main-bgcolor;
   text-decoration: none;
   text-align: center;
-  display: block; /* important */
+  display: block; 
 }
 
 .home-button:hover {
   background-color: transparent;
-  border-color: $main-color;
+  border: solid 3px $main-color;
   a {
     color: $main-color;
   }
@@ -46,7 +46,7 @@ h3.contact-title {
 }
 
 .home-button:hover .home-first {
-  margin-top: -2.6em;
+  margin-top: -3.1em;
 }
 
 .contact-container {
@@ -55,6 +55,7 @@ h3.contact-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .big-container {
@@ -67,20 +68,18 @@ h3.contact-title {
 }
 
 .upper-container {
+  @include standard-boxstyle;
   height: 180px;
-  border: solid 1px rgba(235, 233, 233, 0.282);
-  background-color: rgba(235, 233, 233, 0.091);
-  border-radius: 5px 5px;
+  border-radius: 5px 5px 0 0;
   margin: auto;
+  border-bottom: transparent
 }
 
 .botton-container {
+  @include standard-boxstyle;
   height: 300px;
   text-align: center;
-  border: solid 1px rgba(235, 233, 233, 0.282);
-  background-color: rgba(235, 233, 233, 0.091);
-  border-radius: 5px 5px;
-  border-radius: 5px 5px;
+  border-radius: 0 0 5px 5px;
 }
 .botton-container h3,
 h4,
@@ -109,8 +108,7 @@ p {
 }
 
 .image-container img {
-  border: solid 1px rgba(235, 233, 233, 0.282);
-  background-color: rgba(235, 233, 233, 0.091);
+  @include standard-boxstyle;
   border-radius: 5px 5px;
   width: 200px;
   height: 200px;
@@ -123,7 +121,7 @@ p {
 .Card {
   width: 400px;
   height: 480px;
-  background-color: rgba(235, 233, 233, 0.091);
+  background-color: rgba(235, 186, 247, 0.1);
   border-radius: 10px;
   box-shadow: 0px 1px 10px 1px $main-bgcolor;
   margin: 50px 40px 10px;
@@ -132,7 +130,7 @@ p {
 .Card-2 {
   width: 400px;
   height: 480px;
-  background-color: rgba(235, 233, 233, 0.091);
+  background-color: rgba(235, 186, 247, 0.1);
   border-radius: 10px;
   box-shadow: 0px 1px 10px 1px $main-bgcolor;
   margin: 50px 40px 10px;
@@ -148,7 +146,7 @@ p {
   display: flex;
   justify-content: center;
   padding-top: 0.1rem;
-  background-color: rgba(235, 233, 233, 0.091);
+  background-color: rgba(235, 186, 247, 0.1);
 }
 
 .ft-social-list li {
@@ -162,19 +160,14 @@ p {
   }
 
   .Card {
-    margin-left: 200px;
-    margin-top: 220px;
+    margin: 50px auto;
   }
   .Card-2 {
-    margin-left: 150px;
-    margin-top: 220px;
+    margin: 50px auto;
   }
   .home-button {
     @include animation-button;
     width: 150px;
-    margin-top: 760px;
-    margin-left: -550px;
-    height: 45px;
   }
 }
 
@@ -182,22 +175,6 @@ p {
 @media screen and (max-width: 860px) {
   .big-container {
     flex-direction: row;
-  }
-
-  .Card {
-    margin-left: 200px;
-    margin-top: 220px;
-  }
-  .Card-2 {
-    margin-left: 220px;
-    margin-top: 220px;
-  }
-  .home-button {
-    @include animation-button;
-    width: 150px;
-    margin-top: 760px;
-    margin-left: -580px;
-    height: 45px;
   }
 }
 
@@ -207,12 +184,10 @@ p {
   }
 
   .Card {
-    margin-left: 100px;
-    margin-top: 80px;
+    margin-top: 180px;
   }
   .Card-2 {
-    margin-left: 100px;
-    margin-top: 100px;
+    margin-top: 30px;
   }
   .home-button {
     @include animation-button;

@@ -1,13 +1,15 @@
 @import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
 
 * {
   margin: 0;
   padding: 0;
-  border: 0;
   box-sizing: border-box;
 }
 
 .App {
+  @include full-height;
   background-color: $main-bgcolor;
   background-image: url("../assets/background.svg");
   background-position: center;
@@ -15,7 +17,6 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100vw;
-  height: 100%;
   position: relative;
   overflow-y: initial;
   z-index: 0;

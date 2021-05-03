@@ -36,7 +36,7 @@
 
 .getstarted-btn:hover {
   background-color: transparent;
-  border-color: $main-color;
+  border: solid 3px $main-color;
   a {
     color: $main-color;
   }

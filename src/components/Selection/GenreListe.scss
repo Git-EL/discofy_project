@@ -10,18 +10,11 @@
 	height: 766px;
 }
 .genre-container h4 {
-	margin: 20px 25px 0;
-	font-size: 17px;
-	font-family: 'Nunito Sans', sans-serif;
-	font-weight: bold;
-	letter-spacing: 0.6px;
+	@include infomessage-title;
 }
 
 .genre-container .info-message {
-	color: rgba(235, 233, 233, 0.8);
-	font-size: 14px;
-	margin: 2px 25px 0;
-	font-family: 'Nunito Sans', sans-serif;
+	@include infomessage-standard;
 }
 
 .genre-box {
@@ -51,7 +44,7 @@
 	bottom: 99px;
 	margin-left: 5px;
 	border-radius: 5px;
-	box-shadow: 0 0 2px 3px rgb(124, 240, 255);
+	box-shadow: 0 0 2px 3px $main-color;
 	background-color: #15122e;
 	position: relative;
 	cursor: pointer;
@@ -113,7 +106,7 @@
 	padding: 0;
 	margin: 5px;
 	border-radius: 5%;
-	border: 1px solid rgba(235, 233, 233, 0.282);
+	border: $main-border;
 }
 
 .fa-compact-disc {
