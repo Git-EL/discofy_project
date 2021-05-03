@@ -43,7 +43,6 @@ h3.selection-title {
 }
 
 .boxresult {
-	margin: auto;
 	margin: 100px 30px 0 30px;
 }
 
@@ -69,7 +68,7 @@ h3.selection-title {
 	color: $main-color;
 	font-size: 25px;
 	font-family: 'Nunito Sans', sans-serif;
-	margin: 40px auto 10px;
+	margin: 40px auto 5px;
 }
 
 .happychoices {
@@ -82,7 +81,7 @@ h3.selection-title {
 
 .filter-btn {
 	@include animation-button;
-	margin-top: 20px;
+	margin-top: 30px;
 	width: 190px;
 	cursor: pointer;
 }
