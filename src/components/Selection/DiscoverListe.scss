@@ -41,9 +41,14 @@
 
 .discover-box input:checked ~ .box {
 	@include standardimage-size;
-	@include input-checkedbox;
 	bottom: 130px;
 	margin-left: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 2px 3px $main-color;
+	background-color: #15122e;
+	position: relative;
+	cursor: pointer;
+	z-index: 5;
 }
 
 .discover-box input:checked ~ .discover-image {
@@ -119,20 +124,19 @@
 	}
 }
 
-
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 750px) {
 	.discover-container {
-		text-align: center;
-         width: 47%;
-		margin-left: 203px;
-		height: 100%;
-	
+		border-radius: 5px 0 5px 5px;
+		width: 500px;
+		margin: 0 auto;
+	}
+}
 
-	
-  }
-  
-
-  
+@media screen and (max-width: 625px) {
+	.discover-container {
+		width: 400px;
+		margin: 0 auto;
+	}
 }
 
 @media screen and (max-width: 415px) {

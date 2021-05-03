@@ -41,9 +41,14 @@
 
 .genre-box input:checked ~ .box {
 	@include standardimage-size;
-	@include input-checkedbox;
 	bottom: 99px;
 	margin-left: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 2px 3px $main-color;
+	background-color: #15122e;
+	position: relative;
+	cursor: pointer;
+	z-index: 5;
 }
 
 .genre-box input:checked ~ .genre-image {
@@ -110,13 +115,103 @@
 	margin-bottom: 5px;
 }
 
-@media screen and (max-width: 375px) {
-  .genre-container  {
-    text-align: center;
-    width: 47%;
-		margin-left: 203px;
-		height: 100%;
-  }
+@media screen and (max-width: 890px) {
+	.genre-container {
+		border-radius: 0 5px 5px 5px;
+	}
+	.genre-box {
+		width: 100%;
+	}
+}
 
-  
+@media screen and (max-width: 750px) {
+	.genre-container {
+		width: 500px;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 625px) {
+	.genre-container {
+		width: 400px;
+	}
+	.genre-box {
+		height: 630px;
+		max-height: 100%;
+	}
+}
+
+@media screen and (max-width: 415px) {
+	.genre-container {
+		max-width: 330px;
+	}
+	.genre-box {
+		height: 600px;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.genre-container {
+		max-width: 300px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.genre-container {
+		max-width: 290px;
+	}
+}
+
+@media screen and (max-width: 321px) {
+	.genre-container {
+		max-width: 255px;
+	}
+	.genre-box {
+		height: 590px;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.genre-innerbox {
+		height: 160px;
+		width: 160px;
+		margin: 5px;
+		bottom: 155px;
+	}
+	.genre-image {
+		width: 160px;
+		height: 160px;
+		margin: 0;
+		bottom: 155px;
+	}
+	.genre-checkbox {
+		height: 160px;
+		width: 160px;
+		top: 6px;
+		left: 4px;
+	}
+	.genre-box input:checked ~ .box {
+		height: 160px;
+		width: 160px;
+		bottom: 155px;
+		margin-left: 0px;
+	}
+
+	.genre-box input:checked ~ .box .fa-heart {
+		font-size: 65px;
+	}
+	.genre-name {
+		width: 160px;
+		font-size: 18px;
+		top: 115px;
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 281px) {
+	.genre-container {
+		max-width: 225px;
+	}
+	.genre-box {
+		height: 555px;
+	}
 }

@@ -45,9 +45,14 @@
 
 .subgenre-box input:checked ~ .box {
 	@include standardimage-size;
-	@include input-checkedbox;
 	bottom: 209px;
 	margin-left: 5px;
+	border-radius: 5px;
+	box-shadow: 0 0 2px 3px $main-color;
+	background-color: #15122e;
+	position: relative;
+	cursor: pointer;
+	z-index: 5;
 }
 
 .subgenre-box input:checked ~ .box .fa-heart {
