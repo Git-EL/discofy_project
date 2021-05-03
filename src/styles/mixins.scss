@@ -76,3 +76,20 @@
 	font-size: 14px;
 	margin: 2px 25px 0;
 }
+
+@mixin button-transition {
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+
+@mixin input-checkedbox {
+	border-radius: 5px;
+	box-shadow: 0 0 2px 3px $main-color;
+	background-color: #15122e;
+	position: relative;
+	cursor: pointer;
+	z-index: 5;
+}
