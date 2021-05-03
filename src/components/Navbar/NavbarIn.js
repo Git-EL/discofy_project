@@ -15,10 +15,12 @@ const Navbar = () => {
   const handleNavLinksToggle = () => {
     navLinkToggle(!navLinkOpen)
   }
+
   const handleLinksToggle = () => {
     if (navLinkOpen) {
     navLinkToggle(!navLinkOpen)}
   }
+
   const renderClasses = () => {
     let classes = 'navlinks'
     if (navLinkOpen) {
@@ -29,9 +31,9 @@ const Navbar = () => {
   return (
     <nav>
       <ul className={renderClasses()}>
-      <div onClick={handleNavLinksToggle} className='hamburger-toggle'>
+       <div onClick={handleNavLinksToggle} className='hamburger-toggle'>
         <i className='fas fa-times'></i></div>
-        <li className='link'>
+       <li className='link'>
           <Link to='/' onClick={handleLinksToggle}> Home
           </Link>
         </li>
@@ -47,9 +49,9 @@ const Navbar = () => {
           </li>
         <li className='link'>
         <button onClick={handleLogin}>
-        <Link to='/'> Login
-        </Link>
-      </button>
+         <Link to='/'> Login
+         </Link>
+        </button>
         </li>
       </ul>
       <div onClick={handleNavLinksToggle} className='hamburger-toggle'>
@@ -57,4 +59,5 @@ const Navbar = () => {
       </div>
     </nav>
   )}
+  
 export default Navbar

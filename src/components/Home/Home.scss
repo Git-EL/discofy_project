@@ -1,18 +1,5 @@
-$main-color: #8bffff;
-$main-bgcolor: #050124;
-
-@mixin animation-button {
-  height: 45px;
-  font: normal 700 1em/4em Arial, sans-serif;
-  overflow: hidden;
-  width: 150px;
-  background-color: $main-color;
-  border-radius: 50px;
-  border-style: solid;
-  border-color: $main-color;
-  outline: transparent;
-  text-transform: uppercase;
-}
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
 .home-container {
   display: flex;
@@ -23,7 +10,7 @@ $main-bgcolor: #050124;
   width: 100%;
 }
 
-.logo {
+.home-container .logo {
   width: 90%;
   max-width: 420px;
 }
@@ -36,11 +23,23 @@ $main-bgcolor: #050124;
   -o-transition: 0.3s;
   transition: 0.3s;
 }
-.first-link {
-  margin-top: -10px;}
+
 .getstarted-btn {
   @include animation-button;
+  width: 150px;
   margin: 15px;
+}
+
+.getstarted-btn:hover .first-link {
+  margin-top: -2.5em;
+}
+
+.getstarted-btn:hover {
+  background-color: transparent;
+  border: solid 3px $main-color;
+  a {
+    color: $main-color;
+  }
 }
 
 .getstarted-btn a {
@@ -50,18 +49,7 @@ $main-bgcolor: #050124;
   display: block; /* important */
 }
 
-.getstarted-btn:hover {
-  background-color: transparent;
-  border-color: $main-color;
-  a {
-    color: $main-color;
-  }
-}
-
 .getstarted-btn a:hover {
   text-decoration: none;
 }
 
-.getstarted-btn:hover .first-link {
-  margin-top: -4.7em;
-}

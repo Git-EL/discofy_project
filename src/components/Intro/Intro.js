@@ -1,4 +1,4 @@
-import './Intro.scss'
+import '../Intro/Intro.scss'
 import Navbar from '../Navbar/NavbarIn'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,7 +12,6 @@ import hover_icon from '../../assets/hover_icon.svg'
 const Intro = () => {
 
   const spotifyIcon = <FontAwesomeIcon icon={faSpotify} className='spotifyIcon' />
-
   const spotify_clientId = process.env.REACT_APP_CLIENT_ID
   const spotify_authUrl = process.env.REACT_APP_AUTHORIZE_URL
   const spotify_redirectUrl = process.env.REACT_APP_REDIRECT_URL
@@ -22,31 +21,28 @@ const Intro = () => {
   }
 
   return <div className='intro-container'>
-    <Navbar />
-    <div className='intro-box'>
-    <a href="/"><img src={discofy_logo_small} alt='discofy-logo' className='logo_small' /></a>
-     <div className="title-box">
-           <h1 className='title'>Grab your headphones and turn up your speakers</h1>
-              <p className='sub-title'>Discover new music and get a personalized playlist</p>
-         </div>
+          <Navbar />
+          <div className='intro-box'>
+           <a href="/"><img src={discofy_logo_small} alt='discofy-logo' className='logo_small' /></a>
+           <div className="title-box">
+             <h1 className='title'>Grab your headphones and turn up your speakers</h1>
+             <p className='sub-title'>Discover new music and get a personalized playlist</p>
+           </div>
            <div className='card'>
              <div className='card-box'>
                <img src={select_cat} alt='select-category' className='select-category' />
                <p className='p-style'>1. Choose your category</p>
-              
              </div>
              <div className='right'><i className="fas fa-angle-right"></i></div>
              <div className='card-box'>
              <img src={hover_icon} alt='hover' className='hover-icon' />
                <p className='p-style'>2. Hover to get song previews and pick your songs</p>
              </div>
-             
              <div className='right'><i className="fas fa-angle-right"></i></div>
              <div className='card-box'>
              <img src={create_playlist} alt='create-playlist' className='create-playlist' />
                <p className='p-style'>3. Create your playlist <br></br>and save it to Spotify</p>
-            </div>
-
+             </div>
            </div>
            <button className='intro-btn' variant='info' type='submit' onClick={handleLogin}>
              <div className='intro-firstlink'> {spotifyIcon} Login with Spotify</div>

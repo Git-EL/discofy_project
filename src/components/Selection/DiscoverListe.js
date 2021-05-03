@@ -15,16 +15,15 @@ const clicked = e => {
       <div key={0} className="discover-box">
         {props.discoverlist.map((item, idx)  => 
                 <div key={idx + 1} className="discover-innerbox">
-                <div className="discover-name">
-                  {/* <p className="albumtitle">{item.name}</p> */}
-                  <p className="artistname">{item.artists[0].name.length > 28 ? item.artists[0].name.substring(0, 28) + "..." : item.artists[0].name}</p>
+                  <div className="discover-name">
+                    {/* <p className="albumtitle">{item.name}</p> */}
+                    <p className="artistname">{item.artists[0].name.length > 28 ? item.artists[0].name.substring(0, 28) + "..." : item.artists[0].name}</p>
+                  </div>
+                  <input type="radio" onChange={clicked} id={item.id} value={item.artists[0].name} className="discover-checkbox" name="choice"></input>
+                  <div className="box"><i className="far fa-heart"></i></div>
+                  <img src={item.images.length === 0 ? aurora : item.images[0].url }  alt="discover" className="discover-image" id={item.id} />
                 </div>
-               
-                <input type="radio" onChange={clicked} id={item.id} value={item.artists[0].name} className="discover-checkbox" name="choice"></input>
-                <div className="box"><i className="far fa-heart"></i></div>
-          
-          <img src={item.images.length === 0 ? aurora : item.images[0].url }  alt="discover" className="discover-image" id={item.id} />
-         </div>)}
+        )}
       </div>
     </div>
   )

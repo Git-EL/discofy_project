@@ -1,59 +1,56 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
-.artist-container {
+.subgenre-container {
 	@include standard-boxstyle;
 	border-radius: 5px 0 0 5px;
 	padding-right: 35px;
 	max-width: 855px;
+	width: 100%;
 	height: 766px;
 }
 
-.followedartist-title {
+.subgenre-container h4 {
 	@include infomessage-title;
 }
 
-.followedartist-message {
+.subgenre-container .info-message {
 	@include infomessage-standard;
 }
 
-.artist-outerbox {
-	margin: 19px;
+.subgenre-outerbox {
 	height: 630px;
-	max-height: 100%;
-	width: 100%;
 	overflow-y: auto;
 	overflow-x: hidden;
+	margin: 19px;
+	width: 100%;
 }
 
-.artist-box {
+.subgenre-box {
 	display: flex;
 	flex-flow: row wrap;
+	max-height: 100%;
 }
 
-.artist-box input {
+.subgenre-box input {
 	opacity: 0;
 	background-color: transparent;
 	cursor: pointer;
 }
 
-.artist-box input:checked {
+.subgenre-box input:checked {
 	opacity: 0;
 	background-color: transparent;
 }
 
-.artist-box input:checked ~ .box {
+.subgenre-box input:checked ~ .box {
 	@include standardimage-size;
 	@include input-checkedbox;
-	bottom: 135px;
+	bottom: 209px;
 	margin-left: 5px;
 }
 
-.artist-box input:checked ~ .artist-image {
-	display: none;
-}
-
-.artist-box input:checked ~ .box .fa-heart {
+.subgenre-box input:checked ~ .box .fa-heart {
 	display: block;
 	color: $main-color;
 	font-size: 35px;
@@ -62,173 +59,166 @@
 	top: 20px;
 }
 
-.artist-innerbox {
+.subgenre-innerbox {
 	@include standardimage-size;
 	margin: 3px;
 }
 
-.artist-name {
+.subgenre-container .subgenre-name {
+	@include standardimage-size;
+	background-image: url('../../assets/aurora.jpeg');
+	background-position: top;
+	background-size: 235px;
+	margin: 5px;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: $main-border;
+}
+
+.subgenre-name > p {
 	font-size: 10px;
 	color: white;
 	background-color: rgba(19, 16, 43, 0.7);
 	letter-spacing: 1px;
+	text-transform: capitalize;
 	text-align: center;
 	position: relative;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	top: 66px;
-	left: 6px;
+	top: 30px;
 	padding: 0 2px;
 	height: 30px;
 	width: 98px;
 	z-index: 6;
 }
 
-.artist-checkbox {
+.subgenre-checkbox {
 	@include standardimage-size;
-	bottom: 31px;
+	bottom: 105px;
 	left: 5px;
 	position: relative;
 	z-index: 6;
 }
 
-.artist-image {
-	@include standardimage-size;
-	position: relative;
-	bottom: 140px;
-	padding: 0;
-	opacity: 0.7;
-	margin: 5px;
-	border-radius: 5%;
-	border: $main-border;
+.fa-heart {
+	display: none;
 }
 
-.artist-image:hover,
-.artist-name:hover {
-	cursor: pointer;
-}
-
-.artist-container .missing-message {
+.subgenre-container .missing-message {
 	color: white;
 	font-size: 14px;
 	padding: 20px 6px;
 }
 
-.artist-container .missing-message > .fa-times-circle {
+.subgenre-container .missing-message > .fa-times-circle {
 	color: rgb(240, 113, 113);
 }
 
-.artist-container .missing-message > a {
+.subgenre-container .missing-message > a {
 	color: $main-color;
 }
 
-.artist-container .missing-message > a:visited {
+.subgenre-container .missing-message > a:visited {
 	color: $main-color;
 }
 
-.topartist-title {
-	margin: 35px 10px 0;
-	font-size: 17px;
-	font-family: 'Nunito Sans', sans-serif;
-	font-weight: bold;
-	letter-spacing: 0.6px;
-}
-
-.topartist-message {
-	color: rgba(235, 233, 233, 0.8);
-	font-size: 14px;
-	margin: 2px 10px 20px;
-	font-family: 'Nunito Sans', sans-serif;
-}
-
-.artists-icon {
-	height: 45px;
-	color: white;
+.fa-drum {
+	font-size: 40px;
+	color: $main-color;
+	margin-bottom: 5px;
 }
 
 @media screen and (max-width: 890px) {
-	.artist-container {
+	.subgenre-container {
 		border-radius: 5px;
 	}
 }
 
+@media screen and (max-width: 890px) {
+	.subgenre-outerbox {
+		width: 100%;
+	}
+}
+
 @media screen and (max-width: 750px) {
-	.artist-container {
+	.subgenre-container {
 		width: 500px;
 		margin: 0 auto;
 	}
 }
 
 @media screen and (max-width: 625px) {
-	.artist-container {
+	.subgenre-container {
 		width: 400px;
 		margin: 0 auto;
 	}
 }
 
 @media screen and (max-width: 415px) {
-	.artist-container {
+	.subgenre-container {
 		max-width: 330px;
 	}
-	.artist-outerbox {
-		height: 630px;
+	.subgenre-outerbox {
+		height: 610px;
 		max-height: 100%;
 	}
 }
 
 @media screen and (max-width: 380px) {
-	.artist-container {
+	.subgenre-container {
 		max-width: 300px;
+	}
+	.subgenre-outerbox {
+		height: 590px;
 	}
 }
 
 @media screen and (max-width: 360px) {
-	.artist-container {
+	.subgenre-container {
 		max-width: 290px;
 	}
 }
 
-@media screen and (max-width: 320px) {
-	.artist-container {
+@media screen and (max-width: 321px) {
+	.subgenre-container {
 		max-width: 255px;
 	}
-	.artist-outerbox {
+	.subgenre-outerbox {
+		height: 585px;
+		max-height: 100%;
 		flex-direction: row;
 		justify-content: center;
-		height: 590px;
 	}
-	.artist-innerbox {
+	.subgenre-box {
+		justify-content: center;
+	}
+	.subgenre-container .subgenre-name {
 		height: 160px;
 		width: 160px;
-		margin: 5px;
-		bottom: 210px;
 	}
-	.artist-image {
-		width: 160px;
-		height: 160px;
-		margin: 0;
-		bottom: 210px;
-	}
-	.artist-checkbox {
+	.subgenre-innerbox {
 		height: 160px;
 		width: 160px;
-		bottom: 45px;
-		right: 5px;
+		margin: 5px 0;
 	}
-	.artist-box input:checked ~ .box {
+	.subgenre-checkbox {
 		height: 160px;
 		width: 160px;
-		bottom: 210px;
-		margin-left: 0px;
+		bottom: 164px;
 	}
-
-	.artist-box input:checked ~ .box .fa-heart {
+	.subgenre-box input:checked ~ .box {
+		height: 160px;
+		width: 160px;
+		bottom: 328px;
+	}
+	.subgenre-box input:checked ~ .box .fa-heart {
 		font-size: 65px;
 	}
-	.artist-name {
-		top: 105px;
-		left: 0;
+	.subgenre-name > p {
+		top: 42px;
 		font-size: 18px;
 		height: 55px;
 		width: 160px;
@@ -236,7 +226,7 @@
 }
 
 @media screen and (max-width: 281px) {
-	.artist-container {
+	.subgenre-container {
 		max-width: 225px;
 	}
 }

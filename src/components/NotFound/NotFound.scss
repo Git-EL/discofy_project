@@ -1,41 +1,58 @@
-$main-color: #8bffff;
-$main-bgcolor: #050124;
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
-.notfound-container  h1 {
-  color: white;
-  font-size: 7em;
+.notfound-container h1 {
+	color: white;
+	font-size: 7em;
 }
 
-.notfound-container  h2 {
-  color: white;
+.notfound-container h2 {
+	color: white;
 }
 
 .notfound-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
+	@include full-height;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
 }
 
-.notfound-container button {
-  height: 45px;
-  font: normal 700 1em Arial, sans-serif;
-  padding: 0 15px;
-  margin: 15px;
-  background-color: $main-color;
-  border-radius: 50px;
-  border-style: solid;
-  border-color: $main-color;
-  outline:transparent;
+.notfound-btn,
+.notfound-link {
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+.notfound-btn {
+	@include animation-button;
+	height: 45px;
+	width: 150px;
+	margin: 15px;
 }
 
-.notfound-container button a {
-  text-decoration: transparent;
+.notfound-btn a {
+	color: $main-bgcolor;
+	text-decoration: none;
+	text-align: center;
+	display: block; /* important */
 }
 
+.notfound-btn:hover {
+	background-color: transparent;
+	border-color: $main-color;
+	a {
+		color: $main-color;
+	}
+}
 
-.notfound-container button:hover {
-  cursor: pointer;
+.notfound-btn a:hover {
+	text-decoration: none;
+}
+
+.notfound-btn:hover .notfound-link {
+	margin-top: -2.5em;
 }

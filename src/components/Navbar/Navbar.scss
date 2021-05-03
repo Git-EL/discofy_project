@@ -1,5 +1,5 @@
-$main-color: #8bffff;
-$main-bgcolor: #050124;
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
 nav {
   color: $main-color;
@@ -20,10 +20,6 @@ nav {
   font-size: 17px;
   text-transform: uppercase;
 }
-.spacing-deco {
-  margin-right: 15px;
-}
-
 
 .link {
   letter-spacing: 2px;
@@ -37,12 +33,27 @@ nav {
 .link a:hover {
   color: white;
 }
-.nav a:visited {
-  color: $main-color;
-}
+
 .nav a {
   text-decoration: none;
 }
+
+.nav a:visited {
+  color: $main-color;
+}
+
+.hamburger-toggle {
+  cursor: pointer;
+  display: none;
+  justify-content: flex-end;
+  color: $main-color;
+  margin: 15px 30px 0 0;
+}
+
+.spacing-deco {
+  margin-right: 15px;
+}
+
 nav button {
   margin: 0;
   background-color: transparent;
@@ -55,13 +66,6 @@ nav button {
   cursor: pointer;
 }
 
-.hamburger-toggle {
-  cursor: pointer;
-  display: none;
-  justify-content: flex-end;
-  color: $main-color;
-  margin: 15px 30px 0 0;
-}
 @media screen and (max-width: 700px) {
   nav {
     padding: 0 5px 0 0;
@@ -70,26 +74,20 @@ nav button {
   body {
     overflow-x: hidden;
   }
-  .hamburger-toggle {
-    display: block;
-  }
+
   .navlinks {
     display: block;
     position: fixed;
     top: 0;
-    right: 0px;
+    right: 0;
     min-height: 100vh;
     text-align: center;
     padding: 60px 0;
-    background-color: rgb(10, 1, 36);
-    background-color: rgba(10, 1, 36,0.90);
+    background-color: rgba(10, 1, 36, 0.90);
     transform: translateX(100%);
     z-index: 1;
   }
-  .active {
-    transition: transform 0.2s ease-out;
-    transform: translateX(0%);
-  }
+
   .navlinks .link {
     font-size: 20px;
     font-weight: bold;
@@ -100,16 +98,26 @@ nav button {
     background: $main-color;
    
   }
-  .navlinks .link:hover a 
-  {color: $main-bgcolor;
-   
+  .navlinks .link:hover a {
+    color: $main-bgcolor;
   }
+
+  .active {
+    transition: transform 0.2s ease-out;
+    transform: translateX(0%);
+  }
+
+  .hamburger-toggle {
+    display: block;
+  }
+
   .fa-times {
     position: absolute;
     left: 25px;
     top: 25px;
     font-size: 25px;
   }
+  
   nav button {
     margin: 0;
     background-color: transparent;
@@ -120,6 +128,7 @@ nav button {
     outline: transparent;
     cursor: pointer;
   }
+
   .spacing-deco {
     display: none;
   }
