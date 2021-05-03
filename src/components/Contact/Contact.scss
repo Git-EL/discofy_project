@@ -6,8 +6,9 @@ h3.contact-title {
 	border-bottom: $main-border;
 	line-height: 2.5em;
 	margin: 0 auto;
-	width: 84%;
-	padding-top: 80px;
+	width: 47%;
+	padding-top: 60px;
+ 
 }
 
 .home-button,
@@ -24,6 +25,9 @@ h3.contact-title {
   font: normal 700 1em/2.9em Arial, sans-serif;
   width: 150px;
   margin: 50px auto;
+ 
+
+  
 }
 
 .home-button a {
@@ -38,6 +42,7 @@ h3.contact-title {
   border: solid 3px $main-color;
   a {
     color: $main-color;
+   
   }
 }
 
@@ -46,7 +51,7 @@ h3.contact-title {
 }
 
 .home-button:hover .home-first {
-  margin-top: -3.1em;
+  margin-top: -2.8em;
 }
 
 .contact-container {
@@ -55,13 +60,12 @@ h3.contact-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow-x: hidden;
+  
 }
 
 .big-container {
   display: flex;
   flex-direction: row;
-  max-height: 800px;
   height: 100%;
   width: 100vw;
   justify-content: center;
@@ -88,23 +92,34 @@ p {
   padding: 0;
 }
 .botton-container h3 {
-  color: $main-bgcolor;
+  font-family: 'Nunito Sans', sans-serif;
+  color: white;
   font-weight: 600;
   font-size: 1.5rem;
 }
 
 .botton-container h4 {
-  color: #b23ec9;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #aaa;
   font-weight: 700;
   font-size: 1.2rem;
 }
 
 .botton-container p {
-  color: $main-color;
+  font-family: 'Nunito Sans', sans-serif;
+  color: white;
   margin: 1rem;
   font-family: sans-serif;
   font-size: 0.9rem;
   text-align: justify;
+  
+}
+
+.ft-social-list  .fab, .ft-social-list  .fas{
+ font-size: 50px;
+ color: $main-color;
+ margin-bottom: -15px
+ 
 }
 
 .image-container img {
@@ -184,7 +199,7 @@ p {
   }
 
   .Card {
-    margin-top: 180px;
+    margin-top: 60px;
   }
   .Card-2 {
     margin-top: 30px;
