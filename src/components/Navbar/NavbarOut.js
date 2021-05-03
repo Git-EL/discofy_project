@@ -56,7 +56,7 @@ const Navbar = () => {
         <li className='link, spacing-deco'>|
           </li>
         <li className='link'>
-        <button onClick={logOut}>
+        <button onClick={logOut} className='log-btn'>
         <Link to='/'> Logout
         </Link>
       </button>

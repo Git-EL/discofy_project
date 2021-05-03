@@ -401,13 +401,12 @@ h2.playlist-title {
 
 .play-box1 {
 	@include standard-boxstyle;
+	@include scrollbar-style;
 	width: 90%;
 	margin: 30px auto 10px;
 	height: 600px;
 	overflow-y: auto;
 	overflow-x: hidden;
-	// scrollbar-width: none; /* Firefox */
-	// -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
 .track-info {
@@ -461,22 +460,11 @@ h2.playlist-title {
 	justify-content: center;
 }
 
-.popup {
-	width: 190px;
-	height: 145px;
-	color: $main-color;
-	background-color: $main-bgcolor;
-	font-weight: bold;
-	text-align: center;
-	padding: 5px 15px;
-	border-radius: 5px;
-}
-
 .popup-content {
 	margin: auto;
-	background: $main-bgcolor;
-	width: 50%;
+	background: #221b47;
 	border: solid 2px $main-color;
+	border-radius: 15px;
 }
 
 .popup a {
@@ -497,6 +485,73 @@ h2.playlist-title {
 .done {
 	color: white;
 	font-size: 25px;
+}
+
+.popup-overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	transition: 0.2s ease;
+}
+
+.modal > .content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 350px;
+	width: 100%;
+	padding: 30px 50px 5px;
+	color: $main-color;
+	text-align: center;
+	font-size: 19px;
+}
+
+.modal > .actions {
+	width: 100%;
+	padding: 10px 5px 30px;
+	margin: auto;
+	text-align: center;
+}
+.modal > .close {
+	cursor: pointer;
+	position: absolute;
+	display: block;
+	padding: 2px 5px;
+	line-height: 20px;
+	right: -10px;
+	top: -10px;
+	font-size: 23px;
+	background: #ffffff;
+	border-radius: 50px;
+	border: 2px solid #cfcece;
+}
+
+.modal-button {
+	background-color: $main-color;
+	padding: 10px 20px;
+	border-radius: 25px;
+	border: solid 2px transparent;
+	cursor: pointer;
+}
+
+.modal-button:hover {
+	background-color: #221b47;
+	border: 2px solid $main-color;
+	a {
+		color: $main-color;
+	}
+}
+
+.modal-button a {
+	color: #221b47;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 3px;
+}
+
+.modal-button a:visited {
+	color: #221b47;
 }
 
 .playlist-btn {
@@ -527,7 +582,7 @@ h2.playlist-title {
 
 .playlist-btn:hover {
 	background-color: transparent;
-  border: solid 3px $main-color;
+	border: solid 3px $main-color;
 
 	.playlist-secondlink {
 		color: $main-color;
