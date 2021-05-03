@@ -86,11 +86,14 @@ function Contact () {
           <Link to='/' className='home-first'>
           {" "} Back to Home
           </Link>
-          <Link to='/'> Back to Home
+          <Link to='/' >
+             Back to Home
           </Link>
         </button>
-      </div>
     </div>
+     
+      </div>
+   
   )
 }
 export default Contact
