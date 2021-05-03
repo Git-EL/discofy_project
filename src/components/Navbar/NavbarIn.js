@@ -48,7 +48,7 @@ const Navbar = () => {
         <li className='link, spacing-deco'>|
           </li>
         <li className='link'>
-        <button onClick={handleLogin}>
+        <button onClick={handleLogin}  className='log-btn'>
          <Link to='/'> Login
          </Link>
         </button>
