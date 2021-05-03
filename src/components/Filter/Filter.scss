@@ -1,5 +1,5 @@
-@import "../../styles/mixins.scss";
-@import "../../styles/variables.scss";
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
 
 .filter-container {
 	@include full-height;
@@ -80,12 +80,10 @@ button.back-btn:hover {
 
 .tracklist-insidebox {
 	@include standard-boxstyle;
+	@include scrollbar-style;
 	width: 90%;
 	margin: 0 auto;
 	overflow-y: scroll;
-	scrollbar-width: thin; /* Firefox */
-	scrollbar-color: #1a1535 rgba(132, 138, 170, 0.282);
-	-ms-overflow-style: none; /* Internet Explorer 10+ */
 	height: 600px;
 }
 
@@ -245,23 +243,15 @@ button.back-btn:hover {
 
 .checkbox-container input:checked ~ .checkmark-box {
 	@include standardimage-size;
-	display: block;
-	position: relative;
-	bottom: 1px;
-	right: 0px;
-	background-color: black;
-	opacity: 0.9;
-	color: white;
-	font-size: 10px;
+	@include checkmarkbox-style;
 	padding-top: 54px;
-	text-align: center;
-	border-radius: 4%;
-	z-index: 0;
-	max-lines: 3;
 }
 
-@supports (-moz-appearance:none) {
+@supports (-moz-appearance: none) {
 	.checkbox-container input:checked ~ .checkmark-box {
+		bottom: 2px;
+	}
+	.noprev-checkbox input:checked ~ .checkmark-box {
 		bottom: 2px;
 	}
 }
@@ -378,19 +368,8 @@ button.back-btn:hover {
 
 .noprev-checkbox input:checked ~ .checkmark-box {
 	@include standardimage-size;
-	display: block;
-	position: relative;
-	bottom: 1px;
-	right: 0px;
-	background-color: black;
-	opacity: 0.9;
-	color: white;
-	font-size: 10px;
+	@include checkmarkbox-style;
 	padding-top: 55px;
-	text-align: center;
-	border-radius: 4%;
-	z-index: 0;
-	max-lines: 3;
 }
 
 .playlist-box {
@@ -482,31 +461,11 @@ h2.playlist-title {
 	justify-content: center;
 }
 
-.popup {
-	width: 190px;
-	height: 145px;
-	color: $main-color;
-	background-color: $main-bgcolor;
-	font-weight: bold;
-	text-align: center;
-	padding: 5px 15px;
-	border-radius: 5px;
-}
-
 .popup-content {
 	margin: auto;
-	background: $main-bgcolor;
-	width: 50%;
+	background: #221b47;
 	border: solid 2px $main-color;
-}
-
-.popup a {
-	color: $main-color;
-	font-weight: bold;
-}
-
-.popup a:hover {
-	color: white;
+	border-radius: 15px;
 }
 
 .fa-thumbs-up {
@@ -518,7 +477,71 @@ h2.playlist-title {
 .done {
 	color: white;
 	font-size: 25px;
+	margin-bottom: 5px;
 }
+
+.popup-overlay {
+	background-color: rgba(0, 0, 0, .5);
+  transition: 0.2s ease;
+}
+
+.modal > .content {	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 350px;
+	width: 100%;
+  padding: 30px 50px 5px;
+	color: $main-color;
+	text-align: center;
+	font-size: 19px;
+}
+
+.modal > .actions {
+  width: 100%;
+  padding: 10px 5px 30px;
+  margin: auto;
+  text-align: center;
+}
+.modal > .close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  padding: 2px 5px;
+  line-height: 20px;
+  right: -10px;
+  top: -10px;
+  font-size: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #cfcece;
+}
+
+.modal-button {
+	background-color: $main-color;
+	padding: 10px 20px;
+	border-radius: 25px;
+	border: solid 2px transparent;
+	cursor: pointer;
+}
+
+.modal-button:hover{ 
+	background-color: #221b47;
+border: 2px solid $main-color;
+	a {
+		color: $main-color;
+	}
+	
+}
+
+.modal-button a {
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 15px;
+	font-weight: bold;
+	margin-top: 3px;
+}
+
 
 .playlist-btn {
 	@include animation-button;
@@ -548,7 +571,7 @@ h2.playlist-title {
 
 .playlist-btn:hover {
 	background-color: transparent;
-	border-color: $main-color;
+  border: solid 3px $main-color;
 
 	.playlist-secondlink {
 		color: $main-color;

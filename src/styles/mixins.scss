@@ -1,8 +1,8 @@
 @import "../styles/variables.scss";
 
 @mixin full-height {
-	min-height: 100vh;
 	height: 100%;
+	min-height: 100vh;
 }
 
 @mixin full-width {
@@ -37,4 +37,42 @@
 	font-size: 30px;
 	font-family: 'Nunito Sans', sans-serif;
 	letter-spacing: 1.5px;
+}
+
+@mixin scrollbar-style {
+	scrollbar-width: auto; /* Firefox */
+	scrollbar-color: #1a1535 rgba(132, 138, 170, 0.282);
+	-ms-overflow-style: auto; /* Internet Explorer 10+ */
+	scrollbar-face-color: #1a1535; 
+	scrollbar-highlight-color: rgba(132, 138, 170, 0.282);
+}
+
+@mixin checkmarkbox-style {
+	display: block;
+	position: relative;
+	bottom: 1px;
+	right: 0px;
+	background-color: black;
+	opacity: 0.9;
+	color: white;
+	font-size: 10px;
+	text-align: center;
+	border-radius: 4%;
+	z-index: 0;
+	max-lines: 3;
+}
+
+@mixin infomessage-title {
+	margin: 20px 25px 0;
+	font-size: 17px;
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: bold;
+	letter-spacing: 0.6px;
+}
+
+@mixin infomessage-standard {
+	font-family: 'Nunito Sans', sans-serif;
+	color: rgba(235, 233, 233, 0.8);
+	font-size: 14px;
+	margin: 2px 25px 0;
 }

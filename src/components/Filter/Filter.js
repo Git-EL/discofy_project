@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import Popup from 'reactjs-popup'
-import 'reactjs-popup/dist/index.css'
+// import 'reactjs-popup/dist/index.css'
 import './Filter.scss'
 import discofy_logo_small from '../../assets/discofy_logo_small.svg'
 
@@ -19,7 +19,7 @@ const Filter = (props) => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  
+
   const addTracks = event => {
    setTrackID(event.target.id)
 
@@ -82,15 +82,6 @@ const Filter = (props) => {
       }   
    }
 
-  const PopupPlaylist = () => (
-    <Popup trigger={<button type="submit" className="playlist-btn">
-      <div className='playlist-firstlink'>Create Playlist</div>
-      <div className='playlist-secondlink'>Create Playlist</div>
-      </button>} position="right center">
-      <div className="popup"><i className="far fa-thumbs-up"></i><p className="done">Done!</p><p> Take a look at your new Playlist on <a href="https://open.spotify.com/" target="_blank" rel="noreferrer">Spotify</a>!</p></div>
-    </Popup>
-  )
-
   const SelectedTracksCount = () => {
     return <div className="track-counter">You have {songSelected} tracks selected</div>
    }
@@ -142,24 +133,25 @@ const Filter = (props) => {
                    </div>
                 </div> 
                 :  
-                <div key={idx + 1} className='tracklist-image-outerbox'>
-                <div className="tracklist-imagebox">  
-                   <img src={item.album.images[0].url} alt="trackalbum" className="trackalbum-image" id={item.id} />
-                   <div className="no-preview-box">
-                     <p className="no-songpreview">Sorry! No preview available!</p>
-                     <i className="fas fa-plus-circle"></i>
-                   </div>
-                   <div className="noprev-checkbox" >
-                     <input type="checkbox" className="custom-input " checked={trackID === item.id && 
-                         selectedTracks.playlistTracks.includes(item.uri)
-                         ? true : selectedTracks.playlistTracks.includes(item.uri) ? true : (trackID === item.id) ? false : undefined                        }
-                         id={item.id} value={item.uri} name={item.name} onChange={addTracks}/>
-                    <span className="checkmark"></span>
-                    <div className="checkmark-box"><p>{item.artists[0].name.length > 20 ? item.artists[0].name.substring(0, 18) + "..." : item.artists[0].name}</p>
-                     <p>{item.name.length > 38 ? item.name.substring(0, 38) + "..." : item.name}</p></div>
-                   </div> 
-                </div>
-             </div> 
+                null
+            //     <div key={idx + 1} className='tracklist-image-outerbox'>
+            //     <div className="tracklist-imagebox">  
+            //        <img src={item.album.images[0].url} alt="trackalbum" className="trackalbum-image" id={item.id} />
+            //        <div className="no-preview-box">
+            //          <p className="no-songpreview">Sorry! No preview available!</p>
+            //          <i className="fas fa-plus-circle"></i>
+            //        </div>
+            //        <div className="noprev-checkbox" >
+            //          <input type="checkbox" className="custom-input " checked={trackID === item.id && 
+            //              selectedTracks.playlistTracks.includes(item.uri)
+            //              ? true : selectedTracks.playlistTracks.includes(item.uri) ? true : (trackID === item.id) ? false : undefined                        }
+            //              id={item.id} value={item.uri} name={item.name} onChange={addTracks}/>
+            //         <span className="checkmark"></span>
+            //         <div className="checkmark-box"><p>{item.artists[0].name.length > 20 ? item.artists[0].name.substring(0, 18) + "..." : item.artists[0].name}</p>
+            //          <p>{item.name.length > 38 ? item.name.substring(0, 38) + "..." : item.name}</p></div>
+            //        </div> 
+            //     </div>
+            //  </div> 
                )
            }) : <p className="missing-message">
                   <i className="far fa-times-circle"></i> Unfortunately, there is no track-preview available for this category.
@@ -187,7 +179,32 @@ const Filter = (props) => {
            }
           </div>
           <div className="play-box2">
-           <PopupPlaylist />
+           <Popup trigger={<button type="submit" className="playlist-btn">
+                            <div className='playlist-firstlink'>Create Playlist</div>
+                            <div className='playlist-secondlink'>Create Playlist</div>
+                           </button>} 
+                           position="right top left bottom" modal nested>
+                            {close => (
+                             <div className="modal">
+                                <button className="close" onClick={close}>&times;
+                                </button>
+                                <div className="content">  {' '}
+                                  <i className="far fa-thumbs-up"></i>
+                                  <p className="done">Done!</p>
+                                  <p> Take a look at your new Playlist on</p>
+                                </div>
+                                <div className="actions">
+                                 <button
+                                 className="modal-button"
+                                 onClick={() => { console.log('modal closed ');
+                                                  close();
+                                 }}                        >
+                                  <a href="https://open.spotify.com/" target="_blank" rel="noreferrer">Spotify</a>
+                                 </button>   
+                                </div>
+                             </div>
+                            )}
+           </Popup>
           </div>
         </div>
        </form>

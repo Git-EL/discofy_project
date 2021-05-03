@@ -1,5 +1,5 @@
-@import "../../styles/mixins.scss";
-@import "../../styles/variables.scss";
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
 
 .intro-container {
 	min-height: 100vh;
@@ -27,7 +27,7 @@
 .sub-title {
 	color: rgba(235, 233, 233, 0.6);
 	font-size: 18px;
-	border-bottom: 1px solid rgba(235, 233, 233, 0.282);
+	border-bottom: $main-border;
 	font-family: 'Nunito Sans', sans-serif;
 	line-height: 2em;
 }
@@ -96,7 +96,7 @@
 	color: $main-bgcolor;
 	text-decoration: none;
 	text-align: center;
-	display: block; /* important */
+	display: block;
 	-webkit-transition: 0.3s;
 	-moz-transition: 0.3s;
 	-ms-transition: 0.3s;
@@ -110,7 +110,7 @@
 
 .intro-btn:hover {
 	background-color: transparent;
-	border-color: $main-color;
+  border: solid 3px $main-color;
 
 	.intro-firstlink {
 		margin-top: -39px;
