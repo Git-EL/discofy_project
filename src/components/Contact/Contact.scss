@@ -194,21 +194,27 @@ p {
 }
 
 @media screen and (max-width: 580px) {
+  h3.contact-title{
+    margin-left: 20px;
+    width: 300px;
+  }
   .big-container {
     flex-direction: column;
   }
 
   .Card {
+    width: 350px;
     margin-top: 60px;
   }
   .Card-2 {
     margin-top: 30px;
+    width: 350px;
   }
   .home-button {
     @include animation-button;
     width: 150px;
     margin-top: 40px;
-    margin-left: 220px;
+    margin-left: 120px;
     height: 45px;
   }
 }

@@ -461,11 +461,31 @@ h2.playlist-title {
 	justify-content: center;
 }
 
+.popup {
+	width: 190px;
+	height: 145px;
+	color: $main-color;
+	background-color: $main-bgcolor;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px 15px;
+	border-radius: 5px;
+}
+
 .popup-content {
 	margin: auto;
-	background: #221b47;
+	background: $main-bgcolor;
+	width: 50%;
 	border: solid 2px $main-color;
-	border-radius: 15px;
+}
+
+.popup a {
+	color: $main-color;
+	font-weight: bold;
+}
+
+.popup a:hover {
+	color: white;
 }
 
 .fa-thumbs-up {
@@ -477,103 +497,43 @@ h2.playlist-title {
 .done {
 	color: white;
 	font-size: 25px;
-	margin-bottom: 5px;
-}
-
-.popup-overlay {
-	background-color: rgba(0, 0, 0, 0.5);
-	transition: 0.2s ease;
-}
-
-.modal > .content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	max-width: 350px;
-	width: 100%;
-	padding: 30px 50px 5px;
-	color: $main-color;
-	text-align: center;
-	font-size: 19px;
-}
-
-.modal > .actions {
-	width: 100%;
-	padding: 10px 5px 30px;
-	margin: auto;
-	text-align: center;
-}
-.modal > .close {
-	cursor: pointer;
-	position: absolute;
-	display: block;
-	padding: 2px 5px;
-	line-height: 20px;
-	right: -10px;
-	top: -10px;
-	font-size: 24px;
-	background: #ffffff;
-	border-radius: 18px;
-	border: 1px solid #cfcece;
-}
-
-.modal-button {
-	background-color: $main-color;
-	padding: 8px 20px;
-	border-radius: 25px;
-	border: solid 2px transparent;
-	cursor: pointer;
-}
-
-.modal-button:hover {
-	background-color: #221b47;
-	border: 2px solid $main-color;
-	a {
-		color: $main-color;
-	}
-}
-
-.modal-button a {
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 15px;
-	font-weight: bold;
-	margin-top: 3px;
 }
 
 .playlist-btn {
 	@include animation-button;
 	cursor: pointer;
-	width: 175px;
+	padding: 8.5px;
+	max-width: 175px;
+	width: 100%;
 	margin-top: -1px;
 }
 
 .playlist-btn,
 .playlist-firstlink {
-	@include button-transition
-}
-
-.playlist-firstlink {
-	margin-top: 2px;
-}
-
-.playlist-btn
-.playlist-firstlink {
 	color: $main-bgcolor;
 	text-decoration: none;
 	text-align: center;
-	display: block; 
+	display: block; /* important */
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.playlist-firstlink {
+	margin-top: -6px;
 }
 
 .playlist-btn:hover {
 	background-color: transparent;
-	border: solid 3px $main-color;
+  border: solid 3px $main-color;
 
 	.playlist-secondlink {
 		color: $main-color;
 	}
 	.playlist-firstlink {
-		margin-top: -2.5em;
+		margin-top: -47px;
 	}
 }
 
@@ -640,22 +600,26 @@ h2.playlist-title {
 		margin: 10px 0 10px;
 	}
 	.checkbox-container input:checked ~ .checkmark-box {
+		@include standardimage-size;
 		bottom: 2px;
-		right: 1px;
-		height: 101px;
-		width: 101px;
-	}
-	.noprev-checkbox input:checked ~ .checkmark-box {
-		bottom: 2px;
-		right: 1px;
-		height: 101px;
-		width: 101px;
 	}
 }
 
 @media screen and (max-width: 360px) {
 	.tracklist-insidebox {
 		height: 575px;
+	}
+	.checkbox-container input:checked ~ .checkmark-box {
+		bottom: 1px;
+		right: 1px;
+		height: 101px;
+		width: 101px;
+	}
+	.noprev-checkbox input:checked ~ .checkmark-box {
+		bottom: 1px;
+		right: 1px;
+		height: 101px;
+		width: 101px;
 	}
 	.custom.input {
 		top: 1px;
@@ -697,19 +661,4 @@ h2.playlist-title {
 	.track-info {
 		width: 170px;
 	}
-}
-
-
-@media screen and (max-width: 375px) {
-	.tracklist-box {
-		text-align: center;
-        width: 125%;
-		height: 100%;
-	
-	
-	
-  }
-  
-
-  
 }
