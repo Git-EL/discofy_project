@@ -1,4 +1,5 @@
 import './Intro.scss'
+import Navbar from '../Navbar/NavbarIn'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpotify } from '@fortawesome/free-brands-svg-icons'
@@ -21,6 +22,7 @@ const Intro = () => {
   }
 
   return <div className='intro-container'>
+    <Navbar />
     <div className='intro-box'>
     <a href="/"><img src={discofy_logo_small} alt='discofy-logo' className='logo_small' /></a>
      <div className="title-box">

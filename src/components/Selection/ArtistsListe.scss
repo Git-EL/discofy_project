@@ -7,14 +7,14 @@ $main-bgcolor: #050124;
 	border-radius: 5px 0 0 5px;
 	padding-right: 35px;
 	max-width: 855px;
-  height: 766px;
+	height: 766px;
 }
 
 .followedartist-title {
-  margin: 20px 25px 0;
-  font-size: 17px;
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: bold;
+	margin: 20px 25px 0;
+	font-size: 17px;
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: bold;
 	letter-spacing: 0.6px;
 }
 
@@ -25,12 +25,11 @@ $main-bgcolor: #050124;
 	font-family: 'Nunito Sans', sans-serif;
 }
 
-
 .topartist-title {
-  margin: 35px 10px 0;
-  font-size: 17px;
-  font-family: 'Nunito Sans', sans-serif;
-  font-weight: bold;
+	margin: 35px 10px 0;
+	font-size: 17px;
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: bold;
 	letter-spacing: 0.6px;
 }
 
@@ -83,15 +82,15 @@ $main-bgcolor: #050124;
 }
 
 .artist-image {
-  position:relative;
-  bottom: 140px;
-  height: 100px;
+	position: relative;
+	bottom: 140px;
+	height: 100px;
 	width: 100px;
-  padding: 0;
+	padding: 0;
 	opacity: 0.7;
-  margin: 5px;
-  border-radius: 5%;
-  border: 1px solid rgba(235, 233, 233, 0.282);
+	margin: 5px;
+	border-radius: 5%;
+	border: 1px solid rgba(235, 233, 233, 0.282);
 }
 
 .artist-box input {
@@ -112,16 +111,15 @@ $main-bgcolor: #050124;
 	margin-left: 5px;
 	border-radius: 5px;
 	box-shadow: 0 0 2px 3px rgb(124, 240, 255);
-  background-color: #15122e;
+	background-color: #15122e;
 	position: relative;
 	cursor: pointer;
 	z-index: 5;
 }
 
 .artist-box input:checked ~ .artist-image {
-	display:none;
+	display: none;
 }
-
 
 .artist-box input:checked ~ .box .fa-heart {
 	display: block;
@@ -140,7 +138,7 @@ $main-bgcolor: #050124;
 .artist-innerbox {
 	height: 100px;
 	width: 100px;
-  margin: 3px;
+	margin: 3px;
 }
 
 .artist-name {
@@ -153,7 +151,7 @@ $main-bgcolor: #050124;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  top: 66px;
+	top: 66px;
 	left: 6px;
 	padding: 0 2px;
 	height: 30px;

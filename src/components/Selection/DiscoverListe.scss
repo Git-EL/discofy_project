@@ -151,3 +151,80 @@ $main-bgcolor: #050124;
 
   
 }
+@media screen and (max-width: 415px) {
+	.discover-container {
+		max-width: 330px;
+	}
+	.discover-box {
+		height: 615px;
+		max-height: 100%;
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.discover-container {
+		max-width: 300px;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.discover-container {
+		max-width: 290px;
+	}
+}
+
+@media screen and (max-width: 321px) {
+	.discover-container {
+		max-width: 255px;
+	}
+	.discover-box {
+		height: 610px;
+		flex-direction: row;
+		justify-content: center;
+	}
+	.discover-innerbox {
+		height: 160px;
+		width: 160px;
+		margin: 5px;
+		bottom: 210px;
+	}
+	.discover-image {
+		width: 160px;
+		height: 160px;
+		margin: 0;
+		bottom: 210px;
+	}
+	.discover-checkbox {
+		height: 160px;
+		width: 160px;
+		bottom: 45px;
+		right: 5px;
+	}
+	.discover-box input:checked ~ .box {
+		height: 160px;
+		width: 160px;
+		bottom: 210px;
+		margin-left: 0px;
+	}
+
+	.discover-box input:checked ~ .box .fa-heart {
+		font-size: 65px;
+	}
+	.discover-name {
+		top: 105px;
+		left: 0;
+		font-size: 18px;
+		height: 55px;
+		width: 160px;
+	}
+}
+
+@media screen and (max-width: 281px) {
+	.discover-container {
+		max-width: 225px;
+	}
+	.discover-box {
+		height: 570px;
+		max-height: 100%;
+	}
+}

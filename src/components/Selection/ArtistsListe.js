@@ -1,9 +1,5 @@
 import './ArtistsListe.scss'
-
-// Zur Erinnerung: Get a User's Top Artists and Tracks
-// Get the current user’s top artists or tracks based on calculated affinity.
-// API: https://api.spotify.com/v1/me/top/artists
-
+import aurora from '../../assets/aurora.jpeg'
 
 const ArtistsListe = props => {
   
@@ -25,8 +21,7 @@ const ArtistsListe = props => {
           <input type="radio" onChange={clicked} id={item.id} className="artist-checkbox" name="choice"></input>
           <div className="box"><i className="far fa-heart"></i></div>
 
-          <img src={item.images[0].url} alt="artist" className="artist-image"  onClick={clicked} id={item.id} />
-           
+           <img src={item.images.length === 0 ? aurora : item.images[0].url} alt="artist" className="artist-image"  onClick={clicked} id={item.id} />
             </div>
           ) : <p className="missing-message"><i className="far fa-times-circle"></i> Unfortunately you are not following any artist.
           Please <a href="https://open.spotify.com/" target="_blank" rel="noreferrer">follow some artists on Spotify</a> and come back!</p>
@@ -44,7 +39,7 @@ const ArtistsListe = props => {
           <input type="radio" onChange={clicked} id={item.id} className="artist-checkbox" name="choice"></input>
           <div className="box"><i className="far fa-heart"></i></div>
           
-          <img src={item.images[0].url} alt="artist" className="artist-image"  onClick={clicked} id={item.id} />
+          <img src={item.images.length === 0 ? aurora : item.images[0].url} alt="artist" className="artist-image"  onClick={clicked} id={item.id} />
             </div>
           ) : <p className="missing-message"><i className="far fa-times-circle"></i> Unfortunately you don't have any registered top artists</p>
           }

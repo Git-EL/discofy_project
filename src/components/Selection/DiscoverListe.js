@@ -1,10 +1,6 @@
 import './DiscoverListe.scss'
 import React from 'react'
-
-
-// Zur Erinnerung: Get a User's Top Artists and Tracks
-// Get the current user’s top artists or tracks based on calculated affinity.
-// API: https://api.spotify.com/v1/me/top/artists
+import aurora from '../../assets/aurora.jpeg'
 
 const NewReleasesListe = props => {
 
@@ -27,10 +23,8 @@ const clicked = e => {
                 <input type="radio" onChange={clicked} id={item.id} value={item.artists[0].name} className="discover-checkbox" name="choice"></input>
                 <div className="box"><i className="far fa-heart"></i></div>
           
-          <img src={item.images[0].url} alt="discover" className="discover-image" id={item.id} />
-           
-
-                  </div>)}
+          <img src={item.images.length === 0 ? aurora : item.images[0].url }  alt="discover" className="discover-image" id={item.id} />
+         </div>)}
       </div>
     </div>
   )
