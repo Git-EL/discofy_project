@@ -4,6 +4,7 @@
 .container {
 	@include full-height;
 	@include full-width;
+	@include scrollbar-style;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -39,7 +40,6 @@ h3.selection-title {
 	max-width: 100%;
 	margin: 121px 0;
 	border-radius: 0 5px 5px 0;
-	display: flex;
 }
 
 .boxresult {
@@ -69,6 +69,7 @@ h3.selection-title {
 	color: $main-color;
 	font-size: 25px;
 	font-family: 'Nunito Sans', sans-serif;
+	margin: 40px auto 10px;
 }
 
 .happychoices {
@@ -81,7 +82,7 @@ h3.selection-title {
 
 .filter-btn {
 	@include animation-button;
-	margin-top: 30px;
+	margin-top: 20px;
 	width: 190px;
 	cursor: pointer;
 }
