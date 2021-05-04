@@ -3,6 +3,7 @@
 
 .filter-container {
 	@include full-height;
+	scroll-behavior: smooth;
 }
 
 h3.filter-title {
@@ -640,6 +641,7 @@ h2.playlist-title {
 }
 
 @media screen and (max-width: 560px) {
+
 	.track-info {
 		margin-right: 20px;
 	}
