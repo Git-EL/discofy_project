@@ -25,29 +25,31 @@ const Intro = () => {
           <div className='intro-box'>
            <a href="/"><img src={discofy_logo_small} alt='discofy-logo' className='logo_small' /></a>
            <div className="title-box">
-             <h1 className='title'>Grab your headphones and turn up your speakers</h1>
-             <p className='sub-title'>Discover new music and get a personalized playlist</p>
+             <h1 className='title'>How the App works</h1>
+             <p className='sub-title'>Grab your headphones and turn up your speakers</p>
            </div>
+           <div className="login-box">
+           <p className='login-style'>1. Login with your</p>
+           <button className='intro-btn' variant='info' type='submit' onClick={handleLogin}>
+             <div className='intro-firstlink'> {spotifyIcon} Spotify</div>
+             <div className='intro-secondlink'> {spotifyIcon} Spotify</div>
+           </button></div>
            <div className='card'>
              <div className='card-box'>
                <img src={select_cat} alt='select-category' className='select-category' />
-               <p className='p-style'>1. Choose your category</p>
+               <p className='p-style'>2. Choose your category</p>
              </div>
              <div className='right'><i className="fas fa-angle-right"></i></div>
              <div className='card-box'>
              <img src={hover_icon} alt='hover' className='hover-icon' />
-               <p className='p-style'>2. Hover to get song previews and pick your songs</p>
+               <p className='p-style'>3. Hover to get song previews and pick your songs</p>
              </div>
              <div className='right'><i className="fas fa-angle-right"></i></div>
              <div className='card-box'>
              <img src={create_playlist} alt='create-playlist' className='create-playlist' />
-               <p className='p-style'>3. Create your playlist <br></br>and save it to Spotify</p>
+               <p className='p-style'>4. Create your playlist <br></br>and save it to Spotify</p>
              </div>
            </div>
-           <button className='intro-btn' variant='info' type='submit' onClick={handleLogin}>
-             <div className='intro-firstlink'> {spotifyIcon} Login with Spotify</div>
-             <div className='intro-secondlink'> {spotifyIcon} Login with Spotify</div>
-           </button>
          </div>
          </div>
 }
