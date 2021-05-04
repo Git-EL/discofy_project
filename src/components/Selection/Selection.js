@@ -1,5 +1,5 @@
 import './Selection.scss'
-import React, { useState , useEffect } from 'react'
+import React, { useState , useEffect, useRef } from 'react'
 import { Redirect } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import axios from 'axios'
@@ -12,6 +12,8 @@ import Filter from '../Filter/Filter'
 import artist_icon from '../../assets/artist_icon.svg'
 import discofy_logo_small from '../../assets/discofy_logo_small.svg'
 import aurora from '../../assets/aurora.jpeg'
+
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)  
 
 const Selection = (props) => {
 
@@ -56,7 +58,8 @@ const Selection = (props) => {
   const [filterbtnStatus, setFilterbtnStatus] = useState(false)
   const [buttonActive, setButtonActive] = useState(false)
   const [discoverPicture, setDiscoverPicture] = useState('')
-  
+  const myRef = useRef(null)
+
   useEffect(() => {
     if (isValidSession()) {
     axios('https://accounts.spotify.com/api/token', {
@@ -118,7 +121,12 @@ const Selection = (props) => {
     setArtistId('')
     setDiscoverId('')
     setButtonActive(true)
-        
+
+
+    const mq = window.matchMedia( "(max-width: 890px)" );
+    if (mq.matches) {
+      scrollToRef(myRef)}  
+
     try{
       let playlistIDResponse = await axios({
       method: 'GET',
@@ -138,6 +146,7 @@ const Selection = (props) => {
       console.log(error)
     }   
   }
+
 
   const artistsbuttonClicked = (e) => {
     e.preventDefault()
@@ -172,8 +181,10 @@ const Selection = (props) => {
     setSubGenreId('')
     setDiscoverId('')
     setButtonActive(true)
-    console.log(artistName)
-    console.log('val: ' + val)
+
+    const mq = window.matchMedia( "(max-width: 890px)" );
+    if (mq.matches) {
+      scrollToRef(myRef)}  
 
     axios(`https://api.spotify.com/v1/recommendations?limit=70&seed_artists=${val}`, {
       method: 'GET',
@@ -224,7 +235,10 @@ const Selection = (props) => {
     setArtistId('')
     setDiscoverId('')
     setButtonActive(true)
-    console.log('val: ' + val)
+    
+    const mq = window.matchMedia( "(max-width: 890px)" );
+    if (mq.matches) {
+      scrollToRef(myRef)}  
 
      axios(`https://api.spotify.com/v1/search?q=genre:%22${val}%22&type=track&limit=50`, {
        method: 'GET',
@@ -263,7 +277,10 @@ const Selection = (props) => {
     setSubGenreId('')
     setArtistId('')
     setButtonActive(true)
-    console.log('val: ' + val)
+    
+    const mq = window.matchMedia( "(max-width: 890px)" );
+    if (mq.matches) {
+      scrollToRef(myRef)}  
 
       axios(`https://api.spotify.com/v1/search?q=artist:%22${val}%22&type=track&limit=50`, {
         method: 'GET',
@@ -360,11 +377,11 @@ const Selection = (props) => {
           </TabPanel>
         </Tabs>
         <div className='choices'>
-         <div className='boxresult'>
-           <div className='yourchoice'>Your pick is<p className='categorypick'>{genreId.trim().replaceAll("_", " ") || subGenreId || discoverId || artistName}</p> </div>   
+         <div className='boxresult' >
+           <div className='yourchoice' >Your pick is<p className='categorypick'>{genreId.trim().replaceAll("_", " ") || subGenreId || discoverId || artistName}</p> </div>   
            {discoverPicture ? <div className="preview-imagewrap"><img src={discoverPicture} alt="preview" className="preview-image" /></div>: null}
            <h1 className='happychoices'>Happy with your choice?</h1>                 
-           <button className='filter-btn' disabled={!buttonActive} onClick={filterbtnClicked}>
+           <button className='filter-btn' disabled={!buttonActive} onClick={filterbtnClicked} ref={myRef} >
             <div className='filter-firstlink'> Get your Songs
             </div>
             <div className='filter-secondlink'> Get your Songs
