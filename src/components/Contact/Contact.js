@@ -1,22 +1,21 @@
 import './Contact.scss'
 import Navbar from '../Navbar/NavbarIn'
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { useState } from 'react/cjs/react.development'
 import discofy_logo_small from '../../assets/discofy_logo_small.svg'
 
 function Contact () {
   const [name] = useState('Suzana Jovanovic')
   const [job] = useState('Full Stack Web Developer')
-  const [about] = useState('My interest..')
   const [name2] = useState('Esther Lee')
   const [job2] = useState('Full Stack Web Developer')
-  const [about2] = useState('My interest...')
+
   return (
     <div>
       <Navbar />
       <div className='contact-container'>
-      <h3 className="contact-title">Contact Information</h3>
+      <div className="contact-titlebox">
+      <h3 className="contact-title">Contact Information</h3></div>
         <img src={discofy_logo_small} alt='discofy-logo' className='logo_small' />
         <div className='big-container'>
           <div className='Card'>
@@ -33,7 +32,7 @@ function Contact () {
               <h3>{name}</h3>
               <h4>{job}</h4>
               <p>
-                {about}
+               I am a Junior Full Stack Web Developer with 1+ years of experience in project development. My goal is to create creative websites that are also technologically up-to-date.
               </p>
             </div>
             <div className='ft-social'>
@@ -64,7 +63,7 @@ function Contact () {
               <h3>{name2}</h3>
               <h4>{job2}</h4>
               <p>
-                {about2}
+              I am currently a student at the DCI - Digital Career Institute and working towards a degree in Fullstack Web Development. I will graduate in June this year and am interested in a job position as web developer to improve my skills and to meet new challenges.
               </p>
             </div>
             <div className='ft-social'>
@@ -82,14 +81,6 @@ function Contact () {
             </div>
           </div>
         </div>
-        <button className='home-button'>
-          <Link to='/' className='home-first'>
-          {" "} Back to Home
-          </Link>
-          <Link to='/' >
-             Back to Home
-          </Link>
-        </button>
     </div>
      
       </div>

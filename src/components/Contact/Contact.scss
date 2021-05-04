@@ -6,52 +6,13 @@ h3.contact-title {
 	border-bottom: $main-border;
 	line-height: 2.5em;
 	margin: 0 auto;
-	width: 47%;
+	max-width: 900px;
+  width: 100%;
 	padding-top: 80px;
- 
 }
 
-.home-button,
-.home-first {
-  -webkit-transition: 0.3s;
-  -moz-transition: 0.3s;
-  -ms-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.home-button {
-  @include animation-button;
-  font: normal 700 1em/2.9em Arial, sans-serif;
-  width: 150px;
-  margin: 50px auto;
- 
-
-  
-}
-
-.home-button a {
-  color: $main-bgcolor;
-  text-decoration: none;
-  text-align: center;
-  display: block; 
-}
-
-.home-button:hover {
-  background-color: transparent;
-  border: solid 3px $main-color;
-  a {
-    color: $main-color;
-   
-  }
-}
-
-.home-button a:hover {
-  text-decoration: none;
-}
-
-.home-button:hover .home-first {
-  margin-top: -3.0em;
+.contact-titlebox {
+ margin: 0 30px;
 }
 
 .contact-container {
@@ -76,7 +37,10 @@ h3.contact-title {
   height: 180px;
   border-radius: 5px 5px 0 0;
   margin: auto;
-  border-bottom: transparent
+  border-bottom: transparent;
+  display: flex;
+  justify-content: center;
+
 }
 
 .botton-container {
@@ -112,14 +76,13 @@ p {
   font-family: sans-serif;
   font-size: 0.9rem;
   text-align: justify;
-  
+  padding: 5px;
 }
 
 .ft-social-list  .fab, .ft-social-list  .fas{
  font-size: 50px;
  color: $main-color;
- margin-bottom: -15px
- 
+ margin-bottom: -15px;
 }
 
 .image-container img {
@@ -127,10 +90,9 @@ p {
   border-radius: 5px 5px;
   width: 200px;
   height: 200px;
-  margin-top: -70px;
+  margin-top: -30px;
   border-radius: 50%;
   padding: 5px;
-  transform: translate(95px, 45px);
 }
 
 .Card {
@@ -139,7 +101,7 @@ p {
   background-color: rgba(235, 186, 247, 0.1);
   border-radius: 10px;
   box-shadow: 0px 1px 10px 1px $main-bgcolor;
-  margin: 50px 40px 10px;
+  margin: 50px 50px 20px;
 }
 
 .Card-2 {
@@ -148,7 +110,7 @@ p {
   background-color: rgba(235, 186, 247, 0.1);
   border-radius: 10px;
   box-shadow: 0px 1px 10px 1px $main-bgcolor;
-  margin: 50px 40px 10px;
+  margin: 50px 50px 20px;
 }
 
 .contact-container li {
@@ -165,8 +127,10 @@ p {
 }
 
 .ft-social-list li {
-  margin: 0.5rem;
+  margin-top: 0.5rem;
   font-size: 3.25rem;
+  padding-right: 25px;
+  padding-left: 25px;
 }
 
 @media screen and (max-width: 1180px) {
@@ -187,19 +151,12 @@ p {
 }
 
 
-@media screen and (max-width: 860px) {
-  .big-container {
-    flex-direction: row;
-  }
-}
-
-@media screen and (max-width: 580px) {
-  h3.contact-title{
-    margin-left: 20px;
-    width: 300px;
-  }
+@media screen and (max-width: 900px) {
   .big-container {
     flex-direction: column;
+  }
+  h3.contact-title{
+    margin: auto;
   }
 
   .Card {
@@ -210,13 +167,65 @@ p {
     margin-top: 30px;
     width: 350px;
   }
-  .home-button {
-    @include animation-button;
-    width: 150px;
-    margin-top: 40px;
-    margin-left: 120px;
-    height: 45px;
+}
+
+@media screen and (max-width: 580px) {
+	.title {
+		font-size: 25px;
+	}
+	.sub-title {
+		color: rgba(235, 233, 233, 0.6);
+		font-size: 15.5px;
+		border-bottom: 1px solid rgba(235, 233, 233, 0.282);
+		font-family: 'Nunito Sans', sans-serif;
+		line-height: 2em;
+	}
+}
+@media screen and (max-width: 320px) {
+
+  .upper-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Card {
+    width: 280px;
+  }
+  .Card-2 {
+    width: 280px;
   }
 }
 
-
+@media screen and (max-width: 280px) {
+  
+  .Card {
+    width: 240px;
+  }
+  .Card-2 {
+    width: 240px;
+  }
+  .ft-social-list  .fab, .ft-social-list  .fas{
+    font-size: 40px;
+   }
+   @media screen and (max-width: 280px) {
+  
+    .Card {
+      width: 240px;
+    }
+    .Card-2 {
+      width: 240px;
+    }
+    .ft-social-list  .fab, .ft-social-list  .fas{
+      font-size: 35px;
+      padding: 0 15px;
+     }
+     .ft-social-list li {
+      padding: 0;
+      font-size: 30px;
+    }
+    .ft-social-list {
+     position:relative;
+     top: 50px;
+    }
+  }
+}
