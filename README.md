@@ -15,7 +15,20 @@ Entscheide dich für eine Kategorie, die dir zusagt, seien es deine Lieblings-Ar
 
 Für die Verwendung der App benötigst du lediglich einen Spotify Account.
 
+Erstelle deine personalisierte Playlist jetzt auf [Discofy](discofy-music-app.herokuapp.com)
+
+Eine vollständige Video-Vorschau der App, kannst du unter vollgendem Link ansehen: [Discofy App-Vorschau](https://youtu.be/vyBS1CR28WM)
+
+## Beschreibung
 Dieses Projekt wurde aufgesetzt mit [Create React App](https://github.com/facebook/create-react-app) und bezieht Daten aus der [Spotify Web API](https://developer.spotify.com/documentation/web-api).
+
+Nach einem erfolgreichen Login über Spotify gelangt man zur Kategorieauswahl
+
+![App Vorschau für die Kategorieauswahl](https://github.com/Git-EL/spotify_project/blob/main/src/assets/selection_page.png)
+
+Hat man seine Auswahl getroffen, erhält man nun passende Song-Vorschläge. Fährt man über die einzelnen Bilder der Vorschläge, spielt sich eine Song-Vorschau ab und kann dann die Lieder, die einem gefallen zur Playlist hinzufügen um diese auf Spotify zu speichern.
+
+![App Vorschau für die Songauswahl](https://github.com/Git-EL/spotify_project/blob/main/src/assets/filter_page.png)
 
 ## Installation
 
@@ -62,3 +75,4 @@ npm start
 
 Öffne [http://localhost:3000](http://localhost:3000) um es im Browser zu sehen.
 Die Seite wird neustarten, wenn du Änderungen vornimmst.
+
