@@ -56,7 +56,7 @@ npm install
 |REACT_APP_CLIENT_ID|ID der registrierten App|
 |REACT_APP_CLIENT_SECRET|Schlüssel, der bei gesicherten Aufrufen an die Spotify-Konten und Web-API-Dienste übergeben wird|
 |REACT_APP_AUTHORIZE_URL|Autorisierungsanfrage. Die Autorisierungs-URL ist ein Spotify-Endpunkt, der dem Benutzer einen Berechtigungsdialog anzeigt.|
-|REACT_APP_REDIRECT_URL|Callback-Endpunkt für die Spotify-Authentifizierung. Stelle sicher, dass diese mit der Umleitungs-URL in der Spotify-API-Konsole übereinstimmt|
+|REACT_APP_REDIRECT_URL|Callback-Endpunkt für die Spotify-Authentifizierung. Stelle sicher, dass diese mit der Umleitungs-URL in der Spotify-API-Konsole übereinstimmt.|
 
 ### Konfiguration
 Fülle die .env-Datei folgendermaßen aus
