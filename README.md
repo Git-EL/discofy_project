@@ -76,3 +76,30 @@ npm start
 Öffne [http://localhost:3000](http://localhost:3000) um es im Browser zu sehen.
 Die Seite wird neustarten, wenn du Änderungen vornimmst.
 
+## Autoren
+
+    
+<p>
+ <a href="https://github.com/Git-EL"
+    ><img
+            src="https://avatars.githubusercontent.com/u/65949739?s=400&u=e749c6170b32cd7e893f0372c39a607fa0571e0d&v=4"
+            width="45"
+            height="45"
+    /></a>
+    <a href="https://github.com/Suzy1412"
+    ><img
+            src="https://avatars.githubusercontent.com/u/65951047?v=4"
+            width="45"
+            height="45"
+    /></a>
+</p>
+    
+Wenn du Fragen hast oder uns kontaktieren möchtest, erreichst du uns unter den folgenden Adressen:
+
+Esther:
+* [E-Mail](lee_esther@live.com)
+* [LinkedIn](https://www.linkedin.com/in/esther-lee-627451205)
+
+Suzana: 
+* [E-Mail](code.s09@outlook.com)
+* [LinkedIn](https://www.linkedin.com/in/suzana-jovanovic-1b9ab81b2)
